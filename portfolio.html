@@ -8,9 +8,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Game Developer Portfolio showcasing projects and skills in game development">
-    <title>Pixx's Game Developer Portfolio</title>
+    <title>Portfolio - Pixx's Game Developer Portfolio</title>
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="portfolio.css">
 </head>
 <body>
     <div class="background-animation">
@@ -22,7 +23,7 @@
 
     <div class="navbar-container">
         <nav class="navbar">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h18v8zM6 15h2v-2h2v-2H8V9H6v2H4v2h2z"/>
                     <circle cx="14.5" cy="13.5" r="1.5"/>
@@ -30,8 +31,8 @@
                 </svg>
             </a>
             <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="portfolio.html">Portfolio</a>
+                <a href="index.html">Home</a>
+                <a href="portfolio.html" class="active">Portfolio</a>
                 <!-- <a href="blog.html">Blog</a> -->
                 <a href="contact.html">Contact</a>
             </div>
@@ -45,129 +46,124 @@
         </nav>
     </div>
 
-    <div class="container">
-        <div class="left-section">
-            <div class="profile-card">
-                <div class="profile">
-                    <img src="images/avatar.png" alt="Game Developer" class="profile-image">
-                    <div class="profile-info">
-                        <h1>Sarthak Sachdeva</h1>
-                        <div class="pronouns">They/Them</div>
-                        <p>BSc. (Hons) Computer Games Development Student @ University of Staffordshire | Aspiring Games Developer and Technical Artist</p>
-                    </div>
-                </div>
-                
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/itspixxel/" class="social-link"> <!-- LinkedIn -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/itspixxel" class="social-link"> <!-- GitHub -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://artstation.com/itspixxel" class="social-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M2 377.4l43 74.3A51.35 51.35 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 59.3A51.38 51.38 0 0 0 290.2 32h-88.4l257.3 447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"></path></svg>
-                    </a>
-                    <a href="https://itspixxel.itch.io/" class="social-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M71.9 34.8C50.2 47.7 7.4 96.8 7 109.7v21.3c0 27.1 25.3 50.8 48.3 50.8 27.6 0 50.5-22.9 50.5-50 0 27.1 22.2 50 49.8 50s49-22.9 49-50c0 27.1 23.6 50 51.2 50h.5c27.6 0 51.2-22.9 51.2-50 0 27.1 21.5 50 49 50s49.8-22.9 49.8-50c0 27.1 23 50 50.5 50 23 0 48.3-23.8 48.3-50.8v-21.3c-.4-12.9-43.2-62.1-64.9-75C372.6 32.4 325.8 32 256 32S91.1 33.1 71.9 34.8zm132.3 134.4c-22 38.4-77.9 38.7-99.9 .3-13.2 23.1-43.2 32.1-56 27.7-3.9 40.2-13.7 237.1 17.7 269.2 80 18.7 302.1 18.1 379.8 0 31.7-32.3 21.3-232 17.8-269.2-12.9 4.4-42.9-4.6-56-27.7-22 38.5-77.9 38.1-99.9-.2-7.1 12.5-23.1 28.9-51.8 28.9a57.5 57.5 0 0 1 -51.8-28.9zm-41.6 53.8c16.5 0 31.1 0 49.2 19.8a436.9 436.9 0 0 1 88.2 0C318.2 223 332.9 223 349.3 223c52.3 0 65.2 77.5 83.9 144.5 17.3 62.2-5.5 63.7-34 63.7-42.2-1.6-65.5-32.2-65.5-62.8-39.3 6.4-101.9 8.8-155.6 0 0 30.6-23.3 61.2-65.5 62.8-28.4-.1-51.2-1.6-33.9-63.7 18.7-67 31.6-144.5 83.9-144.5zM256 270.8s-44.4 40.8-52.4 55.2l29-1.2v25.3c0 1.6 21.3 .2 23.3 .2 11.7 .5 23.3 1 23.3-.2v-25.3l29 1.2c-8-14.5-52.4-55.2-52.4-55.2z"></path></svg>
-                    </a>
-                </div>
-                
-                <div class="skills">
-                    <div class="skill-tag">Unity3D</div>
-                    <div class="skill-tag">Unreal</div>
-                    <div class="skill-tag">C#</div>
-                    <div class="skill-tag">C++</div>
-                    <div class="skill-tag">3D Modeling</div>
-                    <div class="skill-tag">Game Design</div>
-                    <div class="skill-tag">Blender</div>
-                    <div class="skill-tag">Graphic Design</div>
-                    <div class="skill-tag">Video Editing</div>
-                </div>
-            </div>
-            
-            <a href="contact.html" class="cta-button">
-                Get in touch
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-            </a>
+    <div class="portfolio-container">
+        <div class="portfolio-header">
+            <h1>My Projects</h1>
+            <p>A comprehensive showcase of my game development journey</p>
         </div>
-        
-        <div class="right-section">
-            <div class="projects-header">
-                <div>
-                    <h2>Featured Projects</h2>
-                    <p>A showcase of my best works</p>
+
+        <div class="portfolio-filters">
+            <button class="filter-btn">All Projects</button>
+            <button class="filter-btn">Unreal Engine</button>
+            <button class="filter-btn">Platformer</button>
+            <button class="filter-btn">Niagara VFX</button>
+            <button class="filter-btn">Tools</button>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Ember's Edge -->
+            <div class="project-card" data-project="embers-edge">
+                <div class="project-image-container">
+                    <img src="/images/EmbersEdgeIcon.png" alt="Ember's Edge">
                 </div>
-                <a href="portfolio.html" class="view-all-btn">
-                    View all projects
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14"></path>
-                        <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                </a>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <div class="project-tag">Unreal Engine</div>
+                        <div class="project-tag">Platformer</div>
+                    </div>
+                    <h3>Ember's Edge</h3>
+                    <p>A puzzle platformer with fluent movement mechanics based in hell</p>
+                </div>
+            </div>
+
+            <!-- HellShot -->
+            <div class="project-card" data-project="hellshot">
+                <div class="project-image-container">
+
+                    <img src="/images/HellshotThumb.png" alt="HellShot">
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <div class="project-tag">Unreal Engine</div>
+                        <div class="project-tag">Boomer Shooter</div>
+                    </div>
+                    <h3>HellShot</h3>
+                    <p>A WIP boomer shooter game with unique movement mechanics</p>
+                </div>
+            </div>
+
+            <!-- Toxic Shard -->
+            <div class="project-card" data-project="toxic-shard">
+                <div class="project-image-container">
+                    <img src="/images/ToxicShard.png" alt="Toxic Shard">
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <div class="project-tag">Unreal Engine</div>
+                        <div class="project-tag">Niagara VFX</div>
+                    </div>
+                    <h3>Toxic Shard</h3>
+                    <p>A Niagara VFX system made with Unreal Engine 5 for 'Explosion-tober' 2024</p>
+                </div>
+            </div>
+
+            <!-- Winternator -->
+            <div class="project-card" data-project="winternator">
+                <div class="project-image-container">
+                    <img src="/images/WinternatorScreenie1.png" alt="Winternator">
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <div class="project-tag">Unreal Engine</div>
+                        <div class="project-tag">Tools</div>
+                    </div>
+                    <h3>Winternator</h3>
+                    <p>A procedural winter generator tool for Unreal Engine</p>
+                </div>
+            </div>
+
+            <!-- Radiant Pulse -->
+            <div class="project-card" data-project="radiant-pulse">
+                <div class="project-image-container">
+                    <img src="/images/RadiantPulse.png" alt="Radiant Pulse">
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <div class="project-tag">Unreal Engine</div>
+                        <div class="project-tag">Niagara VFX</div>
+                    </div>
+                    <h3>Radiant Pulse</h3>
+                    <p>A kamehameha inspired energy beam VFX made with Unreal Engine 5 Niagara</p>
+                </div>
+            </div>
+
+            <!-- Tactical Takedown -->
+            <div class="project-card" data-project="tactical-takedown">
+                <div class="project-image-container">
+                    <img src="/images/TacticalTakedownIcon.png" alt="Tactical Takedown">
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <div class="project-tag">Unity</div>
+                        <div class="project-tag">Prototype</div>
+                    </div>
+                    <h3>Tactical Takedown</h3>
+                    <p>A prototype for a procedural top-down shooter game made with Unity</p>
+                </div>
             </div>
             
-            <div class="projects-grid">
-                <div class="project-card project-1" data-project="embers-edge">
-                    <div class="project-image-container">
-                        <img src="/images/EmbersEdgeIcon.png" alt="Ember's Edge">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <div class="project-tag">Unreal Engine</div>
-                            <div class="project-tag">Platformer</div>
-                        </div>
-                        <h3>Ember's Edge</h3>
-                        <p>A puzzle platformer with fluent movement mechanics based in hell</p>
-                    </div>
+            <!-- Area 26 -->
+            <div class="project-card" data-project="area-26">
+                <div class="project-image-container">
+                    <img src="/images/Area26Cover.jpeg" alt="Area 26">
                 </div>
-                
-                <div class="project-card project-2" data-project="hellshot">
-                    <div class="project-image-container">
-                        <img src="/images/HellshotThumb.png" alt="HellShot">
+                <div class="project-info">
+                    <div class="project-tags">
+                        <div class="project-tag">Unreal Engine</div>
+                        <div class="project-tag">Horror Game</div>
                     </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <div class="project-tag">Unreal Engine</div>
-                            <div class="project-tag">Boomer Shooter</div>
-                        </div>
-                        <h3>HellShot</h3>
-                        <p>A WIP boomer shooter game with unique movement mechanics</p>
-                    </div>
-                </div>
-                
-                <div class="project-card project-3" data-project="toxic-shard">
-                    <div class="project-image-container">
-                        <img src="/images/ToxicShard.png" alt="Toxic Shard">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <div class="project-tag">Unreal Engine</div>
-                            <div class="project-tag">Niagara VFX</div>
-                        </div>
-                        <h3>Toxic Shard</h3>
-                        <p>A Niagara VFX system made with Unreal Engine 5 for 'Explosion-tober' 2024</p>
-                    </div>
-                </div>
-                
-                <div class="project-card project-4" data-project="winternator">
-                    <div class="project-image-container">
-                        <img src="/images/WinternatorScreenie1.png" alt="Winternator">
-                    </div>
-                    <div class="project-info">
-                        <div class="project-tags">
-                            <div class="project-tag">Unreal Engine</div>
-                            <div class="project-tag">Procedural Tool</div>
-                        </div>
-                        <h3>Winternator</h3>
-                        <p>A procedural winter generator tool for Unreal Engine</p>
-                    </div>
+                    <h3>Area 26</h3>
+                    <p>A first-person horror game where you play as a janitor cleaning up a contaminated alien research facility</p>
                 </div>
             </div>
         </div>
@@ -177,12 +173,13 @@
     <div class="modal-overlay" id="projectModal">
         <div class="modal-content">
             <button class="close-modal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
             <div class="modal-body">
+
                 <!-- Ember's Edge Details -->
                 <div class="project-details" data-project="embers-edge">
                     <div class="project-header">
@@ -530,10 +527,263 @@
                         </a>
                     </div>
                 </div>
+
+                <!-- Radiant Pulse Details -->
+                <div class="project-details" data-project="radiant-pulse">
+                    <div class="project-header">
+                        <img src="/images/RadiantPulse.png" alt="Radiant Pulse">
+                        <div>
+                            <h2>Radiant Pulse</h2>
+                            <div class="tags">
+                                <span class="tag">Unreal Engine</span>
+                                <span class="tag">Niagara VFX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/TMjyNKj0g-c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-full-description">
+                        <h3>About the Project</h3>
+                        <p>Radiant Pulse is a sophisticated VFX system that creates a dramatic energy beam effect inspired by iconic anime moments. The system consists of three intricately designed components: an energy gathering orb, a powerful energy beam, and dynamic ground dust effects. The effect is carefully timed across 7 seconds, with 2.5 seconds dedicated to energy gathering and 4.5 seconds for the beam and ground effects, creating a cinematic and impactful visual experience.</p>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Multi-stage VFX sequence with precise timing control for each phase</li>
+                            <li>Dynamic particle systems for energy orb formation with customizable intensity</li>
+                            <li>Beam collision effects with environment including reflection and refraction</li>
+                            <li>Impact particle effects with realistic physics-based behavior</li>
+                            <li>Customizable color and intensity parameters</li>
+                        </ul>
+
+                        <h3>Technical Highlights</h3>
+                        <ul>
+                            <li>Complex Niagara particle systems with custom physics calculations</li>
+                            <li>Timeline-driven effect sequencing with precise control</li>
+                            <li>Dynamic material parameters for real-time effect customization</li>
+                            <li>Advanced lighting system for energy beam visualization</li>
+                            <li>Custom shader system for energy effects</li>
+                            <li>Optimized particle count and system complexity</li>
+                            <li>Blueprint interface for easy integration</li>
+                        </ul>
+
+                        <h3>Development Process</h3>
+                        <p>Radiant Pulse is a focused VFX project that creates a dramatic energy beam effect inspired by iconic anime moments. The project emphasizes timing, visual impact, and technical optimization.</p>
+                        
+                        <h4>Development Timeline</h4>
+                        <ul>
+                            <li>Week 1: Energy gathering effect development</li>
+                            <li>Week 2: Beam system implementation</li>
+                            <li>Week 3: Impact and ground effects</li>
+                            <li>Week 4: Polish and timing refinement</li>
+                        </ul>
+
+                        <h4>Key Challenges</h4>
+                        <ul>
+                            <li>Creating dramatic energy buildup effects</li>
+                            <li>Achieving realistic beam collision behavior</li>
+                            <li>Optimizing particle systems for performance</li>
+                            <li>Timing the multi-stage effect sequence</li>
+                        </ul>
+
+                        <h4>Development Methodology</h4>
+                        <ul>
+                            <li>Reference analysis from anime and games</li>
+                            <li>Stage-by-stage effect development</li>
+                            <li>Performance optimization throughout</li>
+                            <li>Regular visual quality checks</li>
+                        </ul>
+
+                        <h4>Tools & Technologies</h4>
+                        <ul>
+                            <li>Unreal Engine 5 Niagara for particle systems</li>
+                            <li>Substance Designer and Photoshop for texture creation</li>
+                            <li>Git for version control</li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="#" class="portfolio-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M2 377.4l43 74.3A51.35 51.35 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 59.3A51.38 51.38 0 0 0 290.2 32h-88.4l257.3 447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"></path></svg>
+                            Artstation
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tactical Takedown Details -->
+                <div class="project-details" data-project="tactical-takedown">
+                    <div class="project-header">
+                        <img src="/images/TacticalTakedownIcon.png" alt="Tactical Takedown">
+                        <div>
+                            <h2>Tactical Takedown</h2>
+                            <div class="tags">
+                                <span class="tag">Unity</span>
+                                <span class="tag">Prototype</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/qwYHcx8pUR0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-full-description">
+                        <h3>About the Project</h3>
+                        <p>Tactical Takedown is an innovative prototype that explores procedural level generation in a top-down shooter context. The project combines strategic gameplay elements with dynamic level creation to ensure each playthrough offers a unique experience. Players must adapt their tactics to the procedurally generated environments while engaging with increasingly challenging enemy encounters.</p>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Procedural level generation with balanced room layouts and enemy placement</li>
+                            <li>Enemy AI with advanced pathfinding and tactical behavior</li>
+                            <li>Weapon system with diverse projectile types and upgrade paths</li>
+                            <li>Progressive difficulty curve with new mechanics and enemy types</li>
+                            <li>Dynamic cover system for tactical gameplay</li>
+                            <li>Multiple character classes with unique abilities</li>
+                            <li>Procedural mission generation system</li>
+                            <li>Advanced enemy behavior patterns</li>
+                        </ul>
+
+                        <h3>Technical Highlights</h3>
+                        <ul>
+                            <li>Custom character controller in Unity with responsive movement</li>
+                            <li>Procedural level generation using advanced algorithms</li>
+                            <li>Enemy AI with pathfinding and tactical decision making</li>
+                            <li>Optimized particle systems for weapon effects</li>
+                            <li>Efficient object pooling for performance</li>
+                            <li>Modular weapon system for easy expansion</li>
+                        </ul>
+
+                        <h3>Development Process</h3>
+                        <p>Tactical Takedown is a prototype project that explores procedural level generation in a top-down shooter context. The project focuses on creating engaging gameplay through dynamic level creation.</p>
+                        
+                        <h4>Development Timeline</h4>
+                        <ul>
+                            <li>Phase 1: Core movement and combat</li>
+                            <li>Phase 2: Procedural level generation</li>
+                            <li>Phase 3: Enemy AI and behavior</li>
+                            <li>Phase 4: Polish and balance</li>
+                        </ul>
+
+                        <h4>Key Challenges</h4>
+                        <ul>
+                            <li>Creating engaging procedural level layouts</li>
+                            <li>Developing balanced enemy AI</li>
+                            <li>Ensuring consistent gameplay experience</li>
+                            <li>Optimizing generation algorithms</li>
+                        </ul>
+
+                        <h4>Development Methodology</h4>
+                        <ul>
+                            <li>Algorithm-driven level generation</li>
+                            <li>Iterative gameplay testing</li>
+                            <li>Modular enemy behavior system</li>
+                            <li>Performance profiling and optimization</li>
+                        </ul>
+
+                        <h4>Tools & Technologies</h4>
+                        <ul>
+                            <li>Unity for core development</li>
+                            <li>ProBuilder for level prototyping</li>
+                            <li>Git for version control</li>
+                            <li>Visual Studio for C# development</li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/itspixxel/Tactical-Takedown" class="portfolio-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub Repository
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Area 26 Details -->
+                <div class="project-details" data-project="area-26">
+                    <div class="project-header">
+                        <img src="/images/Area26Cover.jpeg" alt="Area 26">
+                        <div>
+                            <h2>Area 26</h2>
+                            <div class="tags">
+                                <span class="tag">Unreal Engine</span>
+                                <span class="tag">Horror Game</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/6ie23H7k7Ew" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-full-description">
+                        <h3>About the Project</h3>
+                        <p>Area 26 is a first-person horror game that puts players in the role of a janitor cleaning up a contaminated alien research facility. As the technical artist, I focused on creating immersive visual systems that bring the horror atmosphere to life. The project emphasizes creating a sense of dread through advanced shader systems, dynamic lighting, and environmental effects that react to player actions and story progression.</p>
+                        
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Atmospheric volumetric fog with alien particle effects and dynamic lighting</li>
+                            <li>Retro post-process effects like posterization, pixelation, and vertex snapping</li>
+                            <li>Custom particle systems for alien effects</li>
+                        </ul>
+
+                        <h3>Technical Highlights</h3>
+                        <ul>
+                            <li>Optimized VFX particle systems using Niagara</li>
+                            <li>Dynamic material instances for real-time effects</li>
+                            <li>Custom post-processing system for horror effects</li>
+                        </ul>
+
+                        <h3>Development Process</h3>
+                        <p>As the technical artist on Area 26, I focused on creating the visual systems that bring the horror atmosphere to life. The project emphasizes creating immersive environments through advanced shader and material systems.</p>
+                        
+                        <h4>Development Timeline</h4>
+                        <ul>
+                            <li>Phase 1: Core shader system development</li>
+                            <li>Phase 2: Material and texture creation</li>
+                            <li>Phase 3: VFX and atmosphere systems</li>
+                            <li>Phase 4: Polish and optimization</li>
+                        </ul>
+
+                        <h4>Key Challenges</h4>
+                        <ul>
+                            <li>Creating dynamic contamination effects</li>
+                            <li>Developing realistic alien material properties</li>
+                            <li>Optimizing complex shader systems</li>
+                            <li>Balancing visual quality with performance</li>
+                        </ul>
+
+                        <h4>Development Methodology</h4>
+                        <ul>
+                            <li>Research-driven approach to horror visuals</li>
+                            <li>Modular shader system design</li>
+                            <li>Regular performance testing</li>
+                            <li>Collaboration with level designers</li>
+                        </ul>
+
+                        <h4>Tools & Technologies</h4>
+                        <ul>
+                            <li>Unreal Engine 5 for core development</li>
+                            <li>Substance Designer and Photoshop for texture creation</li>
+                            <li>Git for version control</li>
+                        </ul>
+                    </div>
+                    <div class="portfolio-links">
+                        <a href="https://github.com/KieranCooksley/Group26Project" class="portfolio-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            GitHub Repository
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <script src="home.js"></script>
-    <script src="background.js"></script>
+    <script src="portfolio.js"></script>
+    <script src="card-effect.js"></script>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
 </body>
-</html>
+</html> 

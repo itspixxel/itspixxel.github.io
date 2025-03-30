@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0d0d14">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Game Development Blog - Development updates and insights">
+    <title>Dev Blog | Pixx's Game Developer Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+
+    <div class="navbar-container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h18v8zM6 15h2v-2h2v-2H8V9H6v2H4v2h2z"/>
+                    <circle cx="14.5" cy="13.5" r="1.5"/>
+                    <circle cx="18.5" cy="10.5" r="1.5"/>
+                </svg>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+    </div>
+
+    <div class="blog-container">
+        <div class="blog-header">
+            <h1>Dev Blog</h1>
+            <p>Updates and insights from my game development journey</p>
+        </div>
+
+        <div class="blog-content">
+            <div class="blog-filters">
+                <button class="filter-btn active">All Posts</button>
+                <button class="filter-btn">Development</button>
+                <button class="filter-btn">Design</button>
+                <button class="filter-btn">Technical</button>
+                <button class="filter-btn">Updates</button>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Featured Post -->
+                <article class="blog-post featured" data-post="embers-edge">
+                    <div class="post-image">
+                        <img src="/images/EmbersEdgeIcon.png" alt="Ember's Edge Development">
+                        <div class="post-tag">Development</div>
+                    </div>
+                    <div class="post-content">
+                        <h2>Implementing Fluid Movement in Ember's Edge</h2>
+                        <div class="post-meta">
+                            <span class="date">March 15, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <p>Deep dive into the implementation of the movement system in Ember's Edge, including wall-running, air dashing, and momentum preservation.</p>
+                    </div>
+                </article>
+
+                <!-- Regular Posts -->
+                <article class="blog-post" data-post="hellshot">
+                    <div class="post-image">
+                        <img src="/images/HellshotThumb.png" alt="HellShot Development">
+                        <div class="post-tag">Technical</div>
+                    </div>
+                    <div class="post-content">
+                        <h2>Custom Weapon System in HellShot</h2>
+                        <div class="post-meta">
+                            <span class="date">March 10, 2024</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                        <p>Exploring the modular weapon system implemented in HellShot, featuring dynamic reload animations and custom effects.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-post="toxic-shard">
+                    <div class="post-image">
+                        <img src="/images/ToxicShard.png" alt="VFX Development">
+                        <div class="post-tag">Design</div>
+                    </div>
+                    <div class="post-content">
+                        <h2>Creating Dynamic VFX in Unreal Engine 5</h2>
+                        <div class="post-meta">
+                            <span class="date">March 5, 2024</span>
+                            <span class="read-time">3 min read</span>
+                        </div>
+                        <p>A look at the process of creating the Toxic Shard VFX system using Niagara in Unreal Engine 5.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-post="winternator">
+                    <div class="post-image">
+                        <img src="/images/WinternatorScreenie1.png" alt="Tool Development">
+                        <div class="post-tag">Updates</div>
+                    </div>
+                    <div class="post-content">
+                        <h2>Winternator: Procedural Winter Generation</h2>
+                        <div class="post-meta">
+                            <span class="date">March 1, 2024</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <p>Introducing Winternator, a new tool for automatically generating winter environments in Unreal Engine.</p>
+                    </div>
+                </article>
+
+                <!-- Additional Blog Posts for Pagination -->
+                <article class="blog-post" data-post="ai-pathfinding">
+                    <div class="post-image">
+                        <img src="/images/EmbersEdgeIcon.png" alt="AI Development">
+                        <div class="post-tag">Technical</div>
+                    </div>
+                    <div class="post-content">
+                        <h2>Advanced AI Pathfinding Systems</h2>
+                        <div class="post-meta">
+                            <span class="date">February 25, 2024</span>
+                            <span class="read-time">8 min read</span>
+                        </div>
+                        <p>Deep dive into implementing advanced AI pathfinding using behavior trees and navigation meshes.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-post="shader-effects">
+                    <div class="post-image">
+                        <img src="/images/ToxicShard.png" alt="Shader Development">
+                        <div class="post-tag">Design</div>
+                    </div>
+                    <div class="post-content">
+                        <h2>Creating Custom Shader Effects</h2>
+                        <div class="post-meta">
+                            <span class="date">February 20, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <p>Tutorial on creating custom shader effects for environmental storytelling and atmosphere.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-post="multiplayer">
+                    <div class="post-image">
+                        <img src="/images/HellshotThumb.png" alt="Multiplayer Development">
+                        <div class="post-tag">Development</div>
+                    </div>
+                    <div class="post-content">
+                        <h2>Implementing Multiplayer Features</h2>
+                        <div class="post-meta">
+                            <span class="date">February 15, 2024</span>
+                            <span class="read-time">7 min read</span>
+                        </div>
+                        <p>A comprehensive guide to adding multiplayer functionality using Unreal's networking system.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-post="optimization">
+                    <div class="post-image">
+                        <img src="/images/WinternatorScreenie1.png" alt="Performance Optimization">
+                        <div class="post-tag">Technical</div>
+                    </div>
+                    <div class="post-content">
+                        <h2>Game Performance Optimization</h2>
+                        <div class="post-meta">
+                            <span class="date">February 10, 2024</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <p>Best practices and techniques for optimizing game performance across different platforms.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" data-post="level-design">
+                    <div class="post-image">
+                        <img src="/images/EmbersEdgeIcon.png" alt="Level Design">
+                        <div class="post-tag">Design</div>
+                    </div>
+                    <div class="post-content">
+                        <h2>Level Design Principles</h2>
+                        <div class="post-meta">
+                            <span class="date">February 5, 2024</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                        <p>Exploring key principles of effective level design and player guidance systems.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="pagination">
+                <button class="pagination-btn" disabled>←</button>
+                <span class="page-number active">1</span>
+                <span class="page-number">2</span>
+                <button class="pagination-btn">→</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Post Modal -->
+    <div class="blog-modal-overlay">
+        <div class="blog-modal-content">
+            <button class="close-modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="blog-modal-body">
+                <!-- Ember's Edge Post -->
+                <div class="blog-post-details" data-post="embers-edge">
+                    <div class="blog-modal-header">
+                        <div class="post-image">
+                            <img src="/images/EmbersEdgeIcon.png" alt="Ember's Edge Development">
+                            <div class="post-tag">Development</div>
+                        </div>
+                        <div class="post-content">
+                            <h2>Implementing Fluid Movement in Ember's Edge</h2>
+                            <div class="post-meta">
+                                <span class="date">March 15, 2024</span>
+                                <span class="read-time">5 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-full-content">
+                        <div class="section">
+                            <h3>The Core Movement System</h3>
+                            <p>The movement system in Ember's Edge was designed with fluidity and player expression in mind. We wanted players to chain together different movement mechanics seamlessly, creating their own unique ways to traverse the environment.</p>
+                            <p>Key features of the system include:</p>
+                            <ul>
+                                <li>Wall-running with adjustable gravity and stick duration</li>
+                                <li>Air dashing with momentum preservation</li>
+                                <li>Double jumping with variable height control</li>
+                                <li>Slide mechanics that interact with terrain slope</li>
+                            </ul>
+                        </div>
+                        <div class="section">
+                            <h3>Technical Implementation</h3>
+                            <p>The system was built using Unreal Engine's Character Movement Component as a foundation, with several custom modifications to achieve the desired feel:</p>
+                            <pre><code>// Custom movement mode for wall-running
+void AEmberCharacter::WallRun()
+{
+    FVector WallNormal = GetCurrentWallNormal();
+    FVector RunDirection = FVector::CrossProduct(WallNormal, FVector::UpVector);
+    
+    // Apply wall-run forces
+    GetCharacterMovement()->Velocity = RunDirection * WallRunSpeed;
+    GetCharacterMovement()->GravityScale = WallRunGravityScale;
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HellShot Post -->
+                <div class="blog-post-details" data-post="hellshot">
+                    <div class="blog-modal-header">
+                        <div class="post-image">
+                            <img src="/images/HellshotThumb.png" alt="HellShot Development">
+                            <div class="post-tag">Technical</div>
+                        </div>
+                        <div class="post-content">
+                            <h2>Custom Weapon System in HellShot</h2>
+                            <div class="post-meta">
+                                <span class="date">March 10, 2024</span>
+                                <span class="read-time">4 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-full-content">
+                        <div class="section">
+                            <h3>Modular Weapon Architecture</h3>
+                            <p>The weapon system in HellShot was designed to be highly modular, allowing for quick iteration and easy addition of new weapons. Each weapon is composed of interchangeable components that define its behavior and characteristics.</p>
+                            <ul>
+                                <li>Component-based weapon modification system</li>
+                                <li>Dynamic reload animations based on weapon state</li>
+                                <li>Procedural recoil and weapon sway</li>
+                                <li>Advanced particle and sound effect system</li>
+                            </ul>
+                        </div>
+                        <div class="section">
+                            <h3>Technical Details</h3>
+                            <p>The weapon modification system uses a data-driven approach with scriptable objects:</p>
+                            <pre><code>// Weapon modification structure
+struct FWeaponModification
+{
+    UPROPERTY(EditDefaultsOnly)
+    float DamageMultiplier;
+    
+    UPROPERTY(EditDefaultsOnly)
+    float FireRateMultiplier;
+    
+    UPROPERTY(EditDefaultsOnly)
+    TArray<UParticleSystem*> CustomEffects;
+};</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add similar detailed content for other blog posts -->
+            </div>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html> 
