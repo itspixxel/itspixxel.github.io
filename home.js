@@ -149,4 +149,82 @@ document.addEventListener('DOMContentLoaded', () => {
     projectCards.forEach(card => {
         card.style.display = 'block'; // Show all cards
     });
-}); 
+
+    // Gallery navigation for modal project details
+    document.querySelectorAll('.project-details').forEach(function(details) {
+        const galleryItems = details.querySelectorAll('.gallery-item');
+        if (galleryItems.length < 2) return; // No need for navigation
+        let currentIndex = 0;
+        const prevBtn = details.querySelector('.gallery-btn.prev-btn');
+        const nextBtn = details.querySelector('.gallery-btn.next-btn');
+
+        function showItem(index) {
+            galleryItems.forEach((item, i) => {
+                item.style.display = (i === index) ? 'block' : 'none';
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                showItem(currentIndex);
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                currentIndex = (currentIndex + 1) % galleryItems.length;
+                showItem(currentIndex);
+            });
+        }
+        showItem(currentIndex);
+    });
+
+    // Gallery modal logic for ALL project modals
+    document.querySelectorAll('.project-details').forEach(function(modal) {
+        const galleryItems = modal.querySelectorAll('.gallery-item');
+        const prevBtn = modal.querySelector('.gallery-btn.prev-btn');
+        const nextBtn = modal.querySelector('.gallery-btn.next-btn');
+        const thumbnails = modal.querySelectorAll('.gallery-thumbnail');
+        if (galleryItems.length === 0 || thumbnails.length === 0) return;
+        let currentIndex = 0;
+
+        function showGalleryItem(index) {
+            galleryItems.forEach((item, i) => {
+                item.style.display = i === index ? 'block' : 'none';
+            });
+            thumbnails.forEach((thumb, i) => {
+                if (i === index) {
+                    thumb.classList.add('active');
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+            currentIndex = index;
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let newIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+                showGalleryItem(newIndex);
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                let newIndex = (currentIndex + 1) % galleryItems.length;
+                showGalleryItem(newIndex);
+            });
+        }
+        thumbnails.forEach((thumb, i) => {
+            thumb.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showGalleryItem(i);
+            });
+        });
+        // Initialize
+        showGalleryItem(currentIndex);
+    });
+});

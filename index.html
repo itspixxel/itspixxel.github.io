@@ -31,7 +31,7 @@
             </a>
             <div class="nav-links">
                 <a href="index.html" class="active">Home</a>
-                <a href="portfolio.html">Portfolio</a>
+                <a href="portfolio.html">Projects</a>
                 <!-- <a href="blog.html">Blog</a> -->
                 <a href="contact.html">Contact</a>
             </div>
@@ -124,49 +124,52 @@
                             <div class="project-tag">Procedural Tool</div>
                         </div>
                         <h3>ADAPTIK</h3>
-                        <p>A complete procedural solution to realistic locomotion</p>
+                        <p>Procedural quadruped locomotion for Unreal Engine 5, featuring dynamic gait transitions, terrain adaptation, and biomechanical IK for realistic movement.</p>
                     </div>
                 </div>
                 
-                <div class="project-card project-2" data-project="hellshot">
+                <!-- Neptune Ocean System Featured Project -->
+                <div class="project-card project-2" data-project="neptune">
                     <div class="project-image-container">
-                        <img src="/images/HellshotThumb.png" alt="HellShot">
+                        <img src="/images/NeptuneCover.png" alt="Neptune Ocean System">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <div class="project-tag">Unreal Engine</div>
-                            <div class="project-tag">Boomer Shooter</div>
+                            <div class="project-tag">Technical Art</div>
+                            <div class="project-tag">Tool</div>
                         </div>
-                        <h3>HellShot</h3>
-                        <p>A WIP boomer shooter game with unique movement mechanics</p>
+                        <h3>Neptune</h3>
+                        <p>Advanced ocean system for Unreal Engine 5 with Gerstner waves, buoyancy, underwater effects, and seafoam built for a collaborative student project.</p>
                     </div>
                 </div>
                 
-                <div class="project-card project-3" data-project="toxic-shard">
+                <div class="project-card project-3" data-project="emp-kunai">
                     <div class="project-image-container">
-                        <img src="/images/ToxicShard.png" alt="Toxic Shard">
+                        <img src="/images/KunaiEMPCover.png" alt="Toxic Shard">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <div class="project-tag">Unreal Engine</div>
-                            <div class="project-tag">Niagara VFX</div>
+                            <div class="project-tag">Niagara</div>
                         </div>
-                        <h3>Toxic Shard</h3>
-                        <p>A Niagara VFX system made with Unreal Engine 5 for 'Explosion-tober' 2024</p>
+                        <h3>EMP Kunai</h3>
+                        <p>Stylized EMP kunai VFX for Unreal Engine 5, featuring dynamic projectile FX, EMP detonation, and modular blueprint integration.</p>
                     </div>
                 </div>
                 
                 <div class="project-card project-4" data-project="winternator">
                     <div class="project-image-container">
-                        <img src="/images/WinternatorScreenie1.png" alt="Winternator">
+                        <img src="/images/WinternatorCover.png" alt="Winternator">
                     </div>
                     <div class="project-info">
                         <div class="project-tags">
                             <div class="project-tag">Unreal Engine</div>
                             <div class="project-tag">Procedural Tool</div>
+                            <div class="project-tag">C++</div>
                         </div>
                         <h3>Winternator</h3>
-                        <p>A procedural winter generator tool for Unreal Engine</p>
+                        <p>Procedural winter environment generator for Unreal Engine 5, with dynamic snow, icicle formation, weather effects, and real-time preview.</p>
                     </div>
                 </div>
             </div>
@@ -188,75 +191,101 @@
                     <div class="project-header">
                         <img src="/images/AdaptikIcon.png" alt="ADAPTIK">
                         <div>
-                            <h2>ADAPTIK</h2>
+                            <h2>ADAPTIK – Procedural Quadruped Locomotion System</h2>
                             <div class="tags">
                                 <span class="tag">Unreal Engine</span>
                                 <span class="tag">Procedural Tool</span>
                             </div>
                         </div>
                     </div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/iTTy5FUacPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="gallery-container">
+                        <div class="gallery-flex" style="display: flex; align-items: center; justify-content: center; width: 100%; margin: 0 auto 32px auto; gap: 16px; flex-direction: column;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 16px;">
+                                <button class="gallery-btn prev-btn" aria-label="Previous" style="background: none; border: none; cursor: pointer; padding: 0 8px; height: 48px; display: flex; align-items: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#6e8efb"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                </button>
+                                <div class="gallery-view" style="flex: 1 1 0; display: flex; align-items: center; justify-content: center; min-width: 0;">
+                                    <!-- Gallery items: images and videos -->
+                                    <div class="gallery-item" data-type="video" style="display:none; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <iframe src="https://www.youtube.com/embed/iTTy5FUacPo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; aspect-ratio: 16/9; object-fit: contain; border-radius: 12px; background: #181824;"></iframe>
+                                    </div>
+                                    <div class="gallery-item" data-type="image" style="display:block; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <img src="/images/AdaptikCover.png" alt="ADAPTIK Screenshot 1" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                                    </div>
+                                    <!-- Add more images/videos as needed -->
+                                </div>
+                                <button class="gallery-btn next-btn" aria-label="Next" style="background: none; border: none; cursor: pointer; padding: 0 8px; height: 48px; display: flex; align-items: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#6e8efb"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                                </button>
+                            </div>
+                            <!-- Thumbnails Bar -->
+                            <div class="gallery-thumbnails" style="display: flex; justify-content: center; gap: 12px; margin-top: 8px;">
+                                <div class="gallery-thumbnail" data-index="0" data-type="video" style="position: relative;">
+                                    <img src="/images/AdaptikIcon.png" alt="Video Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                    <!-- Play button overlay -->
+                                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="white" style="filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); opacity: 0.85;">
+                                            <circle cx="16" cy="16" r="14" fill="rgba(0,0,0,0.45)"/>
+                                            <polygon points="13,10 23,16 13,22" fill="white"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="gallery-thumbnail" data-index="1" data-type="image">
+                                    <img src="/images/AdaptikCover.png" alt="Image Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                </div>
+                                <!-- Add more thumbnails as needed, matching gallery items above -->
+                            </div>
+                        </div>
                     </div>
                     <div class="project-full-description">
-                        <h3>About the Project</h3>
-                        <p>This final year project focused on developing an advanced procedural animation system for quadrupedal characters using Unreal Engine 5's Control Rig system. The research explored the creation of realistic, adaptive locomotion that responds dynamically to terrain variations and environmental constraints. By combining biomechanical principles with modern animation techniques, the project demonstrates how procedural systems can create more believable and efficient quadruped movement compared to traditional keyframe animation approaches.</p>
-                        
-                        <h3>Key Features</h3>
+                        <h3>🎯 Project Overview</h3>
+                        <p>ADAPTIK is an advanced procedural quadruped locomotion system for Unreal Engine 5, developed as a final year dissertation project. It leverages Control Rig to create realistic, adaptive movement for quadrupedal characters, supporting dynamic gait transitions, terrain adaptation, and biomechanical IK. The system is designed for real-time performance and customizable for different species and body types.</p>
+
+                        <h3>🧩 The Problem</h3>
+                        <p>"How can a quadruped animation system in Unreal Engine 5 deliver biomechanically accurate, terrain-adaptive movement with smooth gait transitions, while remaining performant and easy to customize for different character rigs?"</p>
                         <ul>
-                            <li>Advanced Control Rig implementation with custom bone chains and constraint systems for realistic quadruped locomotion</li>
-                            <li>Procedural gait generation system supporting walk, trot, canter, and gallop gaits with smooth transitions</li>
-                            <li>Intelligent terrain adaptation using inverse kinematics to adjust leg positioning for uneven surfaces</li>
-                            <li>Real-time foot placement system with raycast-based ground detection and collision avoidance</li>
-                            <li>Dynamic weight distribution calculations affecting body posture and movement timing</li>
-                            <li>Customizable animation parameters allowing for different quadruped species and body types</li>
-                            <li>Performance optimization ensuring real-time execution suitable for interactive applications</li>
-                            <li>Comprehensive evaluation framework comparing procedural vs. traditional animation quality</li>
+                            <h4>Key challenges:</h4>
+                            <ul>
+                                <li>Implementing realistic quadruped biomechanics within Control Rig's constraint system</li>
+                                <li>Achieving stable foot placement on complex terrain geometries</li>
+                                <li>Balancing animation quality with real-time performance requirements</li>
+                                <li>Developing evaluation metrics to quantify procedural animation effectiveness</li>
+                            </ul>
                         </ul>
 
-                        <h3>Technical Highlights</h3>
+                        <h3>🛠️ What I Built</h3>
                         <ul>
-                            <li>Custom Control Rig blueprint architecture with modular components for different body segments and limb chains</li>
-                            <li>Advanced IK solver implementation using FABRIK algorithm optimized for quadruped leg configurations</li>
-                            <li>Real-time biomechanical simulation incorporating center of mass calculations and stability analysis</li>
-                            <li>Procedural spine curvature system responding to terrain slope and movement dynamics</li>
-                            <li>Multi-threaded animation evaluation system for performance optimization</li>
-                            <li>Data-driven approach using motion capture reference data for gait validation and tuning</li>
+                            <li>Custom Control Rig blueprint architecture for modular body segments and limb chains</li>
+                            <li>Procedural gait generation system supporting walk, trot, canter, and gallop with smooth transitions</li>
+                            <li>Intelligent terrain adaptation using IK and raycast-based ground detection</li>
+                            <li>Real-time foot placement and collision avoidance</li>
+                            <li>Dynamic weight distribution and body posture adjustment</li>
+                            <li>Customizable animation parameters for different quadruped species</li>
+                            <li>Performance optimization for real-time execution</li>
+                            <li>Evaluation framework comparing procedural vs. traditional animation</li>
                         </ul>
 
-                        <h3>Development Process</h3>
-                        <p>The project was developed over 4 months as part of my final year dissertation, combining extensive research into quadruped biomechanics with practical implementation in Unreal Engine 5. The development process involved literature review, iterative prototyping, and comprehensive evaluation against traditional animation methods.</p>
-                        
-                        <h4>Development Timeline</h4>
+                        <h3>🎨 Technical & Visual Principles Applied</h3>
                         <ul>
-                            <li>Month 1: Literature review, biomechanical research, and initial Control Rig setup</li>
-                            <li>Month 2: Core procedural animation system development and basic gait implementation</li>
-                            <li>Month 3: Advanced features including terrain adaptation and IK refinement</li>
-                            <li>Month 4: Optimization, evaluation, and dissertation writing</li>
+                            <li>Biomechanical simulation with center of mass and stability analysis</li>
+                            <li>Procedural spine curvature responding to terrain slope and movement</li>
+                            <li>Multi-threaded animation evaluation for optimization</li>
+                            <li>Data-driven approach using motion capture reference data</li>
                         </ul>
 
-                        <h4>Key Challenges</h4>
+                        <h3>✅ Outcome</h3>
                         <ul>
-                            <li>Implementing realistic quadruped biomechanics within Control Rig's constraint system</li>
-                            <li>Achieving stable foot placement on complex terrain geometries</li>
-                            <li>Balancing animation quality with real-time performance requirements</li>
-                            <li>Developing evaluation metrics to quantify procedural animation effectiveness</li>
+                            <li>Delivered a robust quadruped locomotion system for Unreal Engine 5</li>
+                            <li>Enabled animators and technical artists to create adaptive, realistic movement</li>
+                            <li>Provided technical documentation and evaluation metrics for future research</li>
                         </ul>
 
-                        <h4>Research Methodology</h4>
+                        <h3>⚙️ Tools & Technologies</h3>
                         <ul>
-                            <li>Comprehensive literature review of quadruped locomotion and procedural animation techniques</li>
-                            <li>Iterative development approach with regular testing and refinement</li>
-                            <li>Quantitative evaluation using motion analysis and performance metrics</li>
-                            <li>Comparative study against traditional keyframe animation workflows</li>
-                        </ul>
-
-                        <h4>Tools & Technologies</h4>
-                        <ul>
-                            <li>Unreal Engine 5 with Control Rig system for animation development</li>
-                            <li>Blender for quadruped model creation and rigging</li>
-                            <li>Motion capture data analysis tools for reference validation</li>
-                            <li>Git for version control and project management</li>
+                            <li>Unreal Engine 5 (Control Rig, Blueprints)</li>
+                            <li>Blender for model creation and rigging</li>
+                            <li>Motion capture data analysis tools</li>
+                            <li>Git for version control</li>
                             <li>LaTeX for dissertation documentation</li>
                         </ul>
                     </div>
@@ -276,165 +305,248 @@
                     </div>
                 </div>
 
-                <!-- HellShot Details -->
-                <div class="project-details" data-project="hellshot">
+                <!-- Neptune Ocean System Details -->
+                <div class="project-details" data-project="neptune">
                     <div class="project-header">
-                        <img src="/images/HellshotThumb.png" alt="HellShot">
+                        <img src="/images/NeptuneCover.png" alt="Neptune Ocean System">
                         <div>
-                            <h2>HellShot</h2>
+                            <h2>Neptune – Advanced Ocean System</h2>
                             <div class="tags">
                                 <span class="tag">Unreal Engine</span>
-                                <span class="tag">Boomer Shooter</span>
+                                <span class="tag">Technical Art</span>
+                                <span class="tag">Tool</span>
                             </div>
                         </div>
                     </div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/gzEfOHn0kc4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="gallery-container">
+                        <div class="gallery-flex" style="display: flex; align-items: center; justify-content: center; width: 100%; margin: 0 auto 32px auto; gap: 16px; flex-direction: column;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 16px;">
+                                <button class="gallery-btn prev-btn" aria-label="Previous" style="background: none; border: none; cursor: pointer; padding: 0 8px; height: 48px; display: flex; align-items: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#6e8efb"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                </button>
+                                <div class="gallery-view" style="flex: 1 1 0; display: flex; align-items: center; justify-content: center; min-width: 0;">
+                                    <!-- Gallery items: images and videos -->
+                                    <div class="gallery-item" data-type="video" style="display:none; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <iframe src="https://www.youtube.com/embed/th1fw4S07NQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; aspect-ratio: 16/9; object-fit: contain; border-radius: 12px; background: #181824;"></iframe>
+                                    </div>
+                                    <div class="gallery-item" data-type="image" style="display:none; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <img src="/images/NeptuneBuoyancy.png" alt="Neptune Buoyancy" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                                    </div>
+                                    <div class="gallery-item" data-type="image" style="display:none; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <img src="/images/NeptuneDF.png" alt="Neptune Distance Field" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                                    </div>
+                                    <div class="gallery-item" data-type="image" style="display:none; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <img src="/images/NeptunePP.png" alt="Neptune Post Process" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                                    </div>
+                                    <div class="gallery-item" data-type="image" style="display:none; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <img src="/images/NeptuneWaterline.png" alt="Neptune Waterline" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                                    </div>
+                                </div>
+                                <button class="gallery-btn next-btn" aria-label="Next" style="background: none; border: none; cursor: pointer; padding: 0 8px; height: 48px; display: flex; align-items: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#6e8efb"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                                </button>
+                            </div>
+                            <!-- Thumbnails Bar -->
+                            <div class="gallery-thumbnails" style="display: flex; justify-content: center; gap: 12px; margin-top: 8px;">
+                                <div class="gallery-thumbnail" data-index="0" data-type="video" style="position: relative;">
+                                    <img src="/images/NeptuneCover.png" alt="Video Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                    <!-- Play button overlay -->
+                                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="white" style="filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); opacity: 0.85;">
+                                            <circle cx="16" cy="16" r="14" fill="rgba(0,0,0,0.45)"/>
+                                            <polygon points="13,10 23,16 13,22" fill="white"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="gallery-thumbnail" data-index="3" data-type="image">
+                                    <img src="/images/NeptuneBuoyancy.png" alt="Neptune Buoyancy Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                </div>
+                                <div class="gallery-thumbnail" data-index="4" data-type="image">
+                                    <img src="/images/NeptuneDF.png" alt="Neptune Distance Field Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                </div>
+                                <div class="gallery-thumbnail" data-index="5" data-type="image">
+                                    <img src="/images/NeptunePP.png" alt="Neptune Post Process Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                </div>
+                                <div class="gallery-thumbnail" data-index="6" data-type="image">
+                                    <img src="/images/NeptuneWaterline.png" alt="Neptune Waterline Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-full-description">
-                        <h3>About the Project</h3>
-                        <p>HellShot is a modern take on classic boomer shooters, reimagining the genre with contemporary game design principles and cutting-edge graphics. The game combines the fast-paced, skill-based combat of classic shooters with innovative movement mechanics and modern visual effects. Players navigate through dynamic environments while engaging in intense combat encounters with a diverse arsenal of weapons.</p>
-                        
-                        <h3>Key Features</h3>
+                        <h3>🎯 Project Overview</h3>
+                        <p>Neptune is an advanced ocean and water system for Unreal Engine 5, developed as the core technical art feature for a 30-person collaborative game project. Built over 6 weeks, it was designed to deliver realistic oceans, rivers, lakes, and waterfalls with high visual fidelity and gameplay responsiveness. My role as Senior Technical Artist included system design, prototyping, cross-team integration, and technical documentation.</p>
+
+                        <h3>🧩 The Problem</h3>
+                        <p>"How can a water system in Unreal Engine 5 deliver both visual realism and gameplay flexibility, supporting dynamic environments, buoyancy, and underwater effects, while remaining performant and easy to integrate for artists and designers?"</p>
                         <ul>
-                            <li>Fast-paced, skill-based combat system with emphasis on movement and positioning</li>
-                            <li>Retro-inspired weapons with modern twists, featuring unique alt-fire modes and upgrade paths</li>
-                            <li>Advanced movement mechanics including wall-running, slide-jumping, and momentum-based traversal</li>
-                            <li>Procedurally generated elements including enemy placement, power-up distribution, and environmental hazards</li>
-                            <li>Dynamic difficulty system that adapts to player performance</li>
-                            <li>Multiple game modes including classic campaign and arcade-style challenges</li>
-                            <li>Advanced enemy AI with unique behavior patterns and tactical responses</li>
-                            <li>Comprehensive weapon customization system</li>
+                            <h4>Key challenges:</h4>
+                            <ul>
+                                <li>Achieving realistic wave simulation and water interaction</li>
+                                <li>Supporting buoyancy and underwater rendering</li>
+                                <li>Integrating with level design and gameplay systems</li>
+                                <li>Maintaining performance and scalability</li>
+                                <li>Providing customization for different water types</li>
+                            </ul>
                         </ul>
 
-                        <h3>Technical Highlights</h3>
+                        <h3>🛠️ What I Built</h3>
                         <ul>
-                            <li>Custom weapon system with modular design supporting dynamic weapon combinations and upgrades</li>
-                            <li>Advanced AI behavior trees with dynamic difficulty scaling and tactical decision making</li>
-                            <li>Procedural level generation system with hand-crafted elements and dynamic enemy placement</li>
-                            <li>Optimized particle systems for weapon effects and environmental interactions</li>
-                            <li>Advanced physics system for dynamic object interactions and destruction</li>
-                            <li>Custom shader system for weapon effects and environmental materials</li>
-                            <li>Efficient networking code for future multiplayer implementation</li>
-                            <li>Performance optimization for consistent high framerates</li>
+                            <li>Gerstner wave simulation with dynamic parameters</li>
+                            <li>Full buoyancy support for floating actors and gameplay objects</li>
+                            <li>Underwater rendering, fog, and caustics</li>
+                            <li>Stencil mask system to prevent water inside boats</li>
+                            <li>Spline-based river creation with custom flow and foam</li>
+                            <li>Dynamic foam and wet sand shader for shoreline effects</li>
+                            <li>Wave resistance and interaction with static/dynamic bodies</li>
+                            <li>Water depth coloring, refraction distortion, and fake subsurface scattering (SSS)</li>
+                            <li>Custom waterfall actor with noise blending</li>
+                            <li>Tile repeat solver to reduce tiling artifacts</li>
+                            <li>Highly customizable via material instances and exposed parameters</li>
                         </ul>
 
-                        <h3>Development Process</h3>
-                        <p>HellShot is an ongoing project focused on creating a modern take on classic boomer shooters. The development emphasizes fast-paced combat and unique movement mechanics while maintaining the essence of the genre.</p>
-                        
-                        <h4>Development Timeline</h4>
+                        <h3>🎨 Technical & Visual Principles Applied</h3>
                         <ul>
-                            <li>Phase 1: Core movement and combat systems</li>
-                            <li>Phase 2: Weapon mechanics and enemy AI</li>
-                            <li>Phase 3: Level design and environment creation</li>
-                            <li>Phase 4: Visual effects and polish (Current)</li>
+                            <li>Physically-based shading for water and foam</li>
+                            <li>Procedural generation for waves and river flow</li>
+                            <li>Optimized shader and blueprint architecture for real-time performance</li>
+                            <li>Layered effects for clarity and visual appeal</li>
+                            <li>Modular design for easy integration and expansion</li>
                         </ul>
 
-                        <h4>Key Challenges</h4>
+                        <h3>✅ Outcome</h3>
                         <ul>
-                            <li>Designing unique movement mechanics that complement traditional boomer shooter gameplay</li>
-                            <li>Creating satisfying weapon feedback and impact systems</li>
-                            <li>Balancing modern graphics with performance optimization</li>
-                            <li>Developing AI that provides engaging combat encounters</li>
+                            <li>Delivered a robust water system used across all game levels</li>
+                            <li>Enabled artists and designers to easily customize water features</li>
+                            <li>Improved gameplay clarity and visual quality</li>
+                            <li>Provided technical documentation and training for the team</li>
                         </ul>
 
-                        <h4>Development Methodology</h4>
+                        <h3>⚙️ Tools & Technologies</h3>
                         <ul>
-                            <li>Prototype-driven development focusing on core gameplay loops</li>
-                            <li>Regular community feedback integration</li>
-                            <li>Modular weapon system for easy expansion</li>
-                            <li>Continuous performance optimization</li>
-                        </ul>
-
-                        <h4>Tools & Technologies</h4>
-                        <ul>
-                            <li>Unreal Engine 5 for core development</li>
-                            <li>Maya for custom asset creation</li>
-                            <li>Substance Painter for material texturing</li>
+                            <li>Unreal Engine 5 (Materials, Blueprints, Niagara FX)</li>
+                            <li>Blender for mesh and asset creation</li>
+                            <li>Photoshop/Substance Designer for textures</li>
                             <li>Git for version control</li>
-                            <li>Visual Studio for C++ development</li>
                         </ul>
                     </div>
                     <div class="portfolio-links">
-                        <a href="https://docs.google.com/document/d/1p0W98zarmMH86mSv_sb87_sxJVyH9gDrx39YkRu5mrs/edit?tab=t.0" target="_blank" class="portfolio-btn">
+                        <a href="#" class="portfolio-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/>
                             </svg>
-                            Game Design Doc
+                            See it in action →
                         </a>
                     </div>
                 </div>
 
                 <!-- Toxic Shard Details -->
-                <div class="project-details" data-project="toxic-shard">
+                <div class="project-details" data-project="emp-kunai">
                     <div class="project-header">
-                        <img src="/images/ToxicShard.png" alt="Toxic Shard">
+                        <img src="/images/KunaiEMPIcon.png" alt="EMP Kunai">
                         <div>
-                            <h2>Toxic Shard</h2>
+                            <h2>EMP Kunai – Stylized Gameplay VFX System</h2>
                             <div class="tags">
                                 <span class="tag">Unreal Engine</span>
                                 <span class="tag">Niagara VFX</span>
                             </div>
                         </div>
                     </div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/XODgEIEg7Ck" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="gallery-container">
+                        <div class="gallery-flex" style="display: flex; align-items: center; justify-content: center; width: 100%; margin: 0 auto 32px auto; gap: 16px; flex-direction: column;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 16px;">
+                                <button class="gallery-btn prev-btn" aria-label="Previous" style="background: none; border: none; cursor: pointer; padding: 0 8px; height: 48px; display: flex; align-items: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#6e8efb"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                </button>
+                                <div class="gallery-view" style="flex: 1 1 0; display: flex; align-items: center; justify-content: center; min-width: 0;">
+                                    <!-- Gallery items: images and videos -->
+                                    <div class="gallery-item" data-type="video" style="display:block; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <iframe src="https://www.youtube.com/embed/PwMb2yd_A-o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; aspect-ratio: 16/9; object-fit: contain; border-radius: 12px; background: #181824;"></iframe>
+                                    </div>
+                                    <div class="gallery-item" data-type="image" style="display:none; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <img src="/images/KunaiEMPCover.png" alt="EMP Kunai Screenshot" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                                    </div>
+                                </div>
+                                <button class="gallery-btn next-btn" aria-label="Next" style="background: none; border: none; cursor: pointer; padding: 0 8px; height: 48px; display: flex; align-items: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#6e8efb"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                                </button>
+                            </div>
+                            <!-- Thumbnails Bar -->
+                            <div class="gallery-thumbnails" style="display: flex; justify-content: center; gap: 12px; margin-top: 8px;">
+                                <div class="gallery-thumbnail" data-index="0" data-type="video" style="position: relative;">
+                                    <img src="/images/KunaiEMPIcon.png" alt="Video Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                    <!-- Play button overlay -->
+                                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="white" style="filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); opacity: 0.85;">
+                                            <circle cx="16" cy="16" r="14" fill="rgba(0,0,0,0.45)"/>
+                                            <polygon points="13,10 23,16 13,22" fill="white"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="gallery-thumbnail" data-index="1" data-type="image">
+                                    <img src="/images/KunaiEMPCover.png" alt="Image Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-full-description">
-                        <h3>About the Project</h3>
-                        <p>Created for 'Explosion-tober' 2024, Toxic Shard is a sophisticated VFX system with a projectile and explosion effect. The system features a projectile that would be used as a magic spell or weapon. When it hits a surface, it creates a toxic explosion effect.</p>
+                        <h3>🎯 Project Overview</h3>
+                        <p>The EMP Kunai is a stylized gameplay VFX system designed for a third-person action character. Built in Unreal Engine 5, it showcases a throwable energy kunai that detonates with an area-of-effect EMP pulse, visually disabling nearby tech and enemies.
+                        <br>
+                        This system was created as part of an ongoing goal to build portfolio projects that solve real gameplay and visual communication problems—not just isolated effects.
+                        </p>
                         
-                        <h3>Key Features</h3>
+                        <h3>🧩 The Problem</h3>
+                        <p>"How can I visually communicate a stylized EMP effect that clearly indicates damage, area of effect, and tech disruption while maintaining a cohesive animation and VFX flow?"</p>
                         <ul>
-                            <li>Advanced particle system using Niagara with stylized toxic material behavior and physics</li>
-                            <li>Optimized for real-time performance with LOD system and particle culling</li>
-                            <li>Customizable parameters for different effects including size, intensity, and spread</li>
-                            <li>Preset system for quick effect deployment</li>
+                            <h4>Key challenges:</h4>
+                            <ul>
+                                <li>Making the effect readable in gameplay</li>
+                                <li>Syncing animation timing with VFX</li>
+                                <li>Creating clear enemy/tech state changes post-EMP</li>
+                                <li>Designing a system that’s reusable and optimized</li>
+                            </ul>
                         </ul>
 
-                        <h3>Technical Highlights</h3>
+                        <h3>🛠️ What I Built</h3>
                         <ul>
-                            <li>Complex particle simulation in Niagara</li>
-                            <li>Performance optimization techniques including GPU-based particle simulation</li>
-                            <li>Custom shader system for toxic material visualization</li>
+                            <li>Projectile FX: Trail, throw arc, and charging core</li>
+                            <li>EMP Detonation: Expanding shockwave, distortion, dynamic electric arcs</li>
+                            <li>Target Reaction FX:
+                                <ul>
+                                    <li>Enemies: Sparks, flickers, smoke, and particles</li>
+                                    <li>Tech: Camera shakes, Stunned state in area of effect</li>
+                                </ul>
                             <li>Blueprint interface for easy integration</li>
                         </ul>
 
-                        <h3>Development Process</h3>
-                        <p>Created for 'Explosion-tober' 2024, Toxic Shard is a focused VFX project that demonstrates advanced particle system capabilities in Unreal Engine 5. The project emphasizes creating visually striking effects while maintaining performance.</p>
-                        
-                        <h4>Development Timeline</h4>
+                        <h3>🎨 Animation & Visual Principles Applied</h3>
                         <ul>
-                            <li>Phase 1: Research and reference gathering</li>
-                            <li>Phase 2: Core particle system development</li>
-                            <li>Phase 3: Material and shader implementation</li>
-                            <li>Phase 4: Polish and optimization</li>
+                            <li>Anticipation and slow-in/out on projectile throw</li>
+                            <li>Arcs and follow-through on energy trails</li>
+                            <li>Appeal and timing to signal enemy state changes</li>
+                            <li>Layered VFX elements to support clarity in a stylized world</li>
                         </ul>
 
-                        <h4>Key Challenges</h4>
+                        <h3>✅ Outcome</h3>
+                        <h4>This project demonstrates how stylized gameplay VFX can be:</h4>
                         <ul>
-                            <li>Creating stylized yet intriguing toxic material behavior</li>
-                            <li>Optimizing particle count and system complexity</li>
-                            <li>Balancing visual impact with performance</li>
+                            <li>Visually compelling</li>
+                            <li>Functionally readable</li>
+                            <li>Technically modular</li>
+                            <li>Rooted in animation principles</li>
                         </ul>
+                        <p>It also serves as a prototype for ability design workflows in stylized action games.</p>
 
-                        <h4>Development Methodology</h4>
-                        <ul>
-                            <li>Reference-driven development process</li>
-                            <li>Iterative refinement of particle behaviors</li>
-                            <li>Performance profiling and optimization</li>
-                            <li>Regular feedback from peers</li>
-                        </ul>
-
-                        <h4>Tools & Technologies</h4>
+                        <h3>⚙️ Tools & Technologies</h3>
                         <ul>
                             <li>Unreal Engine 5 Niagara for particle systems</li>
-                            <li>Blender for mesh creation</li>
+                            <li>Blender for character modelling, rigging, and animating</li>
                             <li>Substance Designer and Photoshop for texture creation</li>
                         </ul>
                     </div>
                     <div class="portfolio-links">
-                        <a href="#" class="portfolio-btn">
+                        <a href="https://www.artstation.com/artwork/dyWeGe" class="portfolio-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M2 377.4l43 74.3A51.35 51.35 0 0 0 90.9 480h285.4l-59.2-102.6zM501.8 350L335.6 59.3A51.38 51.38 0 0 0 290.2 32h-88.4l257.3 447.6 40.7-70.5c1.9-3.2 21-29.7 2-59.1zM275 304.5l-115.5-200L44 304.5z"></path></svg>
                             Artstation
                         </a>
@@ -446,70 +558,98 @@
                     <div class="project-header">
                         <img src="/images/WinternatorScreenie1.png" alt="Winternator">
                         <div>
-                            <h2>Winternator</h2>
+                            <h2>Winternator – Procedural Winter Environment Generator</h2>
                             <div class="tags">
                                 <span class="tag">Unreal Engine</span>
                                 <span class="tag">Procedural Tool</span>
                             </div>
                         </div>
                     </div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/x0Ljxgu3ViA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="gallery-container">
+                        <div class="gallery-flex" style="display: flex; align-items: center; justify-content: center; width: 100%; margin: 0 auto 32px auto; gap: 16px; flex-direction: column;">
+                            <div style="display: flex; align-items: center; justify-content: center; width: 100%; gap: 16px;">
+                                <button class="gallery-btn prev-btn" aria-label="Previous" style="background: none; border: none; cursor: pointer; padding: 0 8px; height: 48px; display: flex; align-items: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#6e8efb"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                                </button>
+                                <div class="gallery-view" style="flex: 1 1 0; display: flex; align-items: center; justify-content: center; min-width: 0;">
+                                    <!-- Gallery items: images and videos -->
+                                    <div class="gallery-item" data-type="video" style="display:block; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <iframe src="https://www.youtube.com/embed/x0Ljxgu3ViA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width: 100%; aspect-ratio: 16/9; object-fit: contain; border-radius: 12px; background: #181824;"></iframe>
+                                    </div>
+                                    <div class="gallery-item" data-type="image" style="display:none; width: 100%; height: 100%; box-shadow: 0 2px 16px rgba(0,0,0,0.2); border-radius: 12px; overflow: hidden; background: #181824;">
+                                        <img src="/images/WinternatorCover.png" alt="Winternator Screenshot" style="width: 100%; height: 100%; object-fit: contain; border-radius: 12px;">
+                                    </div>
+                                </div>
+                                <button class="gallery-btn next-btn" aria-label="Next" style="background: none; border: none; cursor: pointer; padding: 0 8px; height: 48px; display: flex; align-items: center;">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" color="#6e8efb"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                                </button>
+                            </div>
+                            <!-- Thumbnails Bar -->
+                            <div class="gallery-thumbnails" style="display: flex; justify-content: center; gap: 12px; margin-top: 8px;">
+                                <div class="gallery-thumbnail" data-index="0" data-type="video" style="position: relative;">
+                                    <img src="/images/WinternatorScreenie1.png" alt="Video Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                    <!-- Play button overlay -->
+                                    <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none;">
+                                        <svg width="32" height="32" viewBox="0 0 32 32" fill="white" style="filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); opacity: 0.85;">
+                                            <circle cx="16" cy="16" r="14" fill="rgba(0,0,0,0.45)"/>
+                                            <polygon points="13,10 23,16 13,22" fill="white"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="gallery-thumbnail" data-index="1" data-type="image">
+                                    <img src="/images/WinternatorCover.png" alt="Image Thumbnail" style="object-fit: cover; border-radius: 6px; background: #181824; aspect-ratio: 16/9;">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="project-full-description">
-                        <h3>About the Project</h3>
-                        <p>Winternator is a comprehensive procedural winter environment generator for Unreal Engine that transforms any environment into a winter wonderland. The tool features advanced snow accumulation, icicle formation, and weather effects systems, making it an essential asset for creating winter scenes. Built with performance and ease of use in mind, it offers both automatic and manual control options for fine-tuning the winter transformation.</p>
-                        
-                        <h3>Key Features</h3>
+                        <h3>🎯 Project Overview</h3>
+                        <p>Winternator is a comprehensive procedural winter environment generator for Unreal Engine 5, designed to transform any environment into a winter wonderland. It features advanced snow accumulation, icicle formation, weather effects, and real-time preview, with both automatic and manual controls for fine-tuning the transformation. Built for performance and ease of use, Winternator is ideal for artists and technical developers creating seasonal or dynamic environments.</p>
+
+                        <h3>🧩 The Problem</h3>
+                        <p>"How can a tool for Unreal Engine 5 procedurally generate realistic winter environments, including snow, ice, and weather effects, while remaining performant, customizable, and easy to integrate into existing projects?"</p>
+                        <ul>
+                            <h4>Key challenges:</h4>
+                            <ul>
+                                <li>Creating realistic snow accumulation behavior and icicle formation</li>
+                                <li>Developing efficient material blending and weather simulation systems</li>
+                                <li>Optimizing performance for large-scale environments</li>
+                                <li>Providing intuitive controls for both automatic and manual adjustments</li>
+                            </ul>
+                        </ul>
+
+                        <h3>🛠️ What I Built</h3>
                         <ul>
                             <li>Procedural snow coverage system with realistic accumulation based on surface angle and exposure</li>
-                            <li>Dynamic icicle formation system that creates realistic icicles and surface snow</li>
+                            <li>Dynamic icicle formation and surface snow generation</li>
                             <li>Weather effect integration including snowfall, wind, and temperature variations</li>
-                            <li>Real-time preview system for instant feedback</li>
+                            <li>Real-time preview system for instant feedback and adjustment</li>
                             <li>Customizable snow and icicle material properties</li>
                             <li>Automatic LOD system for performance optimization</li>
                             <li>Batch processing for large-scale environment transformation</li>
                         </ul>
 
-                        <h3>Technical Highlights</h3>
+                        <h3>🎨 Technical & Visual Principles Applied</h3>
                         <ul>
-                            <li>Advanced dynamic mesh generation system for snow accumulation</li>
-                            <li>Procedural mesh modification system for dynamic icicle formation</li>
-                            <li>Performance-optimized algorithms for large-scale environment processing</li>
-                            <li>Custom shader system for realistic snow and icicle visualization</li>
+                            <li>Advanced dynamic mesh generation for snow accumulation</li>
+                            <li>Procedural mesh modification for icicle formation</li>
+                            <li>Performance-optimized algorithms for large environments</li>
+                            <li>Custom shader system for realistic snow and ice visualization</li>
                             <li>GPU-accelerated processing for faster results</li>
-                            <li>Modular architecture for easy expansion</li>
+                            <li>Modular architecture for easy expansion and integration</li>
                             <li>Advanced weather simulation system</li>
                         </ul>
 
-                        <h3>Development Process</h3>
-                        <p>Winternator is a specialized tool development project focused on creating an efficient and user-friendly winter environment generator for Unreal Engine. The project emphasizes automation and customization capabilities.</p>
-                        
-                        <h4>Development Timeline</h4>
+                        <h3>✅ Outcome</h3>
                         <ul>
-                            <li>Phase 1: Core snow coverage system</li>
-                            <li>Phase 2: Ice formation and material system</li>
-                            <li>Phase 3: Weather effects integration</li>
-                            <li>Phase 4: UI and user experience</li>
+                            <li>Delivered a robust winter environment generator for Unreal Engine 5</li>
+                            <li>Enabled artists and developers to create dynamic, seasonal environments with ease</li>
+                            <li>Provided technical documentation and user-friendly controls for broad adoption</li>
                         </ul>
 
-                        <h4>Key Challenges</h4>
+                        <h3>⚙️ Tools & Technologies</h3>
                         <ul>
-                            <li>Creating realistic snow accumulation behavior</li>
-                            <li>Developing efficient material blending system</li>
-                            <li>Optimizing performance for large environments</li>
-                        </ul>
-
-                        <h4>Development Methodology</h4>
-                        <ul>
-                            <li>Research-driven approach to snow physics</li>
-                            <li>Modular system design for easy expansion</li>
-                            <li>Regular testing with different environment types</li>
-                        </ul>
-
-                        <h4>Tools & Technologies</h4>
-                        <ul>
-                            <li>Unreal Engine's Geometry Scripting for core development</li>
+                            <li>Unreal Engine 5 (Geometry Scripting, Blueprints, C++)</li>
                             <li>Substance Designer and Photoshop for material creation</li>
                             <li>Git for version control</li>
                             <li>Visual Studio for C++ development</li>

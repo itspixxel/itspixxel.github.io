@@ -1,3 +1,16 @@
+/* Harmonize h4 header style with h2/h3 gradient look */
+h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.2rem;
+    background: linear-gradient(135deg, #6e8efb, #ff8e53);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
 :root {
     --purple-accent: #8856e6;
     --purple-light: #a27af3;
@@ -42,6 +55,21 @@ body {
     z-index: 0;
     overflow: hidden;
     opacity: 0.6;
+}
+
+.background-animation::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    pointer-events: none;
 }
 
 .orb {
@@ -127,6 +155,88 @@ body {
     100% {
         transform: translate(0, 0) rotate(0deg) scale(1);
     }
+}
+
+@keyframes gentle-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.gallery-container {
+  width: 100%;
+  margin: 0 auto 24px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gallery-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+.gallery-view {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+.gallery-item {
+  display: none;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #181824;
+  position: relative;
+}
+.gallery-item.active,
+.gallery-item[style*="display: block"] {
+  display: block;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #181824;
+  display: block;
+}
+.gallery-item iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  min-height: 320px;
+  max-height: 60vh;
+  border-radius: 12px;
+  background: #181824;
+  display: block;
+}
+.gallery-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+  .gallery-view, .gallery-item {
+    max-width: 100vw;
+    max-height: 50vw;
+  }
+  .gallery-item iframe {
+    min-height: 180px;
+  }
 }
 
 @keyframes gentle-pulse {
@@ -353,6 +463,7 @@ body {
     margin-bottom: clamp(0.15rem, 0.5vw, 0.35rem);
     background: linear-gradient(135deg, #6e8efb, #ff8e53);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -496,6 +607,7 @@ body {
     margin-bottom: 0.5rem;
     background: linear-gradient(135deg, #6e8efb, #ff8e53);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1136,6 +1248,7 @@ body {
     margin-bottom: 0.5rem;
     background: linear-gradient(135deg, #6e8efb, #ff8e53);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1176,7 +1289,7 @@ body {
 }
 
 .project-full-description h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #6e8efb;
 }
@@ -1250,15 +1363,15 @@ body {
     }
 
     .project-details .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        text-align: center;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1rem;
+    text-align: left;
     }
 
     .project-details .project-header img {
-        width: 60px;
-        height: 60px;
+    width: 60px;
+    height: 60px;
     }
 
     .portfolio-links {
@@ -1272,11 +1385,45 @@ body {
     }
 
     .project-details h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 
     .portfolio-btn {
         width: 100%;
         justify-content: center;
     }
+}
+
+/* Gallery Thumbnails */
+.gallery-thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+}
+.gallery-thumbnail {
+    border: 1px solid transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    padding: 0;
+    width: 96px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gallery-thumbnail.active {
+    border-color: #6e8efb;
+    box-shadow: 0 0 0 1px #6e8efb, 0 2px 8px rgba(0,0,0,0.12);
+}
+.gallery-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    background: #181824;
+    aspect-ratio: 16/9;
+    display: block;
 }
