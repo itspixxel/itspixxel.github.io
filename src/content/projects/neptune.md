@@ -40,9 +40,15 @@ I built Neptune for a collaborative student game with a team of 30. As Senior Te
 
 The brief covered oceans, rivers, lakes, and waterfalls. It also needed to work with gameplay objects and give artists and designers controls they could use in their levels.
 
-## Waves and floating objects
+## From a water shader to a procedural ocean
 
-The system uses Gerstner waves with adjustable parameters and supports buoyancy for floating actors and gameplay objects. It includes wave resistance and interaction with static and dynamic bodies. A stencil mask keeps water out of boats.
+Neptune started as a simple water material. The biggest challenge was taking it beyond the surface appearance and building a procedural ocean with actual waves and buoyancy. It took several iterations to get from that first shader to the finished system.
+
+The final version uses Gerstner waves with adjustable parameters, alongside buoyancy for floating actors and gameplay objects. That progression became the main technical work of the project: moving from a material effect to a water system that could support gameplay.
+
+### Waves, buoyancy, and boats
+
+The system includes wave resistance and interaction with static and dynamic bodies. A stencil mask keeps water out of boats. The capture below shows a buoyancy test with crates and other gameplay objects in the ocean.
 
 ![Buoyancy test with crates and gameplay objects floating in the ocean.](/media/NeptuneBuoyancy.webp)
 
