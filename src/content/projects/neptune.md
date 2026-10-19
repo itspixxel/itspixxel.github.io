@@ -3,7 +3,7 @@ title: Neptune – Advanced Ocean System
 description: Water rendering, buoyancy, and artist tools built in six weeks for a
   collaborative student game in Unreal Engine 5.
 image: /media/NeptuneCover.webp
-imageAlt: Neptune – Advanced Ocean System · project screenshot
+imageAlt: Neptune ocean around a rocky island with a lighthouse
 tags:
   - Unreal Engine
   - Technical Art

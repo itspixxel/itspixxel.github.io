@@ -1,71 +1,43 @@
 ---
 title: Area 26
-description: A first-person horror game where you play as a janitor cleaning up
-  a contaminated alien research facility
+description: A first-person horror game about a janitor cleaning up a contaminated alien research facility, made by a student team in Unreal Engine 5.
 image: /media/Area26Cover.webp
-imageAlt: Area 26 · project screenshot
+imageAlt: Area 26 key art of an alien holding a hazard sign
 tags:
   - Unreal Engine
   - Horror Game
 category: Games
 featured: false
 order: 14
-status: Portfolio project
+status: Student team project
 engine: Unreal Engine
-role: ""
-year: ""
+role: Technical Artist
+team: Student group project
+year: "2024"
 draft: false
 sample: false
 gallery:
   - src: /media/Area26Cover.webp
-    alt: Area 26 · development capture
+    alt: Area 26 key art of an alien holding a hazard sign
 video: https://www.youtube.com/embed/6ie23H7k7Ew
 links:
-  - label: GitHub Repository
+  - label: Team GitHub repository
     url: https://github.com/KieranCooksley/Group26Project
-note: From the workshop archive.
+note: Someone has to clean up.
 ---
 
-### Project Overview
+## The project
 
-Area 26 is a first-person horror game set in a contaminated alien research facility. As the technical artist, I focused on creating immersive visual systems that bring the horror atmosphere to life, including advanced shaders, dynamic lighting, and environmental effects that react to player actions and story progression.
+Area 26 is a first-person horror game. You play the janitor sent to clean up an alien research facility after a contamination incident. It was a group project at the University of Staffordshire, made between March and June 2024.
 
-### The Problem
+I was a technical artist on the team, focused on atmosphere.
 
-"How can a horror game deliver immersive atmosphere, dynamic contamination effects, and maintain performance in complex environments?"
+## What I worked on
 
-#### Key challenges:
+- **Retro post-processing:** posterization, pixelation, and vertex snapping, for a low-fidelity horror look.
+- **Atmosphere:** volumetric fog to make the facility feel close and hard to read.
+- **Contamination effects:** Niagara particle systems for the alien contamination, driven by dynamic material instances.
 
-- Creating dynamic contamination and alien effects
-- Developing realistic material and lighting systems
-- Optimizing complex shaders and VFX for performance
-- Balancing visual quality with gameplay clarity
+## Tools
 
-### What I Built
-
-- Atmospheric volumetric fog and alien particle effects
-- Retro post-process effects: posterization, pixelation, vertex snapping
-- Custom particle systems for alien contamination
-- Dynamic material instances for real-time effects
-- Modular shader system for horror visuals
-- Optimized Niagara VFX for performance
-
-### Technical & Visual Principles Applied
-
-- Physically-based shading and lighting
-- Modular shader and material design
-- Performance profiling and optimization
-- Layered effects for atmosphere and clarity
-
-### Outcome
-
-- Delivered an immersive horror atmosphere with dynamic contamination effects
-- Maintained performance in complex environments
-- Enabled rapid iteration and collaboration with level designers
-- Provided technical documentation for the team
-
-### Tools & Technologies
-
-- Unreal Engine 5 for core development
-- Substance Designer and Photoshop for texture creation
-- Git for version control
+Unreal Engine 5 (materials, post-process, Niagara), Substance Designer, Photoshop, Git.

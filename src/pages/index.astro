@@ -36,10 +36,18 @@ const posts = (await getCollection("blog", (p) => !p.data.draft))
           </span>
           <div>
             <p>{home.intro}</p>
-            <a class="text-link" href="#work">
-              {home.cta}
-              <span><Icon name="down" /></span>
-            </a>
+            <div class="hero-actions">
+              <a class="text-link" href="#work">
+                {home.cta}
+                <span><Icon name="down" /></span>
+              </a>
+              {site.resume && (
+                <a class="text-link" href={url(site.resume)}>
+                  {site.resumeLabel}
+                  <span><Icon name="northeast" /></span>
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -56,7 +64,14 @@ const posts = (await getCollection("blog", (p) => !p.data.draft))
       )}
     </div>
     <div class="hero-bottom">
-      <span>{home.sideNote}</span>
+      {site.availability ? (
+        <a class="availability" href={url("/contact/")}>
+          <span class="availability-dot" aria-hidden="true"></span>
+          {site.availability}
+        </a>
+      ) : (
+        <span>{home.sideNote}</span>
+      )}
       <span class="eyebrow">{site.labels.scroll} <Icon name="down" /></span>
     </div>
   </section>

@@ -13,7 +13,13 @@ const d = project.data;
 const { Content } = await render(project);
 const related = (
   await getCollection("projects", (p) => !p.data.draft && p.id !== project.id)
-).slice(0, 2);
+)
+  .sort(
+    (a, b) =>
+      Number(b.data.featured) - Number(a.data.featured) ||
+      a.data.order - b.data.order,
+  )
+  .slice(0, 2);
 const captures = [
   ...(d.image ? [{ src: d.image, alt: d.imageAlt || d.title }] : []),
   ...d.gallery.filter((g) => g.src !== d.image),
@@ -37,7 +43,7 @@ const projectFacts = [
   <article class="wrap">
     <header class="page-heading project-heading">
       <a class="eyebrow" href={url("/projects/")}>
-        <Icon name="left" /> {site.labels.work}
+        <Icon name="left" /> {site.labels.backToWork}
       </a>
       <p class="eyebrow">
         {d.tags.join(" / ")}
@@ -53,6 +59,22 @@ const projectFacts = [
         </dl>
       )}
     </header>
+    {!d.showCarousel && !videoUrl && d.trailer && (
+      <section class="project-trailer" aria-label="Project trailer">
+        <figure class="standalone-trailer">
+          <video
+            controls
+            playsinline
+            preload="none"
+            poster={d.image ? url(d.image) : undefined}
+            aria-label={d.title + " trailer"}
+          >
+            <source src={url(d.trailer)} type="video/mp4" />
+          </video>
+        </figure>
+        <p class="trailer-caption">{d.title} in motion</p>
+      </section>
+    )}
     {!d.showCarousel && videoUrl && (
       <section class="project-trailer" aria-label="Project trailer">
         <figure class="capture-video standalone-trailer">

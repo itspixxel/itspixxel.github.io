@@ -25,6 +25,7 @@ const projects = defineCollection({
     year: z.string().default(""),
     note: z.string().default(""),
     video: z.string().default(""),
+    trailer: z.string().default(""),
     showCarousel: z.boolean().default(true),
     sections: z.array(z.object({
       title: z.string(),

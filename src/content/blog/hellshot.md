@@ -9,7 +9,7 @@ tags:
   - Technical
 image: /media/HellshotThumb.webp
 featured: false
-draft: false
+draft: true
 sample: false
 ---
 

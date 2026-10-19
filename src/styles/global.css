@@ -137,15 +137,15 @@ h3 {
 }
 h1 {
   font-size: clamp(3.6rem, 7vw, 7rem);
-  letter-spacing: -0.065em;
+  letter-spacing: -0.045em;
 }
 h2 {
   font-size: clamp(2rem, 3.5vw, 3.5rem);
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
 }
 h3 {
   font-size: 1.75rem;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.025em;
 }
 .wrap {
   width: min(1320px, 89%);
@@ -247,13 +247,13 @@ h3 {
   font-size: clamp(4rem, 7.4vw, 7.4rem);
   margin: 42px 0 38px;
   line-height: 1.04;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.05em;
 }
 .hero h1 em {
   font-family: var(--serif);
   font-weight: 400;
   color: var(--accent);
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
 }
 .hero-intro {
   display: flex;
@@ -293,6 +293,33 @@ h3 {
   justify-content: space-between;
   font-size: 14px;
   color: var(--muted);
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+}
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+}
+.availability-dot {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px #c5a0f526;
+}
+.availability-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--ink);
+  font-size: 15px;
 }
 .section {
   padding-block: 90px;
@@ -346,11 +373,12 @@ h3 {
 .archive-section-heading .eyebrow { margin-bottom: 12px; }
 .archive-featured-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
 }
 .archive-featured-grid .project-large { grid-column: auto; }
-.archive-featured-grid .project-visual img { aspect-ratio: 16 / 9; }
+.archive-featured-grid .project-visual img,
+.archive-featured-grid .project-large .project-visual img { aspect-ratio: 16 / 9; }
 .archive-featured-grid .project-caption { padding: 22px; gap: 0; }
 .archive-featured-grid .project-caption h3 { font-size: 23px; line-height: 1.2; }
 .archive-featured-grid .project-caption .eyebrow { font-size: 11px; line-height: 1.6; }
@@ -407,7 +435,8 @@ h3 {
 }
 @media (max-width: 760px) {
   .archive-featured-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .archive-featured-grid .project-visual img { aspect-ratio: 2 / 1; }
+  .archive-featured-grid .project-visual img,
+  .archive-featured-grid .project-large .project-visual img { aspect-ratio: 2 / 1; }
   .archive-featured-grid .project-preview-toggle { top: 12px; }
   .archive-selected { padding-bottom: 44px; }
   .archive-section-heading { align-items: start; flex-direction: column; gap: 12px; }
@@ -693,6 +722,13 @@ footer {
   object-fit: cover;
   opacity: .7;
 }
+.standalone-trailer > video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
 .standalone-trailer .project-video-play {
   border-radius: 999px;
   padding: 16px 24px;
@@ -925,6 +961,9 @@ dd {
 }
 .personal-contact {
   margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
 }
 .prose .personal-contact a {
   text-decoration: none;
@@ -982,6 +1021,7 @@ dd {
   border-collapse: collapse;
   max-width: 100%;
   font-size: 14px;
+  margin: 0 0 1.5em;
 }
 .prose th,
 .prose td {
@@ -1036,8 +1076,12 @@ dd {
 }
 .contact-socials {
   display: flex;
-  gap: 35px;
+  flex-wrap: wrap;
+  gap: 16px 35px;
   padding-top: 35px;
+}
+.contact-socials a {
+  white-space: nowrap;
 }
 .contact-page {
   min-height: 70vh;
@@ -1177,7 +1221,7 @@ select {
   .hero h1 {
     font-size: clamp(3rem, 12vw, 4.8rem);
     margin: 36px 0 28px;
-    letter-spacing: -0.065em;
+    letter-spacing: -0.05em;
   }
   .hero-intro {
     max-width: 100%;
@@ -1322,7 +1366,7 @@ select {
   }
   .contact-socials {
     font-size: 15px;
-    gap: 25px;
+    gap: 14px 25px;
   }
   .email-link {
     font-size: 23px;
@@ -2476,3 +2520,18 @@ select:focus {
 
 /* Keep controls consistent across system fonts and mobile devices. */
 .ui-icon { display: inline-block; flex: none; vertical-align: -0.125em; pointer-events: none; }
+
+/* Keep the name on one line, and stack the header before the nav runs out of room. */
+.brand { white-space: nowrap; flex: none; }
+@media (max-width: 760px) {
+  .header {
+    height: auto;
+    min-height: 105px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    padding: 20px 0;
+  }
+  .header nav { width: 100%; justify-content: flex-start; gap: 8px 24px; }
+}

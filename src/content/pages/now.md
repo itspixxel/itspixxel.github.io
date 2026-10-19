@@ -19,10 +19,12 @@ currentWork:
   pauseLabel: Pause trailer
 ---
 
+What I do on the game, from ability VFX to performance testing, is in the [Superhero Arena case study](/projects/superhero-arena/).
+
 ## Currently exploring
 
 I’m learning how to build my own programming language, fitted around my full-time work.
 
 ## Availability
 
-I’m focused on AriseMedia and don’t currently have capacity for freelance work, collaborations, or part-time opportunities.
+I’m working full-time at AriseMedia and I’m open to hearing about **full-time technical art, VFX, or tools roles**. I’m not taking on freelance or part-time work right now. The best way to reach me is through the [contact page](/contact/).

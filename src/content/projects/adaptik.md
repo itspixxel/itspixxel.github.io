@@ -1,18 +1,18 @@
 ---
 title: ADAPTIK
-description: A final-year study of procedural foot placement and terrain adaptation in Unreal Engine 5 Control Rig.
+description: A final-year study of terrain-adaptive foot placement for a quadruped in UE5 Control Rig, measured across flat, uneven, sloped, and moving ground.
 image: /media/AdaptikCover.webp
-imageAlt: ADAPTIK · project screenshot
+imageAlt: ADAPTIK title art over the four-legged robot in a street scene
 tags:
   - Unreal Engine
-  - Tools
+  - Procedural Animation
 category: Tools
 featured: true
-order: 2
+order: 4
 status: Final-year university project
 engine: Unreal Engine
-role: Development and dissertation
-year: ""
+role: Implementation, testing, and dissertation
+year: "2025"
 draft: false
 sample: false
 gallery:
@@ -34,21 +34,17 @@ video: https://www.youtube.com/embed/iTTy5FUacPo
 links:
   - label: Source on GitHub
     url: https://github.com/itspixxel/ADAPTIK
-  - label: Read the dissertation (Word)
-    url: /docs/other/Realtime%20Procedural%20IK%20Animation.docx
-  - label: Tutorial by Lincoln Margison
-    url: https://www.youtube.com/watch?v=vKiqs_h1WXM
+  - label: Read the dissertation (PDF)
+    url: /docs/other/ADAPTIK-dissertation.pdf
 note: Finding its feet, one frame at a time.
 duration: 4 months
 showCarousel: false
 sections:
-  - title: Learning the system by building it
+  - title: The question
     text: |-
-      I learned the approach through Lincoln Margison's “Step by Step” Procedural Animation tutorial. ADAPTIK was my implementation of that approach, developed as the practical project for my final-year dissertation.
+      How well can a quadruped adjust its feet to the ground in real time, and what does that cost? A walk that looks right on a flat floor can stop making sense at a kerb or a cable on the ground.
 
-      The question I explored was how a quadruped could adjust its feet to the ground in real time. A movement that looks right on a flat surface can stop making sense at a kerb or an obstacle. This project let me study that problem through a working Control Rig setup and a set of terrain tests.
-
-      The linked tutorial is the foundation for the implementation. My dissertation records the research, testing, and limitations of the project.
+      I answered that with a working Control Rig setup and a set of terrain tests. The test scenes, measurements, and analysis make up the dissertation.
     image: /media/AdaptikCR.webp
     imageAlt: ADAPTIK's four-legged robot in the Unreal Engine demonstration scene
     caption: The demonstration character, built around an Unreal Engine 5 Control Rig setup.
@@ -66,9 +62,9 @@ sections:
     text: |-
       The demonstration includes raised surfaces and obstacles around the environment. The captures show the character on a workbench and interacting with a cable beside a vehicle. These make changes in foot placement easier to see than a walk across an empty floor.
 
-      The dissertation considers flat, uneven, sloped, and moving surfaces. Its reported results were strongest on flat ground, with accuracy falling as the terrain became less predictable. Abrupt changes and faster movement could still produce sliding or misalignment.
+      I measured foot drift and successful placements on four surface types. On flat ground, 98% of placements succeeded with 0.5 cm of average drift. That fell to 90% on uneven terrain, 85% on slopes, and 78% on moving surfaces, where drift reached 4.7 cm.
 
-      Testing different surfaces made those limits visible. It gave me a way to compare the behaviour on ordinary ground with the cases that needed more refinement.
+      The rig adapted to a change in terrain within about 12 ms. Abrupt changes and faster movement were where it struggled, with occasional sliding or misalignment.
     image: /media/AdaptikWire.webp
     imageAlt: ADAPTIK's legs positioned around a raised cable beside a vehicle
     caption: A small obstacle introduces a more local change in ground height.
@@ -84,11 +80,11 @@ sections:
     caption: Procedural leaning shown as part of the character demonstration.
   - title: What the evaluation showed
     text: |-
-      The project demonstrated real-time terrain adaptation, but the dissertation also records the trade-offs. Terrain scanning and IK added CPU work. Moving surfaces and sudden changes could cause frame spikes or desynchronisation, and more demanding terrain still exposed foot-placement errors.
+      The project demonstrated real-time terrain adaptation, and the dissertation also records what it costs. Terrain scanning and IK added about 20% CPU usage compared with keyframed animation, while GPU load barely changed. The scene averaged 120 FPS on high-end hardware and 85 FPS on mid-range hardware. Moving surfaces and sudden changes could still cause frame spikes or desynchronisation.
 
       The next steps would be better collision handling, lower CPU overhead, and testing across more complex environments. The project gave me a practical foundation in Control Rig and terrain-aware animation, as well as a clearer understanding of where the system needed more work.
 
-      The dissertation is linked above for the full methodology and reported measurements. The source repository and the tutorial I followed are available alongside it.
+      The dissertation is linked above for the full methodology and reported measurements. The source repository is available alongside it.
     image: /media/AdaptikTable.webp
     imageAlt: ADAPTIK standing on a raised workbench inside the demonstration garage
     caption: A raised workbench provides another surface for the character to stand on.
@@ -96,6 +92,6 @@ sections:
 
 ## The project
 
-ADAPTIK was my final-year investigation into procedural locomotion for a four-legged character, using Unreal Engine 5 and Control Rig. I built the implementation by following [Lincoln Margison's “Step by Step” Procedural Animation tutorial](https://www.youtube.com/watch?v=vKiqs_h1WXM), then documented and evaluated the system in my dissertation.
+ADAPTIK was my final-year investigation into procedural locomotion for a four-legged character in Unreal Engine 5 Control Rig. The focus was terrain adaptation: placing feet on uneven ground, responding to height changes, and finding out where the approach starts to struggle.
 
-The focus was terrain adaptation: placing feet on uneven ground, responding to height changes, and understanding where the approach starts to struggle.
+I tested the rig on flat, uneven, sloped, and moving ground and measured how often each foot landed where it should. Placement held at 98% on flat ground and dropped to 78% on moving surfaces, for roughly 20% more CPU than keyframed animation.

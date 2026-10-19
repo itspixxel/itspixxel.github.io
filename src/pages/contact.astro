@@ -1,7 +1,7 @@
 ---
 import Icon from "../components/Icon.astro";
 import Layout from "../layouts/Layout.astro";
-import { site } from "../lib";
+import { site, url } from "../lib";
 ---
 
 <Layout title={site.labels.contact}>
@@ -9,6 +9,12 @@ import { site } from "../lib";
     <p class="eyebrow">{site.labels.channel}</p>
     <h1>{site.contactTitle}</h1>
     <p>{site.contactText}</p>
+    {site.availability && (
+      <p class="availability-note">
+        <span class="availability-dot" aria-hidden="true"></span>
+        {site.availability}
+      </p>
+    )}
     {site.showEmail && site.email && (
       <a class="email-link" href={`mailto:${site.email}`}>
         {site.email}
@@ -16,6 +22,9 @@ import { site } from "../lib";
       </a>
     )}
     <div class="contact-socials">
+      {site.resume && (
+        <a href={url(site.resume)}>{site.resumeLabel} <Icon name="northeast" /></a>
+      )}
       {site.socials
         .filter((s) => s.visible)
         .map((s) => (

@@ -2,13 +2,13 @@
 title: Winternator
 description: An Unreal Engine editor tool that generates snow cover and icicles on existing meshes, with adjustable snowfall.
 image: /media/WinternatorCover.webp
-imageAlt: Winternator · project screenshot
+imageAlt: Snow cover and icicles generated on a stone building in the Unreal editor
 tags:
   - Unreal Engine
   - Tools
 category: Tools
 featured: true
-order: 4
+order: 2
 status: University tools project
 engine: Unreal Engine
 role: C++ and procedural tools

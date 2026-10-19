@@ -9,7 +9,7 @@ tags:
   - Development
 image: /media/EmbersEdgeIcon.webp
 featured: true
-draft: false
+draft: true
 sample: false
 ---
 
