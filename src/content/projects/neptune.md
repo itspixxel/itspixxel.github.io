@@ -1,7 +1,7 @@
 ---
 title: Neptune – Advanced Ocean System
-description: Advanced ocean system for Unreal Engine 5 built for a collaborative
-  student project
+description: Water rendering, buoyancy, and artist tools built in six weeks for a
+  collaborative student game in Unreal Engine 5.
 image: /media/NeptuneCover.webp
 imageAlt: Neptune – Advanced Ocean System · project screenshot
 tags:
@@ -12,74 +12,56 @@ featured: true
 order: 1
 status: Portfolio project
 engine: Unreal Engine
-role: ""
+role: Senior Technical Artist
+duration: 6 weeks
+team: 30-person student game team
 year: ""
 draft: false
 sample: false
 gallery:
   - src: /media/NeptuneCover.webp
-    alt: Neptune – Advanced Ocean System · development capture
+    alt: Neptune ocean system in the game environment
   - src: /media/NeptuneBuoyancy.webp
-    alt: Neptune – Advanced Ocean System · development capture
+    alt: Buoyancy test with floating crates and gameplay objects
   - src: /media/NeptuneDF.webp
-    alt: Neptune – Advanced Ocean System · development capture
+    alt: Shoreline foam using distance fields
   - src: /media/NeptunePP.webp
-    alt: Neptune – Advanced Ocean System · development capture
+    alt: Underwater post-processing in the game environment
   - src: /media/NeptuneWaterline.webp
-    alt: Neptune – Advanced Ocean System · development capture
+    alt: Split view across the waterline
 video: https://www.youtube.com/embed/th1fw4S07NQ
 links: []
 note: A little trigonometry. A lot of water.
 ---
 
-### Project Overview
+## My contribution
 
-Neptune is an advanced ocean and water system for Unreal Engine 5, developed as the core technical art feature for a 30-person collaborative game project. Built over 6 weeks, it was designed to deliver realistic oceans, rivers, lakes, and waterfalls with high visual fidelity and gameplay responsiveness. My role as Senior Technical Artist included system design, prototyping, cross-team integration, and technical documentation.
+I built Neptune for a collaborative student game with a team of 30. As Senior Technical Artist, I worked on the water system's design, prototypes, integration, and documentation over six weeks.
 
-### The Problem
+The brief covered oceans, rivers, lakes, and waterfalls. It also needed to work with gameplay objects and give artists and designers controls they could use in their levels.
 
-"How can a water system in Unreal Engine 5 deliver both visual realism and gameplay flexibility, supporting dynamic environments, buoyancy, and underwater effects, while remaining performant and easy to integrate for artists and designers?"
+## Waves and floating objects
 
-#### Key challenges:
+The system uses Gerstner waves with adjustable parameters and supports buoyancy for floating actors and gameplay objects. It includes wave resistance and interaction with static and dynamic bodies. A stencil mask keeps water out of boats.
 
-- Achieving realistic wave simulation and water interaction
-- Supporting buoyancy and underwater rendering
-- Integrating with level design and gameplay systems
-- Maintaining performance and scalability
-- Providing customization for different water types
+![Buoyancy test with crates and gameplay objects floating in the ocean.](/media/NeptuneBuoyancy.webp)
 
-### What I Built
+## Where water meets the level
 
-- Gerstner wave simulation with dynamic parameters
-- Full buoyancy support for floating actors and gameplay objects
-- Underwater rendering, fog, and caustics
-- Stencil mask system to prevent water inside boats
-- Spline-based river creation with custom flow and foam
-- Dynamic foam and wet sand shader for shoreline effects
-- Wave resistance and interaction with static/dynamic bodies
-- Water depth coloring, refraction distortion, and fake subsurface scattering (SSS)
-- Custom waterfall actor with noise blending
-- Tile repeat solver to reduce tiling artifacts
-- Highly customizable via material instances and exposed parameters
+Shorelines combine distance-field foam with a wet-sand shader. Rivers use splines to control their path, flow, and foam. A separate waterfall actor uses noise blending, and the materials include a tile-repeat solver to reduce visible repetition.
 
-### Technical & Visual Principles Applied
+![Distance-field shoreline foam around the beach and rocks.](/media/NeptuneDF.webp)
 
-- Physically-based shading for water and foam
-- Procedural generation for waves and river flow
-- Optimized shader and blueprint architecture for real-time performance
-- Layered effects for clarity and visual appeal
-- Modular design for easy integration and expansion
+## Below the surface
 
-### Outcome
+Underwater rendering includes fog, caustics, and post-processing. Depth colouring, refraction distortion, and a fake subsurface-scattering effect handle the appearance of the water itself.
 
-- Delivered a robust water system used across all game levels
-- Enabled artists and designers to easily customize water features
-- Improved gameplay clarity and visual quality
-- Provided technical documentation and training for the team
+![Underwater post-processing showing the submerged level.](/media/NeptunePP.webp)
 
-### Tools & Technologies
+![The waterline separating the underwater view from the scene above.](/media/NeptuneWaterline.webp)
 
-- Unreal Engine 5 (Materials, Blueprints, Niagara FX)
-- Blender for mesh and asset creation
-- Photoshop/Substance Designer for textures
-- Git for version control
+## Working with the team
+
+Material instances and exposed parameters let artists and designers customise the water. I also provided documentation and training to help the team integrate it into their levels.
+
+**Tools:** Unreal Engine 5 Materials, Blueprints, Niagara, Blender, Photoshop, Substance Designer, and Git.

@@ -309,6 +309,12 @@ content:
       - name: role
         label: Role
         type: string
+      - name: duration
+        label: Project duration
+        type: string
+      - name: team
+        label: Team size and context
+        type: string
       - name: year
         label: Year
         type: string

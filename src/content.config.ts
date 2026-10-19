@@ -19,6 +19,8 @@ const projects = defineCollection({
     status: z.string().default(""),
     engine: z.string().default(""),
     role: z.string().default(""),
+    duration: z.string().default(""),
+    team: z.string().default(""),
     year: z.string().default(""),
     note: z.string().default(""),
     video: z.string().default(""),

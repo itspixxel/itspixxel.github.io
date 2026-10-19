@@ -24,11 +24,17 @@ const videoUrl = videoId
   ? "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1&rel=0"
   : "";
 const mediaCount = captures.length + (videoUrl ? 1 : 0);
+const projectFacts = [
+  [site.labels.role, d.role],
+  ["Duration", d.duration],
+  ["Team", d.team],
+  [site.labels.engine, d.engine],
+].filter(([, value]) => value);
 ---
 
 <Layout title={d.title} description={d.description} image={d.image}>
   <article class="wrap">
-    <header class="page-heading">
+    <header class="page-heading project-heading">
       <a class="eyebrow" href={url("/projects/")}>
         ← {site.labels.work}
       </a>
@@ -38,6 +44,13 @@ const mediaCount = captures.length + (videoUrl ? 1 : 0);
       </p>
       <h1>{d.title}</h1>
       <p>{d.description}</p>
+      {(d.duration || d.team) && (
+        <dl class="project-facts">
+          {projectFacts.map(([label, value]) => (
+            <div><dt>{label}</dt><dd>{value}</dd></div>
+          ))}
+        </dl>
+      )}
     </header>
     {mediaCount > 0 && (
       <section
