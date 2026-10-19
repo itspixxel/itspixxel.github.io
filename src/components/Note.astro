@@ -1,4 +1,5 @@
 ---
+import Icon from "./Icon.astro";
 import { url, site, date, reading } from "../lib";
 const { post, index = 0 } = Astro.props;
 ---
@@ -23,5 +24,5 @@ const { post, index = 0 } = Astro.props;
     <span>{date(post.data.date)}</span>
     <span>{reading(post.body)}</span>
   </div>
-  <span class="arrow">↗</span>
+  <span class="arrow"><Icon name="northeast" /></span>
 </a>

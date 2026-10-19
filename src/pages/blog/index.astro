@@ -1,4 +1,5 @@
 ---
+import Icon from "../../components/Icon.astro";
 import Layout from "../../layouts/Layout.astro";
 import Note from "../../components/Note.astro";
 import { getCollection } from "astro:content";
@@ -41,7 +42,7 @@ const tags = [...new Set(posts.flatMap((p) => p.data.tags))];
       {site.labels.empty}
     </p>
     <button id="more" class="text-link" hidden>
-      {site.labels.loadMore} ↓
+      {site.labels.loadMore} <Icon name="down" />
     </button>
   </section>
 </Layout>

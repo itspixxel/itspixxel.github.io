@@ -1,4 +1,5 @@
 ---
+import Icon from "../components/Icon.astro";
 import play from "../content/settings/play.json";
 import "../styles/global.css";
 import { site, url } from "../lib";
@@ -108,10 +109,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           {site.socials
             .filter((s) => s.visible)
             .map((s) => (
-              <a href={s.url}>{s.label} ↗</a>
+              <a href={s.url}>{s.label} <Icon name="northeast" /></a>
             ))}
           {play.enabled && play.secretRoom && (
-            <a href={url("/play/")}>{play.roomLabel} ↗</a>
+            <a href={url("/play/")}>{play.roomLabel} <Icon name="northeast" /></a>
           )}
           {play.enabled && play.commentary && (
             <button

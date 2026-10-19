@@ -2473,3 +2473,6 @@ select:focus {
 @media (prefers-reduced-motion: reduce) {
   .project-preview-player { transition: none; }
 }
+
+/* Keep controls consistent across system fonts and mobile devices. */
+.ui-icon { display: inline-block; flex: none; vertical-align: -0.125em; pointer-events: none; }

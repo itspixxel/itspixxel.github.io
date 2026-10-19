@@ -1,4 +1,5 @@
 ---
+import Icon from "../../components/Icon.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import { site, url, date, reading } from "../../lib";
@@ -20,7 +21,7 @@ const related = (
   <article class="wrap">
     <header class="page-heading article-heading">
       <a class="eyebrow" href={url("/blog/")}>
-        ← {site.labels.writing}
+        <Icon name="left" /> {site.labels.writing}
       </a>
       <p class="eyebrow">
         {d.tags.join(" / ")}
@@ -58,7 +59,7 @@ const related = (
           class="resource"
           href={`mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(Astro.url.href)}`}
         >
-          {site.labels.share} ↗
+          {site.labels.share} <Icon name="northeast" />
         </a>
       </aside>
       <div
@@ -72,7 +73,7 @@ const related = (
     <section class="related">
       <p class="eyebrow">{site.labels.related}</p>
       {related.map((p) => (
-        <a href={url(`/blog/${p.id}/`)}>{p.data.title} ↗</a>
+        <a href={url(`/blog/${p.id}/`)}>{p.data.title} <Icon name="northeast" /></a>
       ))}
     </section>
   </article>

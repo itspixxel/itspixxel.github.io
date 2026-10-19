@@ -1,3 +1,4 @@
+import { setIconLabel } from "../icons";
 type PreviewPlayer = { destroy(): void; mute(): void; playVideo(): void };
 type PreviewAPI = { Player: new (frame: HTMLIFrameElement, options: { events: { onReady(event: { target: PreviewPlayer }): void; onStateChange(event: { data: number }): void; onError(): void } }) => PreviewPlayer };
 const youtubeWindow = window as typeof window & { YT?: PreviewAPI; onYouTubeIframeAPIReady?: () => void };
@@ -35,7 +36,7 @@ document.querySelectorAll<HTMLElement>("[data-preview-url]").forEach((card) => {
     player?.remove();
     player = null;
     card.classList.remove("is-previewing");
-    button.textContent = "Play preview ▷";
+    setIconLabel(button, "Play preview", "play");
     button.setAttribute("aria-label", label);
     button.setAttribute("aria-pressed", "false");
   };
@@ -75,7 +76,7 @@ document.querySelectorAll<HTMLElement>("[data-preview-url]").forEach((card) => {
         onError: () => { if (player === frame) stop(); },
       } });
     }).catch(() => { if (player === frame) stop(); });
-    button.textContent = "Pause preview Ⅱ";
+    setIconLabel(button, "Pause preview", "pause");
     button.setAttribute("aria-label", label.replace(/^Play /, "Pause "));
     button.setAttribute("aria-pressed", "true");
   };

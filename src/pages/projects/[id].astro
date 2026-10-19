@@ -1,4 +1,5 @@
 ---
+import Icon from "../../components/Icon.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
 import { site, url } from "../../lib";
@@ -36,7 +37,7 @@ const projectFacts = [
   <article class="wrap">
     <header class="page-heading project-heading">
       <a class="eyebrow" href={url("/projects/")}>
-        ← {site.labels.work}
+        <Icon name="left" /> {site.labels.work}
       </a>
       <p class="eyebrow">
         {d.tags.join(" / ")}
@@ -57,7 +58,7 @@ const projectFacts = [
         <figure class="capture-video standalone-trailer">
           {d.image && <img src={url(d.image)} alt="" role="presentation" width="1600" height="900" />}
           <button class="project-video-play" type="button" data-project-video={videoUrl}>
-            <span aria-hidden="true">▷</span>Watch the trailer
+            <span aria-hidden="true"><Icon name="play" /></span>Watch the trailer
           </button>
         </figure>
         <p class="trailer-caption">{d.title} in motion <span>YouTube loads when you press play.</span></p>
@@ -72,7 +73,7 @@ const projectFacts = [
         <header class="capture-heading">
           <span class="eyebrow">Visual field notes</span>
           <h2>Inside {d.title}</h2>
-          <span class="capture-hint">Swipe to explore / click to expand ↗</span>
+          <span class="capture-hint">Swipe to explore / click to expand <Icon name="northeast" /></span>
         </header>
         <div
           class="capture-track"
@@ -102,7 +103,7 @@ const projectFacts = [
                 class="project-video-play"
                 data-project-video={videoUrl}
               >
-                <span aria-hidden="true">▷</span>Play project film
+                <span aria-hidden="true"><Icon name="play" /></span>Play project film
               </button>
               <p class="video-privacy">YouTube loads when you press play.</p>
             </figure>
@@ -133,7 +134,7 @@ const projectFacts = [
                 data-expand-capture={index}
                 aria-label={"Expand capture " + (index + 1)}
               >
-                ⤢
+                <Icon name="expand" />
               </button>
             </figure>
           ))}
@@ -142,13 +143,13 @@ const projectFacts = [
         {mediaCount > 1 && (
           <div class="capture-controls" hidden data-capture-controls>
             <button type="button" data-previous aria-label="Previous capture">
-              ←
+              <Icon name="left" />
             </button>
             <span data-capture-count aria-live="polite" aria-atomic="true">
               1 / {mediaCount}
             </span>
             <button type="button" data-next aria-label="Next capture">
-              →
+              <Icon name="right" />
             </button>
           </div>
         )}
@@ -167,7 +168,7 @@ const projectFacts = [
                 aria-pressed="true"
                 class="video-thumbnail"
               >
-                ▷<span>FILM</span>
+                <Icon name="play" /><span>FILM</span>
               </button>
             )}
             {captures.map((g, index) => (
@@ -212,7 +213,7 @@ const projectFacts = [
         </dl>}
         {d.links.map((l) => (
           <a class="resource" href={l.url}>
-            {l.label} ↗
+            {l.label} <Icon name="northeast" />
           </a>
         ))}
         <p class="field-note">{d.note}</p>
@@ -258,7 +259,7 @@ const projectFacts = [
                 <span class="related-image-fallback">{p.data.title}</span>
               )}
               <span class="related-project-arrow" aria-hidden="true">
-                ↗
+                <Icon name="northeast" />
               </span>
             </div>
             <div class="related-project-copy">

@@ -1,4 +1,5 @@
 ---
+import Icon from "./Icon.astro";
 import play from "../content/settings/play.json";
 import { url } from "../lib";
 const { kind } = Astro.props;
@@ -93,7 +94,7 @@ const Heading = kind === "spring" ? "h1" : "h2";
         {play.jumpLabel}
       </button>
       <a class="toy-success" href={url("/")} hidden>
-        {play.jumpSuccess}
+        {play.jumpSuccess} <Icon name="northeast" />
       </a>
     </>
   )}

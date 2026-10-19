@@ -1,4 +1,5 @@
 ---
+import Icon from "../components/Icon.astro";
 import play from "../content/settings/play.json";
 import PlayFeature from "../components/PlayFeature.astro";
 import Layout from "../layouts/Layout.astro";
@@ -101,7 +102,7 @@ const { Content } = await render(page);
                       data-pause-label={page.data.currentWork.pauseLabel}
                       aria-pressed="false"
                     >
-                      {page.data.currentWork.playLabel} ▷
+                      {page.data.currentWork.playLabel} <Icon name="play" />
                     </button>
                   </>
                 )}
@@ -119,7 +120,7 @@ const { Content } = await render(page);
             <p>{page.data.currentWork.description}</p>
             <a class="text-link" href={page.data.currentWork.url}>
               {page.data.currentWork.linkLabel}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true"><Icon name="northeast" /></span>
             </a>
           </section>
         )}
@@ -145,7 +146,7 @@ const { Content } = await render(page);
         )}
         <div class="personal-contact">
           <a class="text-link" href={url("/contact/")}>
-            {site.labels.contact}<span aria-hidden="true">↗</span>
+            {site.labels.contact}<span aria-hidden="true"><Icon name="northeast" /></span>
           </a>
         </div>
       </div>

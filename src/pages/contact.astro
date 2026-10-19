@@ -1,4 +1,5 @@
 ---
+import Icon from "../components/Icon.astro";
 import Layout from "../layouts/Layout.astro";
 import { site } from "../lib";
 ---
@@ -11,14 +12,14 @@ import { site } from "../lib";
     {site.showEmail && site.email && (
       <a class="email-link" href={`mailto:${site.email}`}>
         {site.email}
-        <span>↗</span>
+        <span><Icon name="northeast" /></span>
       </a>
     )}
     <div class="contact-socials">
       {site.socials
         .filter((s) => s.visible)
         .map((s) => (
-          <a href={s.url}>{s.label} ↗</a>
+          <a href={s.url}>{s.label} <Icon name="northeast" /></a>
         ))}
     </div>
   </section>

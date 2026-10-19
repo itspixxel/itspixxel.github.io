@@ -1,3 +1,4 @@
+import { iconMarkup, setIconLabel } from "../icons";
 // A browser-local visibility preference; GitHub remains the authorization layer.
 const ownerKey = "pixxel-owner-mode";
 function syncOwnerMode() {
@@ -234,7 +235,7 @@ document
       shineAnimation?.cancel();
       video.pause();
       card.classList.remove("is-playing");
-      button.textContent = `${button.dataset.playLabel} ▷`;
+      setIconLabel(button, button.dataset.playLabel || "Play", "play");
       button.setAttribute("aria-pressed", "false");
     };
     const play = async () => {
@@ -242,7 +243,7 @@ document
       wantsPlayback = true;
       const request = ++sequence;
       button.setAttribute("aria-pressed", "true");
-      button.textContent = `${button.dataset.pauseLabel} Ⅱ`;
+      setIconLabel(button, button.dataset.pauseLabel || "Pause", "pause");
       try {
         // Decode behind the cover while the shine runs, then overlap the fade.
         if (video.readyState === 0) video.load();
@@ -272,7 +273,7 @@ document
         }
         shineAnimation?.cancel();
         card.classList.add("is-playing");
-        button.textContent = `${button.dataset.pauseLabel} Ⅱ`;
+        setIconLabel(button, button.dataset.pauseLabel || "Pause", "pause");
         button.setAttribute("aria-pressed", "true");
       } catch {
         if (request === sequence) stop();
@@ -391,7 +392,7 @@ document
     dialog.className = "capture-lightbox";
     dialog.setAttribute("aria-label", "Development capture viewer");
     dialog.innerHTML =
-      '<div class="lightbox-toolbar"><span class="eyebrow">Development captures</span><span data-view-count aria-live="polite"></span><button type="button" data-close aria-label="Close viewer">Close ×</button></div><div class="lightbox-stage"><button type="button" data-view-prev aria-label="Previous image">←</button><img alt="" /><button type="button" data-view-next aria-label="Next image">→</button></div><p data-view-caption></p>';
+      '<div class="lightbox-toolbar"><span class="eyebrow">Development captures</span><span data-view-count aria-live="polite"></span><button type="button" data-close aria-label="Close viewer">Close ×</button></div><div class="lightbox-stage"><button type="button" data-view-prev aria-label="Previous image">' + iconMarkup("left") + '</button><img alt="" /><button type="button" data-view-next aria-label="Next image">' + iconMarkup("right") + '</button></div><p data-view-caption></p>';
     document.body.append(dialog);
     let index = 0;
     let opener: HTMLElement | null = null;

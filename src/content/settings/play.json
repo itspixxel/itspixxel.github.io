@@ -20,7 +20,7 @@
   "jumpTitle": "Mind the missing bridge.",
   "jumpDescription": "One small jump to get back on the map. The regular home link works too.",
   "jumpLabel": "Jump the gap",
-  "jumpSuccess": "Made it. Head home ↗",
+  "jumpSuccess": "Made it. Head home",
   "notes": [
     {
       "page": "/",

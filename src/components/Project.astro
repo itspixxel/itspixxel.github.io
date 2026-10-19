@@ -1,4 +1,5 @@
 ---
+import Icon from "./Icon.astro";
 import play from "../content/settings/play.json";
 import { url, site } from "../lib";
 const { project, index = 0 } = Astro.props;
@@ -24,19 +25,19 @@ const previewUrl = videoId
     ) : (
       <div class="image-fallback">
         {d.title}
-        <span>↗</span>
+        <span><Icon name="northeast" /></span>
       </div>
     )}
     <span class="project-number">
       {String(index + 1).padStart(2, "0")} / {d.engine}
     </span>
     <span class="project-arrow" aria-hidden="true">
-      ↗
+      <Icon name="northeast" />
     </span>
   </a>
   {previewUrl && (
     <button class="project-preview-toggle" type="button" aria-label={`Play ${d.title} preview`} aria-pressed="false" data-preview-toggle>
-      Play preview ▷
+      Play preview <Icon name="play" />
     </button>
   )}
   <div class="project-caption">
@@ -79,7 +80,7 @@ const previewUrl = videoId
           </div>
         </dl>
         <a class="text-link" href={url("/projects/" + project.id + "/")}>
-          Open the case study ↗
+          Open the case study <Icon name="northeast" />
         </a>
       </div>
     </details>
