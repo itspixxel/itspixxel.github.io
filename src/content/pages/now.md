@@ -21,8 +21,8 @@ currentWork:
 
 ## Currently exploring
 
-I’m learning how to make my own programming language. It’s my current side goal, fitted around a busy working week. I’m usually building an app or following some other software idea too; having something to make is how I like to spend my spare time.
+I’m learning how to build my own programming language, fitted around my full-time work.
 
 ## Availability
 
-I’m focused on my full-time role at AriseMedia and don’t currently have capacity for freelance work, collaborations, or part-time opportunities. Between work and my own experiments, my plate is full. Minecraft, Valorant, and Overwatch still tend to find their way into the gaps.
+I’m focused on AriseMedia and don’t currently have capacity for freelance work, collaborations, or part-time opportunities.

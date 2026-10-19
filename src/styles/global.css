@@ -622,6 +622,20 @@ dd {
   text-underline-offset: 4px;
   color: var(--accent);
 }
+.origin-story {
+  margin-top: 2rem;
+  border-block: 1px solid currentColor;
+  padding-block: 1rem;
+}
+.origin-story summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding-block: .5rem;
+}
+.origin-story summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
 .prose strong {
   color: var(--ink);
 }

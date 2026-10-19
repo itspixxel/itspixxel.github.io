@@ -406,6 +406,10 @@ content:
       - name: profileBio
         label: Bio under portrait
         type: text
+      - name: originStory
+        label: How I got here (expandable story)
+        type: text
+        description: Hidden behind a disclosure on About. Separate paragraphs with a blank line.
       - *a8
   - name: now
     label: Now

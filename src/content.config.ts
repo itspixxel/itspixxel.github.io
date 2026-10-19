@@ -47,6 +47,7 @@ const pages = defineCollection({
     profileName: z.string().optional(),
     profileDetail: z.string().optional(),
     profileBio: z.string().optional(),
+    originStory: z.string().optional(),
     updated: z.coerce.date().optional(),
     currentWork: z
       .object({

@@ -124,6 +124,14 @@ const { Content } = await render(page);
           </section>
         )}
         <Content />
+        {page.data.originStory && (
+          <details class="origin-story">
+            <summary>How I got here</summary>
+            {page.data.originStory.split(/\n\s*\n/).map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </details>
+        )}
         {page.id === "about" && play.enabled && play.rig && (
           <PlayFeature kind="rig" />
         )}
