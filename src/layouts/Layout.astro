@@ -125,7 +125,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
             </button>
           )}
           <a href={url("/rss.xml")}>{site.labels.rss}</a>
-          <a href={url("/edit/")}>{site.labels.edit}</a>
+          <template data-owner-link>
+            <a href={url("/edit/")}>{site.labels.edit}</a>
+          </template>
         </div>
       </div>
     </footer>

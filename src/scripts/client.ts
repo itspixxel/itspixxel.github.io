@@ -1,3 +1,35 @@
+// A browser-local visibility preference; GitHub remains the authorization layer.
+const ownerKey = "pixxel-owner-mode";
+function syncOwnerMode() {
+let ownerMode = false;
+const ownerHash = window.location.hash;
+try {
+  if (ownerHash === "#owner-mode-on") localStorage.setItem(ownerKey, "on");
+  if (ownerHash === "#owner-mode-off") localStorage.removeItem(ownerKey);
+  ownerMode = localStorage.getItem(ownerKey) === "on";
+} catch {
+  // With storage unavailable, keep the owner link absent.
+}
+if (ownerHash === "#owner-mode-on" || ownerHash === "#owner-mode-off") {
+  history.replaceState(null, "", window.location.pathname + window.location.search);
+}
+document.querySelectorAll("[data-owner-visible]").forEach((link) => link.remove());
+if (ownerMode) {
+  document.querySelectorAll<HTMLTemplateElement>("[data-owner-link]").forEach((template) => {
+    const link = template.content.firstElementChild?.cloneNode(true) as HTMLElement | undefined;
+    if (link) {
+      link.dataset.ownerVisible = "";
+      template.after(link);
+    }
+  });
+}
+}
+syncOwnerMode();
+window.addEventListener("hashchange", syncOwnerMode);
+window.addEventListener("storage", (event) => {
+  if (event.key === ownerKey || event.key === null) syncOwnerMode();
+});
+
 const filter = document.querySelector("[data-filter]");
 if (filter) {
   const search = document.querySelector<HTMLInputElement>("#search")!;

@@ -16,6 +16,8 @@ Expected URL: **https://itspixxel.github.io/**. No CNAME/custom domain was prese
 
 Visit `/edit/` for the editor link and sign-in guidance. Editing is hosted by Pages CMS; visitors cannot commit from the public site.
 
+The footer editor link is absent from the rendered page by default. Bookmark `https://itspixxel.github.io/#owner-mode-on` to enable it in your current browser. Visit `https://itspixxel.github.io/#owner-mode-off` to hide it again. The preference stays on that browser and origin; it does not sign you in or grant editing permission. This is a convenience setting, not identity authentication. The `/edit/` route remains directly accessible.
+
 - **Homepage:** change the introduction, heading, invitation, interest list, and section visibility in Homepage.
 - **Settings:** change SEO description, social preview image, name, footer, workshop status, contact invitation, email visibility, and all shared section labels in Site settings. The SEO description is the homepage fallback; individual pages/posts/projects have their own title and description.
 - **Navigation:** edit, reorder, or hide items within Site settings → Navigation. Use existing routes (`/`, `/projects/`, `/blog/`, `/about/`, `/now/`, `/contact/`) or valid external links. Adding an item doesn't create a page. Keep at most five short primary labels for the designed mobile layout.
