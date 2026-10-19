@@ -357,7 +357,7 @@ h3 {
 .archive-featured-grid .field-note { display: none; }
 .archive-featured-grid .project-number { left: 12px; top: 12px; font-size: 11px; padding: 5px 7px; }
 .archive-featured-grid .project-arrow { width: 32px; height: 32px; right: 12px; bottom: 12px; font-size: 20px; }
-.archive-featured-grid .project-preview-toggle { font-size: 11px; padding: 6px 10px; right: 12px; top: 48px; }
+.archive-featured-grid .project-preview-toggle { font-size: 11px; padding: 6px 10px; right: 12px; top: 12px; }
 .work-directory { padding-block: 56px 80px; border-top: 1px solid var(--line); }
 .archive-group {
   display: grid;
