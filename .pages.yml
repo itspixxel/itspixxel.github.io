@@ -295,6 +295,16 @@ content:
       - name: imageAlt
         label: Image Alt
         type: string
+      - name: category
+        label: Archive category
+        type: select
+        required: true
+        default: Games
+        options:
+          values:
+            - Games
+            - Tools
+            - VFX
       - name: order
         label: Order
         type: number

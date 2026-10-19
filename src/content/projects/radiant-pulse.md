@@ -6,6 +6,7 @@ imageAlt: Radiant Pulse · project screenshot
 tags:
   - Unreal Engine
   - Niagara VFX
+category: VFX
 featured: false
 order: 12
 status: Portfolio project

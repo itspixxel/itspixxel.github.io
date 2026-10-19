@@ -7,6 +7,7 @@ imageAlt: On The Way · project screenshot
 tags:
   - Unity
   - Puzzle Game
+category: Games
 featured: false
 order: 15
 status: Portfolio project

@@ -15,6 +15,7 @@ const projects = defineCollection({
   schema: z.object({
     ...common,
     imageAlt: z.string().default(""),
+    category: z.enum(["Games", "Tools", "VFX"]).default("Games"),
     order: z.number().default(100),
     status: z.string().default(""),
     engine: z.string().default(""),

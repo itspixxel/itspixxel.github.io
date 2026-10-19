@@ -6,6 +6,7 @@ imageAlt: HellShot · project screenshot
 tags:
   - Unreal Engine
   - Boomer Shooter
+category: Games
 featured: false
 order: 9
 status: Portfolio project

@@ -26,7 +26,7 @@ The footer editor link is absent from the rendered page by default. Bookmark `ht
 - **Images:** upload through any image field or the rich-text editor. Files live in `public/media`; references are `/media/filename`. Supply gallery alt descriptions and cover alt text. For future uploads, prefer reasonably compressed WebP/JPEG and images around 1600px wide. Existing images were resized and converted to WebP; CMS uploads are served directly, not automatically transcoded.
 - **About / Now:** edit titles, descriptions and the entire body. Now has an editable update date. Biographical gaps are explicitly marked in the About/Now bodies; replace them before launch if desired.
 - **Contact / social links:** edit the existing verified email and GitHub/itch.io/LinkedIn entries, add optional platforms, and control visibility. No contact form service is required.
-- **Categories:** tags are editable lists on each entry. Adding a new blog tag automatically adds a filter option; there is no separate tag registry to keep synchronized.
+- **Archive categories:** each project has a Games, Tools, or VFX category. Change it in Projects → Archive category. Featured projects appear as larger case-study cards above the compact, grouped directory; the directory includes every published project. Order controls the sequence within each category. Tags are separate editable lists; adding a new blog tag automatically adds a blog filter option.
 
 Saving in Pages CMS commits content to GitHub. A commit to `amethyst` triggers the same deployment workflow as a developer push. Builds typically take a few minutes; watch Actions for the actual result.
 

@@ -6,6 +6,7 @@ imageAlt: Ember's Edge · project screenshot
 tags:
   - Unreal Engine
   - Platformer
+category: Games
 featured: false
 order: 8
 status: Portfolio project

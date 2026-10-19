@@ -6,6 +6,7 @@ imageAlt: Tactical Takedown · project screenshot
 tags:
   - Unity
   - Prototype
+category: Games
 featured: false
 order: 13
 status: Portfolio project

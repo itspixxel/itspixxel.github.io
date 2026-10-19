@@ -7,6 +7,7 @@ imageAlt: Area 26 · project screenshot
 tags:
   - Unreal Engine
   - Horror Game
+category: Games
 featured: false
 order: 14
 status: Portfolio project

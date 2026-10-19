@@ -6,6 +6,7 @@ imageAlt: Toxic Shard · project screenshot
 tags:
   - Unreal Engine
   - Niagara VFX
+category: VFX
 featured: false
 order: 10
 status: Portfolio project

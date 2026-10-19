@@ -4,6 +4,7 @@ description: An original personal VFX study in Niagara, focused on animation
   timing and readable ability feedback.
 image: /media/KunaiEMPCover.webp
 draft: false
+category: VFX
 featured: false
 sample: false
 tags:

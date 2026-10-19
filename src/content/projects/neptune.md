@@ -8,6 +8,7 @@ tags:
   - Unreal Engine
   - Technical Art
   - Tool
+category: Tools
 featured: true
 order: 1
 status: Portfolio project

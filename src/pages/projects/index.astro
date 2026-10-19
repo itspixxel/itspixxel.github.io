@@ -2,10 +2,16 @@
 import Layout from "../../layouts/Layout.astro";
 import Project from "../../components/Project.astro";
 import { getCollection } from "astro:content";
-import { site } from "../../lib";
+import { site, url } from "../../lib";
 const projects = (await getCollection("projects", (p) => !p.data.draft)).sort(
   (a, b) => a.data.order - b.data.order,
 );
+const featured = projects.filter((project) => project.data.featured);
+const groups = ["Games", "Tools", "VFX"].map((name) => ({
+  name,
+  id: name.toLowerCase(),
+  projects: projects.filter((project) => project.data.category === name),
+})).filter((group) => group.projects.length > 0);
 ---
 
 <Layout
@@ -16,10 +22,59 @@ const projects = (await getCollection("projects", (p) => !p.data.draft)).sort(
     <p class="eyebrow">01 / {site.labels.archive}</p>
     <h1>{site.labels.projectsTitle}</h1>
     <p>{site.labels.projectsIntro}</p>
+    <nav class="work-jump-links" aria-label="Browse projects by category">
+      {featured.length > 0 && <a href="#selected-work">Selected work <span>{featured.length}</span></a>}
+      {groups.map((group) => (
+        <a href={`#${group.id}`}>{group.name} <span>{group.projects.length}</span></a>
+      ))}
+    </nav>
   </section>
-  <section class="wrap project-grid section">
-    {projects.map((project, index) => (
-      <Project project={project} index={index} />
+  {featured.length > 0 && (
+    <section class="wrap archive-selected" id="selected-work" aria-labelledby="selected-heading">
+      <div class="archive-section-heading">
+        <h2 id="selected-heading">Selected work</h2>
+        <p>Projects to start with.</p>
+      </div>
+      <div class="archive-featured-grid">
+        {featured.map((project, index) => <Project project={project} index={index} />)}
+      </div>
+    </section>
+  )}
+  <section class="wrap work-directory" aria-labelledby="directory-heading">
+    <header class="archive-section-heading">
+      <div>
+        <p class="eyebrow">{projects.length} projects</p>
+        <h2 id="directory-heading">The full archive</h2>
+      </div>
+      <p>Games, tools, and VFX. Pick a project to take a closer look.</p>
+    </header>
+    {groups.map((group) => (
+      <section class="archive-group" id={group.id} aria-labelledby={`${group.id}-heading`}>
+        <header class="archive-group-heading">
+          <h3 id={`${group.id}-heading`}>{group.name}</h3>
+          <span>{String(group.projects.length).padStart(2, "0")} projects</span>
+        </header>
+        <ul class="archive-list">
+          {group.projects.map((project) => (
+            <li>
+              <a class="archive-row" href={url(`/projects/${project.id}/`)}>
+                <span class="archive-thumbnail" aria-hidden="true">
+                  {project.data.image && <img src={url(project.data.image)} alt="" role="presentation" width="192" height="108" loading="lazy" />}
+                </span>
+                <span class="archive-row-copy">
+                  <span class="archive-project-title">{project.data.title}</span>
+                  <span class="archive-description">{project.data.description}</span>
+                </span>
+                <span class="archive-row-meta">
+                  <span>{project.data.engine}</span>
+                  {project.data.featured && <span class="archive-featured-label">Featured</span>}
+                </span>
+                <span class="archive-row-arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
     ))}
   </section>
 </Layout>
