@@ -126,18 +126,28 @@ const { Content } = await render(page);
         <Content />
         {page.data.originStory && (
           <details class="origin-story">
-            <summary>How I got here</summary>
+            <summary>
+              <span class="origin-story-label">
+                <span>How I got here</span>
+                <span class="origin-story-caption">From Discord bots to game development</span>
+              </span>
+              <span class="origin-story-indicator" aria-hidden="true">+</span>
+            </summary>
+            <div class="origin-story-body">
             {page.data.originStory.split(/\n\s*\n/).map((paragraph) => (
               <p>{paragraph}</p>
             ))}
+            </div>
           </details>
         )}
         {page.id === "about" && play.enabled && play.rig && (
           <PlayFeature kind="rig" />
         )}
-        <p>
-          <a href={url("/contact/")}>{site.labels.contact} ↗</a>
-        </p>
+        <div class="personal-contact">
+          <a class="text-link" href={url("/contact/")}>
+            {site.labels.contact}<span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </div>
     </div>
   </article>

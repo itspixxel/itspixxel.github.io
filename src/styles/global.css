@@ -623,18 +623,59 @@ dd {
   color: var(--accent);
 }
 .origin-story {
-  margin-top: 2rem;
-  border-block: 1px solid currentColor;
-  padding-block: 1rem;
+  margin-top: 2.25rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgb(238 238 228 / 2%);
 }
 .origin-story summary {
   cursor: pointer;
-  font-weight: 600;
-  padding-block: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 22px 24px;
+  list-style: none;
+  color: var(--ink);
+}
+.origin-story summary::-webkit-details-marker {
+  display: none;
+}
+.origin-story-label {
+  display: grid;
+  gap: 4px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+.origin-story-caption {
+  font-size: 14px;
+  color: var(--muted);
+}
+.origin-story-indicator {
+  flex: none;
+  color: var(--accent);
+  font-size: 26px;
+  line-height: 1;
+}
+.origin-story[open] .origin-story-indicator {
+  transform: rotate(45deg);
+}
+.origin-story-body {
+  padding: 0 24px 8px;
+}
+.origin-story-body > :first-child {
+  margin-top: 0;
 }
 .origin-story summary:focus-visible {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
+}
+.personal-contact {
+  margin-top: 28px;
+}
+.prose .personal-contact a {
+  text-decoration: none;
+  color: var(--ink);
 }
 .prose strong {
   color: var(--ink);
