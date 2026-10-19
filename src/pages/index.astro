@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Project from "../components/Project.astro";
+import Note from "../components/Note.astro";
+import home from "../content/settings/home.json";
+import { site, url } from "../lib";
+import { getCollection } from "astro:content";
+const projects = (
+  await getCollection("projects", (p) => !p.data.draft && p.data.featured)
+)
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+const posts = (await getCollection("blog", (p) => !p.data.draft))
+  .sort((a, b) => +b.data.date - +a.data.date)
+  .slice(0, 3);
+---
+
+<Layout>
+  <section class="hero wrap">
+    <div class="hero-top">
+      <span class="eyebrow">
+        <i class="little-cross">+</i> {home.eyebrow}
+      </span>
+    </div>
+    <div class:list={["hero-composition", { "has-portrait": home.portrait }]}>
+      <div class="hero-copy">
+        <h1>
+          {home.headline}
+          <br />
+          <em>{home.emphasis}</em>
+        </h1>
+        <div class="hero-intro">
+          <span class="hand-arrow" aria-hidden="true">
+            ↳
+          </span>
+          <div>
+            <p>{home.intro}</p>
+            <a class="text-link" href="#work">
+              {home.cta}
+              <span>↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      {home.portrait && (
+        <div class="hero-portrait">
+          <img
+            src={url(home.portrait)}
+            alt={home.portraitAlt || site.name}
+            width="640"
+            height="640"
+            fetchpriority="high"
+          />
+        </div>
+      )}
+    </div>
+    <div class="hero-bottom">
+      <span>{home.sideNote}</span>
+      <span class="eyebrow">{site.labels.scroll} ↓</span>
+    </div>
+  </section>
+  {home.showProjects && (
+    <section class="section wrap" id="work">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">01 / {site.labels.work}</p>
+          <h2>{site.labels.workIntro}</h2>
+        </div>
+        <a class="text-link" href={url("/projects/")}>
+          {site.labels.allWork}
+          <span>↗</span>
+        </a>
+      </div>
+      <div class="project-grid">
+        {projects.map((project, index) => (
+          <Project project={project} index={index} />
+        ))}
+      </div>
+    </section>
+  )}
+  {home.showInterests && (
+    <section class="interest-section">
+      <div class="wrap interest">
+        <p class="eyebrow">02 / {site.labels.interests}</p>
+        <h2>{home.interestTitle}</h2>
+        <div>
+          <p>{home.interestText}</p>
+          <ul>
+            {home.interests.map((i, n) => (
+              <li>
+                <span>0{n + 1}</span>
+                {i}
+              </li>
+            ))}
+          </ul>
+          <a class="text-link" href={url("/about/")}>
+            {site.labels.aboutLink} ↗
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
+  {home.showWriting && (
+    <section class="section wrap">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">03 / {site.labels.writing}</p>
+          <h2>{site.labels.writingIntro}</h2>
+        </div>
+        <a class="text-link" href={url("/blog/")}>
+          {site.labels.allWriting}
+          <span>↗</span>
+        </a>
+      </div>
+      {posts.map((post, index) => (
+        <Note post={post} index={index} />
+      ))}
+    </section>
+  )}
+  <section class="contact-band wrap">
+    <span class="eyebrow">{site.labels.next}</span>
+    <h2>
+      <a href={url("/contact/")}>
+        {site.contactTitle}
+        <span>↗</span>
+      </a>
+    </h2>
+    <p>{site.contactText}</p>
+  </section>
+</Layout>

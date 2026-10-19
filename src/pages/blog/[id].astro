@@ -1,0 +1,79 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import { site, url, date, reading } from "../../lib";
+export async function getStaticPaths() {
+  return (await getCollection("blog", (p) => !p.data.draft)).map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+const { post } = Astro.props;
+const d = post.data;
+const { Content, headings } = await render(post);
+const related = (
+  await getCollection("blog", (p) => !p.data.draft && p.id !== post.id)
+).slice(0, 2);
+---
+
+<Layout title={d.title} description={d.description} image={d.image}>
+  <article class="wrap">
+    <header class="page-heading article-heading">
+      <a class="eyebrow" href={url("/blog/")}>
+        ← {site.labels.writing}
+      </a>
+      <p class="eyebrow">
+        {d.tags.join(" / ")}
+        {d.sample && ` / ${site.labels.sample}`}
+      </p>
+      <h1>{d.title}</h1>
+      <p>{d.description}</p>
+      <div class="eyebrow">
+        {date(d.date)} / {reading(post.body)}{" "}
+        {d.updated && ` / ${site.labels.updated} ${date(d.updated)}`}
+      </div>
+    </header>
+    {d.image && (
+      <img
+        class="detail-cover"
+        src={url(d.image)}
+        alt={d.title}
+        width="1400"
+        height="788"
+      />
+    )}
+    <div class="article-layout">
+      <aside>
+        <p class="eyebrow">{site.labels.toc}</p>
+        <nav aria-label={site.labels.toc}>
+          {headings
+            .filter((h) => h.depth < 4)
+            .map((h) => (
+              <a class="toc-link" href={`#${h.slug}`}>
+                {h.text}
+              </a>
+            ))}
+        </nav>
+        <a
+          class="resource"
+          href={`mailto:?subject=${encodeURIComponent(d.title)}&body=${encodeURIComponent(Astro.url.href)}`}
+        >
+          {site.labels.share} ↗
+        </a>
+      </aside>
+      <div
+        class="prose"
+        data-copy={site.labels.copy}
+        data-copied={site.labels.copied}
+      >
+        <Content />
+      </div>
+    </div>
+    <section class="related">
+      <p class="eyebrow">{site.labels.related}</p>
+      {related.map((p) => (
+        <a href={url(`/blog/${p.id}/`)}>{p.data.title} ↗</a>
+      ))}
+    </section>
+  </article>
+</Layout>

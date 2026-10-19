@@ -1,0 +1,16 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PlayFeature from "../components/PlayFeature.astro";
+import play from "../content/settings/play.json";
+export function getStaticPaths() {
+  return play.enabled && play.secretRoom
+    ? [{ params: { playground: "play" } }]
+    : [];
+}
+---
+
+<Layout title={play.roomTitle} description={play.roomDescription}>
+  <div class="wrap section">
+    <PlayFeature kind="spring" />
+  </div>
+</Layout>

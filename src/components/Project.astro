@@ -1,0 +1,87 @@
+---
+import play from "../content/settings/play.json";
+import { url, site } from "../lib";
+const { project, index = 0 } = Astro.props;
+const d = project.data;
+const videoId = d.video?.match(
+  /(?:youtube(?:-nocookie)?.com\/embed\/|youtu\.be\/)([\w-]+)/,
+)?.[1];
+const previewUrl = videoId
+  ? `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0`
+  : "";
+---
+
+<article class:list={["project", { "project-large": index === 0 }]} data-preview-url={previewUrl || undefined}>
+  <a class="project-visual" href={url(`/projects/${project.id}/`)}>
+    {d.image ? (
+      <img
+        src={url(d.image)}
+        alt={d.imageAlt || d.title}
+        loading="lazy"
+        width="1400"
+        height="788"
+      />
+    ) : (
+      <div class="image-fallback">
+        {d.title}
+        <span>↗</span>
+      </div>
+    )}
+    <span class="project-number">
+      {String(index + 1).padStart(2, "0")} / {d.engine}
+    </span>
+    <span class="project-arrow" aria-hidden="true">
+      ↗
+    </span>
+  </a>
+  {previewUrl && (
+    <button class="project-preview-toggle" type="button" aria-label={`Play ${d.title} preview`} aria-pressed="false" data-preview-toggle>
+      Play preview ▷
+    </button>
+  )}
+  <div class="project-caption">
+    <div>
+      <p class="eyebrow">
+        {d.tags.join(" / ")}
+        {d.sample && ` / ${site.labels.sample}`}
+      </p>
+      <h3>
+        <a href={url(`/projects/${project.id}/`)}>{d.title}</a>
+      </h3>
+      <p>{d.description}</p>
+    </div>
+    <span class="field-note">{d.note}</span>
+  </div>
+  {play.enabled && play.projectInspection && (
+    <details class="project-inspect">
+      <summary>
+        {play.inspectLabel}
+        <span aria-hidden="true">+</span>
+      </summary>
+      <div>
+        <p class="field-note">{d.note || d.description}</p>
+        <dl>
+          {d.engine && (
+            <div>
+              <dt>{site.labels.engine}</dt>
+              <dd>{d.engine}</dd>
+            </div>
+          )}
+          {d.role && (
+            <div>
+              <dt>{site.labels.role}</dt>
+              <dd>{d.role}</dd>
+            </div>
+          )}
+          <div>
+            <dt>Tools & focus</dt>
+            <dd>{d.tags.join(" / ")}</dd>
+          </div>
+        </dl>
+        <a class="text-link" href={url("/projects/" + project.id + "/")}>
+          Open the case study ↗
+        </a>
+      </div>
+    </details>
+  )}
+</article>

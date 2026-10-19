@@ -1,0 +1,231 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import { site, url } from "../../lib";
+export async function getStaticPaths() {
+  return (await getCollection("projects", (p) => !p.data.draft)).map(
+    (project) => ({ params: { id: project.id }, props: { project } }),
+  );
+}
+const { project } = Astro.props;
+const d = project.data;
+const { Content } = await render(project);
+const related = (
+  await getCollection("projects", (p) => !p.data.draft && p.id !== project.id)
+).slice(0, 2);
+const captures = [
+  ...(d.image ? [{ src: d.image, alt: d.imageAlt || d.title }] : []),
+  ...d.gallery.filter((g) => g.src !== d.image),
+];
+const videoId = d.video.match(
+  /(?:youtube(?:-nocookie)?.com\/embed\/|youtu\.be\/)([\w-]+)/,
+)?.[1];
+const videoUrl = videoId
+  ? "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1&rel=0"
+  : "";
+const mediaCount = captures.length + (videoUrl ? 1 : 0);
+---
+
+<Layout title={d.title} description={d.description} image={d.image}>
+  <article class="wrap">
+    <header class="page-heading">
+      <a class="eyebrow" href={url("/projects/")}>
+        ← {site.labels.work}
+      </a>
+      <p class="eyebrow">
+        {d.tags.join(" / ")}
+        {d.sample && ` / ${site.labels.sample}`}
+      </p>
+      <h1>{d.title}</h1>
+      <p>{d.description}</p>
+    </header>
+    {mediaCount > 0 && (
+      <section
+        class="capture-carousel project-media-gallery"
+        data-carousel
+        aria-label="Development captures"
+      >
+        <header class="capture-heading">
+          <span class="eyebrow">Visual field notes</span>
+          <h2>Inside {d.title}</h2>
+          <span class="capture-hint">Swipe to explore / click to expand ↗</span>
+        </header>
+        <div
+          class="capture-track"
+          data-capture-track
+          tabindex="0"
+          aria-label="Project media. Swipe or use the arrow keys."
+        >
+          {videoUrl && (
+            <figure
+              class="capture-slide capture-video"
+              data-slide
+              role="group"
+              aria-label={"Project film / 1 of " + mediaCount}
+            >
+              {d.image && (
+                <img
+                  src={url(d.image)}
+                  alt=""
+                  role="presentation"
+                  width="1200"
+                  height="675"
+                  loading="lazy"
+                />
+              )}
+              <button
+                type="button"
+                class="project-video-play"
+                data-project-video={videoUrl}
+              >
+                <span aria-hidden="true">▷</span>Play project film
+              </button>
+              <p class="video-privacy">YouTube loads when you press play.</p>
+            </figure>
+          )}
+          {captures.map((g, index) => (
+            <figure
+              class="capture-slide"
+              data-slide
+              role="group"
+              aria-label={String(index + 1 + (videoUrl ? 1 : 0)) + " of " + mediaCount}
+            >
+              <img
+                src={url(g.src)}
+                alt={g.alt}
+                loading="lazy"
+                width="1200"
+                height="675"
+              />
+              <figcaption>
+                <span class="capture-frame-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                {g.alt}
+              </figcaption>
+              <button
+                class="capture-expand"
+                type="button"
+                data-expand-capture={index}
+                aria-label={"Expand capture " + (index + 1)}
+              >
+                ⤢
+              </button>
+            </figure>
+          ))}
+
+        </div>
+        {mediaCount > 1 && (
+          <div class="capture-controls" hidden data-capture-controls>
+            <button type="button" data-previous aria-label="Previous capture">
+              ←
+            </button>
+            <span data-capture-count aria-live="polite" aria-atomic="true">
+              1 / {mediaCount}
+            </span>
+            <button type="button" data-next aria-label="Next capture">
+              →
+            </button>
+          </div>
+        )}
+        {mediaCount > 1 && (
+          <div
+            class="capture-thumbnails"
+            aria-label="Choose a capture"
+            hidden
+            data-capture-thumbnails
+          >
+            {videoUrl && (
+              <button
+                type="button"
+                data-capture-index={0}
+                aria-label="Show project film"
+                aria-pressed="true"
+                class="video-thumbnail"
+              >
+                ▷<span>FILM</span>
+              </button>
+            )}
+            {captures.map((g, index) => (
+              <button
+                type="button"
+                data-capture-index={index + (videoUrl ? 1 : 0)}
+                aria-label={"Show capture " + (index + 1)}
+                aria-pressed={!videoUrl && index === 0 ? "true" : "false"}
+              >
+                <img
+                  src={url(g.src)}
+                  alt=""
+                  role="presentation"
+                  loading="lazy"
+                  width="120"
+                  height="68"
+                />
+                <span>{String(index + 1).padStart(2, "0")}</span>
+              </button>
+            ))}
+
+          </div>
+        )}
+      </section>
+    )}
+    <div class="article-layout">
+      <aside>
+        <dl>
+          {[
+            [site.labels.engine, d.engine],
+            [site.labels.role, d.role],
+            [site.labels.status, d.status],
+            [site.labels.year, d.year],
+          ]
+            .filter((x) => x[1])
+            .map(([label, value]) => (
+              <div>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+        </dl>
+        {d.links.map((l) => (
+          <a class="resource" href={l.url}>
+            {l.label} ↗
+          </a>
+        ))}
+        <p class="field-note">{d.note}</p>
+      </aside>
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+    <section class="related">
+      <p class="eyebrow">{site.labels.related}</p>
+      <div class="related-project-grid">
+        {related.map((p) => (
+          <a class="related-project-card" href={url("/projects/" + p.id + "/")}>
+            <div class="related-project-image">
+              {p.data.image ? (
+                <img
+                  src={url(p.data.image)}
+                  alt={p.data.imageAlt || p.data.title}
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                />
+              ) : (
+                <span class="related-image-fallback">{p.data.title}</span>
+              )}
+              <span class="related-project-arrow" aria-hidden="true">
+                ↗
+              </span>
+            </div>
+            <div class="related-project-copy">
+              <p class="eyebrow">{p.data.tags.slice(0, 2).join(" / ")}</p>
+              <h3>{p.data.title}</h3>
+              <p>{p.data.description}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </article>
+</Layout>

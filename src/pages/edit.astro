@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Workshop editor">
+  <section class="wrap page-heading">
+    <p class="eyebrow">OWNER ACCESS</p>
+    <h1>Backstage at the workshop.</h1>
+    <p>
+      Update your pages, projects, photos, and blog posts in Pages CMS.
+      Sign in with GitHub and select itspixxel/itspixxel.github.io,
+      branch amethyst.
+    </p>
+    <a class="text-link" href="https://app.pagescms.org/">
+      Open Pages CMS ↗
+    </a>
+    <p class="small">Only authorized repository editors can save changes.</p>
+  </section>
+  <section class="wrap prose editor-guide">
+    <h2>Choose what to edit</h2>
+    <ul>
+      <li><strong>Homepage:</strong> your introduction, portrait, interests, and visible sections.</li>
+      <li><strong>Projects:</strong> case studies, videos, galleries, and featured work. Lower order numbers appear first.</li>
+      <li><strong>Blog posts:</strong> create a note, write in the visual editor, add images, and set its date.</li>
+      <li><strong>About and Now:</strong> your biography, personal details, and current work.</li>
+      <li><strong>Site settings:</strong> navigation, contact details, social links, and shared labels.</li>
+    </ul>
+    <h2>From draft to published</h2>
+    <p>New projects and posts start as drafts. Save with Draft enabled while writing; switch it off and save when ready to publish. A future date does not schedule a post.</p>
+    <p>Saving updates the GitHub copy of your content. The live site changes after its deployment finishes, usually a few minutes later. The editor is separate from this local preview.</p>
+    <a class="text-link" href="https://github.com/itspixxel/itspixxel.github.io/actions">Check publishing progress ↗</a>
+    <h2>First-time connection</h2>
+    <p>If the repository is missing, use Pages CMS’s GitHub installation flow and select only itspixxel.github.io. The amethyst branch must contain the website and its editor configuration before its content can appear.</p>
+  </section>
+</Layout>
+
+<style>
+  .editor-guide { max-width: 760px; padding-bottom: 5rem; }
+  .editor-guide h2 { margin-top: 2rem; }
+  .editor-guide li { margin-bottom: .75rem; }
+</style>

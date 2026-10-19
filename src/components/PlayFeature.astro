@@ -1,0 +1,100 @@
+---
+import play from "../content/settings/play.json";
+import { url } from "../lib";
+const { kind } = Astro.props;
+const Heading = kind === "spring" ? "h1" : "h2";
+---
+
+<section class="play-feature" data-toy={kind}>
+  <p class="eyebrow">
+    {kind === "rig"
+      ? "Mechanics / IK sketch"
+      : kind === "spring"
+        ? "Experiment / spring follower"
+        : "404 / one last jump"}
+  </p>
+  <Heading>
+    {kind === "rig"
+      ? play.rigTitle
+      : kind === "spring"
+        ? play.roomTitle
+        : play.jumpTitle}
+  </Heading>
+  <p>
+    {kind === "rig"
+      ? play.rigDescription
+      : kind === "spring"
+        ? play.roomDescription
+        : play.jumpDescription}
+  </p>
+  <svg
+    class="toy-stage"
+    viewBox="0 0 480 240"
+    role="img"
+    aria-label={
+      kind === "rig"
+        ? "Four-legged inverse kinematics sketch"
+        : kind === "spring"
+          ? "A creature following a spring target"
+          : "A character jumping a gap"
+    }
+  >
+    {kind === "rig" ? (
+      <>
+        <path d="M20 200H460" class="toy-ground" />
+        <g data-legs class="toy-legs"></g>
+        <rect x="180" y="80" width="120" height="48" rx="22" class="toy-body" />
+        <circle cx="275" cy="97" r="4" class="toy-eye" />
+        <circle data-target cx="240" cy="196" r="6" class="toy-target" />
+      </>
+    ) : kind === "spring" ? (
+      <>
+        <path d="M0 120H480M240 0V240" class="toy-grid" />
+        <circle data-target cx="300" cy="120" r="7" class="toy-target" />
+        <g data-creature transform="translate(240 120)">
+          <path
+            d="M-16 10Q-26-18-8-16Q0-30 12-15Q30-12 18 12Z"
+            class="toy-body"
+          />
+          <circle cx="3" cy="-5" r="3" class="toy-eye" />
+          <circle cx="12" cy="-5" r="3" class="toy-eye" />
+        </g>
+      </>
+    ) : (
+      <>
+        <path d="M0 190H185M310 190H480" class="toy-ground" />
+        <path d="M185 195v30m125-30v30" class="toy-grid" />
+        <g data-jumper>
+          <rect x="84" y="158" width="24" height="30" rx="5" class="toy-body" />
+          <circle cx="100" cy="166" r="3" class="toy-eye" />
+        </g>
+        <path d="M390 190V110l35 12-35 12" class="toy-legs" />
+      </>
+    )}
+  </svg>
+  {kind === "rig" ? (
+    <label class="toy-slider">
+      {play.targetLabel}
+      <input type="range" min="-65" max="65" value="0" data-rig-target />
+    </label>
+  ) : kind === "spring" ? (
+    <button
+      class="toy-button"
+      data-start
+      data-start-label={play.startLabel}
+      data-stop-label={play.stopLabel}
+      aria-pressed="false"
+    >
+      {play.startLabel}
+    </button>
+  ) : (
+    <>
+      <button class="toy-button" data-jump>
+        {play.jumpLabel}
+      </button>
+      <a class="toy-success" href={url("/")} hidden>
+        {play.jumpSuccess}
+      </a>
+    </>
+  )}
+</section>

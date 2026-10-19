@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { site } from "../lib";
+---
+
+<Layout title={site.labels.contact}>
+  <section class="wrap page-heading contact-page">
+    <p class="eyebrow">{site.labels.channel}</p>
+    <h1>{site.contactTitle}</h1>
+    <p>{site.contactText}</p>
+    {site.showEmail && site.email && (
+      <a class="email-link" href={`mailto:${site.email}`}>
+        {site.email}
+        <span>↗</span>
+      </a>
+    )}
+    <div class="contact-socials">
+      {site.socials
+        .filter((s) => s.visible)
+        .map((s) => (
+          <a href={s.url}>{s.label} ↗</a>
+        ))}
+    </div>
+  </section>
+</Layout>

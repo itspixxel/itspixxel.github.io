@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Note from "../../components/Note.astro";
+import { getCollection } from "astro:content";
+import { site } from "../../lib";
+const posts = (await getCollection("blog", (p) => !p.data.draft)).sort(
+  (a, b) =>
+    Number(b.data.featured) - Number(a.data.featured) ||
+    +b.data.date - +a.data.date,
+);
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))];
+---
+
+<Layout title={site.labels.writing} description={site.labels.blogIntro}>
+  <section class="wrap page-heading">
+    <p class="eyebrow">02 / {site.labels.writing}</p>
+    <h1>{site.labels.blogTitle}</h1>
+    <p>{site.labels.blogIntro}</p>
+  </section>
+  <section class="wrap section" data-filter>
+    <div class="filter-bar">
+      <label>
+        <span class="eyebrow">{site.labels.search}</span>
+        <input type="search" id="search" placeholder={site.labels.search} />
+      </label>
+      <label>
+        <span class="eyebrow">{site.labels.topics}</span>
+        <select id="tag">
+          <option value="">{site.labels.all}</option>
+          {tags.map((t) => (
+            <option>{t}</option>
+          ))}
+        </select>
+      </label>
+    </div>
+    <div aria-live="polite" id="results-status" class="eyebrow"></div>
+    {posts.map((post, index) => (
+      <Note post={post} index={index} />
+    ))}
+    <p id="empty" hidden>
+      {site.labels.empty}
+    </p>
+    <button id="more" class="text-link" hidden>
+      {site.labels.loadMore} ↓
+    </button>
+  </section>
+</Layout>

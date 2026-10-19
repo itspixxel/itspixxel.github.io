@@ -1,0 +1,136 @@
+---
+import play from "../content/settings/play.json";
+import PlayFeature from "../components/PlayFeature.astro";
+import Layout from "../layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+import { site, url, date } from "../lib";
+export async function getStaticPaths() {
+  return (await getCollection("pages")).map((page) => ({
+    params: { page: page.id },
+    props: { page },
+  }));
+}
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<Layout title={page.data.title} description={page.data.description}>
+  <article class="wrap">
+    <header class="page-heading">
+      <p class="eyebrow">
+        {page.id} / {site.name}
+      </p>
+      <h1>{page.data.title}</h1>
+      <p>{page.data.description}</p>
+      {page.data.updated && (
+        <span class="eyebrow">
+          {site.labels.updated} {date(page.data.updated)}
+        </span>
+      )}
+    </header>
+    <div class="personal-layout">
+      {(page.data.image || page.data.profileBio) && (
+        <aside
+          class="profile-sidebar"
+          aria-label={page.data.profileName || site.name}
+        >
+          {page.data.image && (
+            <img
+              class="portrait"
+              src={url(page.data.image)}
+              alt={page.data.profileName || site.name}
+              width="640"
+              height="640"
+            />
+          )}
+          {page.data.profileName && (
+            <h2 class="profile-name">{page.data.profileName}</h2>
+          )}
+          {page.data.profileDetail && (
+            <p class="profile-detail">{page.data.profileDetail}</p>
+          )}
+          {page.data.profileBio && (
+            <p class="profile-bio">{page.data.profileBio}</p>
+          )}
+        </aside>
+      )}
+      <div class="prose">
+        {page.data.currentWork && (
+          <section
+            class="now-work-card"
+            data-trailer-card
+            aria-label={page.data.currentWork.title}
+          >
+            {(page.data.currentWork.image || page.data.currentWork.trailer) && (
+              <div class="now-work-media">
+                {page.data.currentWork.image && (
+                  <img
+                    src={url(page.data.currentWork.image)}
+                    alt={
+                      page.data.currentWork.imageAlt ||
+                      page.data.currentWork.title
+                    }
+                    width="500"
+                    height="280"
+                  />
+                )}
+                {page.data.currentWork.trailer && (
+                  <>
+                    <video
+                      data-trailer
+                      muted
+                      loop
+                      playsinline
+                      preload="none"
+                      poster={
+                        page.data.currentWork.image
+                          ? url(page.data.currentWork.image)
+                          : undefined
+                      }
+                      aria-label={page.data.currentWork.title + " trailer"}
+                    >
+                      <source
+                        src={url(page.data.currentWork.trailer)}
+                        type="video/mp4"
+                      />
+                    </video>
+                    <button
+                      class="trailer-toggle"
+                      type="button"
+                      data-play-label={page.data.currentWork.playLabel}
+                      data-pause-label={page.data.currentWork.pauseLabel}
+                      aria-pressed="false"
+                    >
+                      {page.data.currentWork.playLabel} ▷
+                    </button>
+                  </>
+                )}
+              </div>
+            )}
+            <p class="eyebrow now-work-label">
+              <span aria-hidden="true"></span>
+              {page.data.currentWork.label}
+            </p>
+            <div class="now-work-meta">
+              <span>{page.data.currentWork.platform}</span>
+              <span>{page.data.currentWork.studio}</span>
+            </div>
+            <h2>{page.data.currentWork.title}</h2>
+            <p>{page.data.currentWork.description}</p>
+            <a class="text-link" href={page.data.currentWork.url}>
+              {page.data.currentWork.linkLabel}
+              <span aria-hidden="true">↗</span>
+            </a>
+          </section>
+        )}
+        <Content />
+        {page.id === "about" && play.enabled && play.rig && (
+          <PlayFeature kind="rig" />
+        )}
+        <p>
+          <a href={url("/contact/")}>{site.labels.contact} ↗</a>
+        </p>
+      </div>
+    </div>
+  </article>
+</Layout>

@@ -1,0 +1,25 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Project from "../../components/Project.astro";
+import { getCollection } from "astro:content";
+import { site } from "../../lib";
+const projects = (await getCollection("projects", (p) => !p.data.draft)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<Layout
+  title={site.labels.projectsTitle}
+  description={site.labels.projectsIntro}
+>
+  <section class="wrap page-heading">
+    <p class="eyebrow">01 / {site.labels.archive}</p>
+    <h1>{site.labels.projectsTitle}</h1>
+    <p>{site.labels.projectsIntro}</p>
+  </section>
+  <section class="wrap project-grid section">
+    {projects.map((project, index) => (
+      <Project project={project} index={index} />
+    ))}
+  </section>
+</Layout>

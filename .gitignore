@@ -21,3 +21,10 @@ $RECYCLE.BIN/
 # =========================
 # Operating System Files
 # =========================
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+qa/

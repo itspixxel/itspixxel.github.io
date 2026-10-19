@@ -1,0 +1,109 @@
+{
+  "name": "Sarthak Sachdeva",
+  "title": "Sarthak Sachdeva · Game Developer & Technical Artist",
+  "description": "Portfolio of Sarthak Sachdeva, game developer and technical artist. Explore games, procedural systems, technical art, and development notes.",
+  "status": "Somewhere between an idea and a working prototype.",
+  "footer": "Game development, technical art, and procedural systems.",
+  "contactTitle": "Have a good problem?",
+  "contactText": "A game idea, a technical rabbit hole, or just something interesting. I’d love to hear about it.",
+  "email": "itsapixxel@gmail.com",
+  "showEmail": true,
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/itspixxel",
+      "visible": true
+    },
+    {
+      "label": "itch.io",
+      "url": "https://itspixxel.itch.io/",
+      "visible": true
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/itspixxel/",
+      "visible": true
+    },
+    {
+      "label": "ArtStation",
+      "url": "https://artstation.com/itspixxel",
+      "visible": true
+    }
+  ],
+  "navigation": [
+    {
+      "label": "Home",
+      "url": "/",
+      "visible": true
+    },
+    {
+      "label": "Work",
+      "url": "/projects/",
+      "visible": true
+    },
+    {
+      "label": "About",
+      "url": "/about/",
+      "visible": true
+    },
+    {
+      "label": "Blog",
+      "url": "/blog/",
+      "visible": true
+    },
+    {
+      "label": "Now",
+      "url": "/now/",
+      "visible": true
+    },
+    {
+      "label": "Contact",
+      "url": "/contact/",
+      "visible": true
+    }
+  ],
+  "ogImage": "/media/social.png",
+  "labels": {
+    "work": "Selected work",
+    "workIntro": "A few things that escaped the drawing board.",
+    "writing": "The rabbit hole",
+    "writingIntro": "Field notes from the interesting bits in between.",
+    "allWork": "Explore all work",
+    "allWriting": "All field notes",
+    "read": "Read the note",
+    "back": "Back to the workshop",
+    "search": "Search field notes",
+    "all": "All topics",
+    "empty": "Nothing here yet. Try another trail.",
+    "copy": "Copy code",
+    "copied": "Copied",
+    "related": "Keep exploring",
+    "toc": "On this page",
+    "sample": "Sample content",
+    "archive": "Workshop archive",
+    "contact": "Get in touch",
+    "rss": "RSS feed",
+    "edit": "Edit this site",
+    "notFound": "This level hasn’t been built.",
+    "notFoundText": "You’ve wandered a little beyond the map. There’s plenty to explore back at the workshop.",
+    "loadMore": "Show more notes",
+    "updated": "Updated",
+    "share": "Share this note",
+    "projectsTitle": "Things I’ve built.",
+    "projectsIntro": "Games, tools, and experiments. Different shapes, same curiosity.",
+    "blogTitle": "Down the rabbit hole.",
+    "blogIntro": "Bugs worth remembering. Systems worth taking apart. Notes from a life spent asking “what if?”.",
+    "interests": "The good questions",
+    "aboutLink": "A little more about me",
+    "next": "Next / Say hello",
+    "scroll": "Scroll to explore",
+    "topics": "Topics",
+    "channel": "An open channel",
+    "engine": "Engine",
+    "role": "Role",
+    "status": "Status",
+    "year": "Year",
+    "watch": "Watch the project film",
+    "outside": "404 / Outside the map"
+  }
+}

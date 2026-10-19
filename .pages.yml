@@ -1,0 +1,553 @@
+media:
+  input: public/media
+  output: /media
+content:
+  - name: site
+    label: Site settings, navigation & contact
+    type: file
+    path: src/content/settings/site.json
+    format: json
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: status
+        label: Status
+        type: string
+      - name: footer
+        label: Footer
+        type: string
+      - name: contactTitle
+        label: Contact Title
+        type: string
+      - name: contactText
+        label: Contact Text
+        type: text
+      - name: email
+        label: Email
+        type: string
+      - name: showEmail
+        label: Show Email
+        type: boolean
+      - name: socials
+        label: Socials
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: url
+            label: Url
+            type: string
+          - name: visible
+            label: Visible
+            type: boolean
+      - name: navigation
+        label: Navigation
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: url
+            label: Url
+            type: string
+          - name: visible
+            label: Visible
+            type: boolean
+      - name: ogImage
+        label: Og Image
+        type: image
+      - name: labels
+        label: Labels
+        type: object
+        fields:
+          - name: work
+            label: Work
+            type: string
+          - name: workIntro
+            label: Work Intro
+            type: text
+          - name: writing
+            label: Writing
+            type: string
+          - name: writingIntro
+            label: Writing Intro
+            type: text
+          - name: allWork
+            label: All Work
+            type: string
+          - name: allWriting
+            label: All Writing
+            type: string
+          - name: read
+            label: Read
+            type: string
+          - name: back
+            label: Back
+            type: string
+          - name: search
+            label: Search
+            type: string
+          - name: all
+            label: All
+            type: string
+          - name: empty
+            label: Empty
+            type: string
+          - name: copy
+            label: Copy
+            type: string
+          - name: copied
+            label: Copied
+            type: string
+          - name: related
+            label: Related
+            type: string
+          - name: toc
+            label: Toc
+            type: string
+          - name: sample
+            label: Sample
+            type: string
+          - name: archive
+            label: Archive
+            type: string
+          - name: contact
+            label: Contact
+            type: string
+          - name: rss
+            label: Rss
+            type: string
+          - name: edit
+            label: Edit
+            type: string
+          - name: notFound
+            label: Not Found
+            type: string
+          - name: notFoundText
+            label: Not Found Text
+            type: text
+          - name: loadMore
+            label: Load More
+            type: string
+          - name: updated
+            label: Updated
+            type: string
+          - name: share
+            label: Share
+            type: string
+          - name: projectsTitle
+            label: Projects Title
+            type: string
+          - name: projectsIntro
+            label: Projects Intro
+            type: text
+          - name: blogTitle
+            label: Blog Title
+            type: string
+          - name: blogIntro
+            label: Blog Intro
+            type: text
+          - name: interests
+            label: Interests
+            type: string
+          - name: aboutLink
+            label: About Link
+            type: string
+          - name: next
+            label: Next
+            type: string
+          - name: scroll
+            label: Scroll
+            type: string
+          - name: topics
+            label: Topics
+            type: string
+          - name: channel
+            label: Channel
+            type: string
+          - name: engine
+            label: Engine
+            type: string
+          - name: role
+            label: Role
+            type: string
+          - name: status
+            label: Status
+            type: string
+          - name: year
+            label: Year
+            type: string
+          - name: watch
+            label: Watch
+            type: string
+          - name: outside
+            label: Outside
+            type: string
+  - name: home
+    label: Homepage
+    type: file
+    path: src/content/settings/home.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: Eyebrow
+        type: string
+      - name: headline
+        label: Headline
+        type: string
+      - name: emphasis
+        label: Emphasis
+        type: string
+      - name: intro
+        label: Intro
+        type: text
+      - name: cta
+        label: Cta
+        type: string
+      - name: sideNote
+        label: Side Note
+        type: string
+      - name: interestTitle
+        label: Interest Title
+        type: string
+      - name: interestText
+        label: Interest Text
+        type: text
+      - name: interests
+        label: Interests
+        type: string
+        list: true
+      - name: showProjects
+        label: Show Projects
+        type: boolean
+      - name: showWriting
+        label: Show Writing
+        type: boolean
+      - name: showInterests
+        label: Show Interests
+        type: boolean
+      - name: portrait
+        label: Hero portrait
+        type: image
+      - name: portraitAlt
+        label: Portrait description
+        type: string
+  - name: projects
+    label: Projects
+    type: collection
+    path: src/content/projects
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields:
+        - title
+        - order
+        - featured
+        - draft
+      sort: order
+      order: asc
+    fields:
+      - &a1
+        name: title
+        label: Title
+        type: string
+        required: true
+      - &a2
+        name: description
+        label: Description
+        type: text
+        required: true
+      - &a3
+        name: image
+        label: Image
+        type: image
+      - &a4
+        name: draft
+        label: Draft
+        type: boolean
+        default: true
+        description: Keep enabled while writing. Turn off and save to publish on the next successful deployment.
+      - &a5
+        name: featured
+        label: Featured
+        type: boolean
+        description: Highlight this entry in featured listings.
+      - &a6
+        name: sample
+        label: Sample
+        type: boolean
+      - &a7
+        name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: imageAlt
+        label: Image Alt
+        type: string
+      - name: order
+        label: Order
+        type: number
+        default: 100
+        description: Lower numbers appear first. The homepage shows the first three featured projects.
+      - name: status
+        label: Status
+        type: string
+      - name: engine
+        label: Engine
+        type: string
+      - name: role
+        label: Role
+        type: string
+      - name: year
+        label: Year
+        type: string
+      - name: note
+        label: Note
+        type: text
+      - name: video
+        label: Video
+        type: string
+        description: YouTube embed URL, for example https://www.youtube.com/embed/VIDEO_ID. Appears as the project film.
+      - name: links
+        label: Links
+        type: object
+        list: true
+        fields:
+          - name: label
+            label: Label
+            type: string
+          - name: url
+            label: Url
+            type: string
+      - name: gallery
+        label: Gallery
+        type: object
+        list: true
+        fields:
+          - name: src
+            label: Src
+            type: image
+          - name: alt
+            label: Alt
+            type: string
+      - &a8
+        name: body
+        label: Body
+        type: rich-text
+        description: Write with the visual editor and insert uploaded images. Switch to Source for Markdown code blocks and tables.
+        options:
+          format: markdown
+          switcher: true
+  - name: blog
+    label: Blog posts
+    type: collection
+    path: src/content/blog
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields:
+        - title
+        - date
+        - draft
+        - featured
+      sort: date
+      order: desc
+    fields:
+      - *a1
+      - *a2
+      - *a3
+      - *a4
+      - *a5
+      - *a6
+      - *a7
+      - name: date
+        label: Date
+        type: date
+        required: true
+      - name: updated
+        label: Updated
+        type: date
+      - *a8
+  - name: about
+    label: About
+    type: file
+    path: src/content/pages/about.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: image
+        label: Image
+        type: image
+      - name: profileName
+        label: Profile name
+        type: string
+      - name: profileDetail
+        label: Name and pronouns
+        type: string
+      - name: profileBio
+        label: Bio under portrait
+        type: text
+      - *a8
+  - name: now
+    label: Now
+    type: file
+    path: src/content/pages/now.md
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: updated
+        label: Updated
+        type: date
+      - name: currentWork
+        label: Current work card
+        type: object
+        fields:
+          - name: label
+            label: label
+            type: string
+          - name: title
+            label: title
+            type: string
+          - name: platform
+            label: platform
+            type: string
+          - name: studio
+            label: studio
+            type: string
+          - name: description
+            label: description
+            type: text
+          - name: url
+            label: url
+            type: string
+          - name: linkLabel
+            label: link Label
+            type: string
+          - name: image
+            label: Cover image
+            type: image
+          - name: imageAlt
+            label: Cover description
+            type: string
+          - name: trailer
+            label: Trailer video
+            type: file
+          - name: playLabel
+            label: Play button label
+            type: string
+          - name: pauseLabel
+            label: Pause button label
+            type: string
+      - *a8
+  - name: play
+    label: Playful features (on/off)
+    type: file
+    path: src/content/settings/play.json
+    format: json
+    fields:
+      - name: enabled
+        label: enabled
+        type: boolean
+      - name: rig
+        label: rig
+        type: boolean
+      - name: projectInspection
+        label: project Inspection
+        type: boolean
+      - name: commentary
+        label: commentary
+        type: boolean
+      - name: secretRoom
+        label: secret Room
+        type: boolean
+      - name: playable404
+        label: playable404
+        type: boolean
+      - name: rigTitle
+        label: rig Title
+        type: text
+      - name: rigDescription
+        label: rig Description
+        type: text
+      - name: targetLabel
+        label: target Label
+        type: text
+      - name: inspectLabel
+        label: inspect Label
+        type: text
+      - name: commentaryLabel
+        label: commentary Label
+        type: text
+      - name: commentaryOff
+        label: commentary Off
+        type: text
+      - name: commentaryHeading
+        label: commentary Heading
+        type: text
+      - name: roomLabel
+        label: room Label
+        type: text
+      - name: roomTitle
+        label: room Title
+        type: text
+      - name: roomDescription
+        label: room Description
+        type: text
+      - name: startLabel
+        label: start Label
+        type: text
+      - name: stopLabel
+        label: stop Label
+        type: text
+      - name: jumpTitle
+        label: jump Title
+        type: text
+      - name: jumpDescription
+        label: jump Description
+        type: text
+      - name: jumpLabel
+        label: jump Label
+        type: text
+      - name: jumpSuccess
+        label: jump Success
+        type: text
+      - name: notes
+        label: notes
+        type: object
+        list: true
+        fields:
+          - name: page
+            label: page
+            type: text
+          - name: title
+            label: title
+            type: text
+          - name: body
+            label: body
+            type: text

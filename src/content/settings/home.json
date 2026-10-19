@@ -1,0 +1,20 @@
+{
+  "eyebrow": "GAME DEVELOPER / Technical Artist",
+  "headline": "Serious about",
+  "emphasis": "playing around.",
+  "intro": "I’m Sarthak Sachdeva, a game developer and technical artist focused on games, procedural animation, and interactive systems.",
+  "cta": "Take a look around",
+  "sideNote": "A small corner of the internet. A lot of unfinished questions.",
+  "interestTitle": "The interesting part is figuring it out.",
+  "interestText": "How does a creature find its footing? What makes water feel like water? How far can a small idea go?",
+  "interests": [
+    "Procedural animation",
+    "Tools that get out of the way",
+    "Worlds with a little life in them"
+  ],
+  "showProjects": true,
+  "showWriting": true,
+  "showInterests": true,
+  "portrait": "/media/avatar.webp",
+  "portraitAlt": "Sarthak Sachdeva outdoors, wearing glasses and headphones"
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://itspixxel.github.io/sitemap-index.xml

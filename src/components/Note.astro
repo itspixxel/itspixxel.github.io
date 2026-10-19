@@ -1,0 +1,27 @@
+---
+import { url, site, date, reading } from "../lib";
+const { post, index = 0 } = Astro.props;
+---
+
+<a
+  class="note-row"
+  href={url(`/blog/${post.id}/`)}
+  data-entry
+  data-tags={post.data.tags.join("|")}
+  data-search={`${post.data.title} ${post.data.description} ${post.data.tags.join(" ")}`.toLowerCase()}
+>
+  <span class="note-index">{String(index + 1).padStart(2, "0")}</span>
+  <div>
+    <p class="eyebrow">
+      {post.data.tags.join(" / ")}
+      {post.data.sample && ` / ${site.labels.sample}`}
+    </p>
+    <h3>{post.data.title}</h3>
+    <p>{post.data.description}</p>
+  </div>
+  <div class="note-meta">
+    <span>{date(post.data.date)}</span>
+    <span>{reading(post.body)}</span>
+  </div>
+  <span class="arrow">↗</span>
+</a>

@@ -1,0 +1,139 @@
+---
+import play from "../content/settings/play.json";
+import "../styles/global.css";
+import { site, url } from "../lib";
+const {
+  title = site.title,
+  description = site.description,
+  image = site.ogImage,
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171917" />
+    <title>{title===site.title?title:`${title} · ${site.name}`}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:type"
+      content={
+        Astro.url.pathname.startsWith("/blog/") &&
+        Astro.url.pathname != "/blog/"
+          ? "article"
+          : "website"
+      }
+    />
+    <meta property="og:url" content={canonical} />
+    <meta
+      property="og:image"
+      content={new URL(url(image || site.ogImage), Astro.site)}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={site.labels.writing}
+      href={url("/rss.xml")}
+    />
+  </head>
+  <body>
+    <div class="ambient-background" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <a class="skip" href="#main">
+      Skip to content
+    </a>
+    <header class="header wrap">
+      <a class="brand" href={url("/")} aria-label={`${site.name} home`}>
+        {site.name}
+        <span class="brand-dot">.</span>
+      </a>
+      <nav aria-label="Main navigation">
+        {site.navigation
+          .filter((n) => n.visible)
+          .map((n) => (
+            <a
+              href={url(n.url)}
+              aria-current={
+                (
+                  n.url === "/"
+                    ? Astro.url.pathname === "/"
+                    : Astro.url.pathname.startsWith(n.url)
+                )
+                  ? "page"
+                  : undefined
+              }
+            >
+              {n.label}
+            </a>
+          ))}
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    {play.enabled && play.commentary && (
+      <aside class="wrap commentary-panel" id="developer-notes" hidden>
+        <p class="eyebrow">{play.commentaryHeading}</p>
+        {play.notes
+          .filter((n) => n.page === Astro.url.pathname)
+          .map((n) => (
+            <div>
+              <h2>{n.title}</h2>
+              <p>{n.body}</p>
+            </div>
+          ))}
+      </aside>
+    )}
+    <footer class="wrap">
+      <div class="footer-top">
+        <span class="brand">
+          {site.name}
+          <span class="brand-dot">.</span>
+        </span>
+        <p>{site.footer}</p>
+      </div>
+      <div class="footer-bottom">
+        <span>
+          © {new Date().getFullYear()} {site.name}
+        </span>
+        <div>
+          {site.socials
+            .filter((s) => s.visible)
+            .map((s) => (
+              <a href={s.url}>{s.label} ↗</a>
+            ))}
+          {play.enabled && play.secretRoom && (
+            <a href={url("/play/")}>{play.roomLabel} ↗</a>
+          )}
+          {play.enabled && play.commentary && (
+            <button
+              class="commentary-toggle"
+              aria-controls="developer-notes"
+              aria-expanded="false"
+              data-on={play.commentaryLabel}
+              data-off={play.commentaryOff}
+            >
+              {play.commentaryLabel}
+            </button>
+          )}
+          <a href={url("/rss.xml")}>{site.labels.rss}</a>
+          <a href={url("/edit/")}>{site.labels.edit}</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      import "../scripts/client";
+      import "../scripts/play";
+      import "../scripts/cursor";
+      import "../scripts/project-previews";
+    </script>
+  </body>
+</html>

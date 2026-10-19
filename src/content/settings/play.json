@@ -1,0 +1,51 @@
+{
+  "enabled": false,
+  "rig": true,
+  "projectInspection": true,
+  "commentary": true,
+  "secretRoom": true,
+  "playable404": true,
+  "rigTitle": "A little footwork",
+  "rigDescription": "Move the target. Four feet, a few constraints, and no baked footsteps. A small interactive sketch of two-bone inverse kinematics.",
+  "targetLabel": "Move the foot target",
+  "inspectLabel": "Inspect this build",
+  "commentaryLabel": "Developer commentary",
+  "commentaryOff": "Hide commentary",
+  "commentaryHeading": "Margin notes",
+  "roomLabel": "Take a side quest",
+  "roomTitle": "A small room for unnecessary things.",
+  "roomDescription": "A spring, a curious little creature, and your pointer. Press Start, then move around the canvas or tap a destination.",
+  "startLabel": "Start experiment",
+  "stopLabel": "Pause experiment",
+  "jumpTitle": "Mind the missing bridge.",
+  "jumpDescription": "One small jump to get back on the map. The regular home link works too.",
+  "jumpLabel": "Jump the gap",
+  "jumpSuccess": "Made it. Head home ↗",
+  "notes": [
+    {
+      "page": "/",
+      "title": "About that purple",
+      "body": "A little color goes further against charcoal. The projects get the rest of the spotlight."
+    },
+    {
+      "page": "/projects/",
+      "title": "Look a little closer",
+      "body": "Open “Inspect this build” for tools and notes about each project. The full case studies have the longer version."
+    },
+    {
+      "page": "/about/",
+      "title": "Under the hood",
+      "body": "The little rig uses a two-bone solver. Try moving the target beyond its reach and watch the legs extend."
+    },
+    {
+      "page": "/now/",
+      "title": "On the workbench",
+      "body": "The cover stays still until you choose to explore. Hover for a muted trailer or use the play button."
+    },
+    {
+      "page": "/blog/",
+      "title": "A note about notes",
+      "body": "These are the small discoveries worth keeping around. Code blocks have copy buttons for the useful bits."
+    }
+  ]
+}
