@@ -44,7 +44,7 @@ const projectFacts = [
       </p>
       <h1>{d.title}</h1>
       <p>{d.description}</p>
-      {(d.duration || d.team) && (
+      {(d.role || d.duration || d.team) && (
         <dl class="project-facts">
           {projectFacts.map(([label, value]) => (
             <div><dt>{label}</dt><dd>{value}</dd></div>
