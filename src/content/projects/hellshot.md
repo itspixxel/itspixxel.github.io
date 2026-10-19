@@ -1,78 +1,36 @@
 ---
 title: HellShot
-description: A WIP boomer shooter game with unique movement mechanics
+description: A work-in-progress boomer shooter prototype in Unreal Engine 5, built around fast movement.
 image: /media/HellshotThumb.webp
-imageAlt: HellShot · project screenshot
+imageAlt: HellShot title art over a red, hellish arena
 tags:
   - Unreal Engine
   - Boomer Shooter
 category: Games
 featured: false
 order: 9
-status: Portfolio project
+status: Work in progress
 engine: Unreal Engine
-role: ""
+role: Solo project
 year: ""
 draft: false
 sample: false
 gallery:
   - src: /media/HellshotThumb.webp
-    alt: HellShot · development capture
+    alt: HellShot title art over a red, hellish arena
 video: https://www.youtube.com/embed/gzEfOHn0kc4
 links:
-  - label: Game Design Doc
+  - label: Game design document
     url: https://docs.google.com/document/d/1p0W98zarmMH86mSv_sb87_sxJVyH9gDrx39YkRu5mrs/edit?tab=t.0
-note: From the workshop archive.
+note: Still under construction.
 ---
 
-### Project Overview
+## The project
 
-HellShot is a modern take on classic boomer shooters, reimagining the genre with contemporary game design principles and cutting-edge graphics. The game combines the fast-paced, skill-based combat of classic shooters with innovative movement mechanics and modern visual effects. Players navigate through dynamic environments while engaging in intense combat encounters with a diverse arsenal of weapons.
+HellShot is a boomer shooter I'm building in Unreal Engine 5: fast, aggressive combat in the style of the classic 90s shooters, with movement doing a lot of the work.
 
-### The Problem
+It's a work in progress. The showcase video shows where the prototype stands, and the game design document sets out the planned scope.
 
-"How can a shooter game deliver fast-paced, skill-based combat and innovative movement mechanics, while maintaining the essence of classic boomer shooters and modern visual fidelity?"
+## Tools
 
-#### Key challenges:
-
-- Designing unique movement mechanics that complement traditional boomer shooter gameplay
-- Creating satisfying weapon feedback and impact systems
-- Balancing modern graphics with performance optimization
-- Developing AI that provides engaging combat encounters
-
-### What I Built
-
-- Fast-paced, skill-based combat system with emphasis on movement and positioning
-- Retro-inspired weapons with modern twists, featuring unique alt-fire modes and upgrade paths
-- Advanced movement mechanics: wall-running, slide-jumping, momentum-based traversal
-- Procedurally generated elements: enemy placement, power-up distribution, environmental hazards
-- Dynamic difficulty system that adapts to player performance
-- Multiple game modes: classic campaign and arcade-style challenges
-- Advanced enemy AI with unique behavior patterns and tactical responses
-- Comprehensive weapon customization system
-
-### Technical & Visual Principles Applied
-
-- Custom weapon system with modular design supporting dynamic weapon combinations and upgrades
-- Advanced AI behavior trees with dynamic difficulty scaling and tactical decision making
-- Procedural level generation system with hand-crafted elements and dynamic enemy placement
-- Optimized particle systems for weapon effects and environmental interactions
-- Advanced physics system for dynamic object interactions and destruction
-- Custom shader system for weapon effects and environmental materials
-- Efficient networking code for future multiplayer implementation
-- Performance optimization for consistent high framerates
-
-### Outcome
-
-- Delivered a fast-paced shooter experience with modern and classic elements
-- Created a visually compelling and technically robust game world
-- Balanced gameplay challenge and accessibility
-- Provided technical documentation and community feedback integration
-
-### Tools & Technologies
-
-- Unreal Engine 5 for core development
-- Maya for custom asset creation
-- Substance Painter for material texturing
-- Git for version control
-- Visual Studio for C++ development
+Unreal Engine 5, Git.

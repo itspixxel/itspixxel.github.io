@@ -1,13 +1,16 @@
 {
   "name": "Sarthak Sachdeva",
   "title": "Sarthak Sachdeva · Game Developer & Technical Artist",
-  "description": "Portfolio of Sarthak Sachdeva, game developer and technical artist. Explore games, procedural systems, technical art, and development notes.",
+  "description": "Portfolio of Sarthak Sachdeva, game developer and technical artist working in real-time VFX, procedural animation, and artist-facing Unreal Engine tools.",
   "status": "Somewhere between an idea and a working prototype.",
   "footer": "Game development, technical art, and procedural systems.",
   "contactTitle": "Have a good problem?",
-  "contactText": "A game idea, a technical rabbit hole, or just something interesting. I’d love to hear about it.",
+  "contactText": "Hiring for technical art, VFX, or tools? I’m open to full-time roles. Game ideas and technical rabbit holes are welcome too.",
   "email": "itsapixxel@gmail.com",
   "showEmail": true,
+  "availability": "Open to full-time technical art, VFX, and tools roles.",
+  "resume": "/docs/Sarthak_Sachdeva_CV.pdf",
+  "resumeLabel": "Download CV",
   "socials": [
     {
       "label": "GitHub",
@@ -104,6 +107,7 @@
     "status": "Status",
     "year": "Year",
     "watch": "Watch the project film",
-    "outside": "404 / Outside the map"
+    "outside": "404 / Outside the map",
+    "backToWork": "All work"
   }
 }

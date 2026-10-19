@@ -35,6 +35,17 @@ content:
       - name: showEmail
         label: Show Email
         type: boolean
+      - name: availability
+        label: Availability
+        type: string
+        description: One line shown in the homepage hero and on Contact. Leave empty to hide it.
+      - name: resume
+        label: CV file
+        type: file
+        description: PDF linked from the homepage, About, Contact and footer. Leave empty to hide the links.
+      - name: resumeLabel
+        label: CV link label
+        type: string
       - name: socials
         label: Socials
         type: object
@@ -93,6 +104,9 @@ content:
             type: string
           - name: back
             label: Back
+            type: string
+          - name: backToWork
+            label: Back to all work (project pages)
             type: string
           - name: search
             label: Search
@@ -335,6 +349,10 @@ content:
         label: Video
         type: string
         description: YouTube embed URL, for example https://www.youtube.com/embed/VIDEO_ID. Appears as the project film.
+      - name: trailer
+        label: Self-hosted trailer
+        type: file
+        description: Optional MP4 in public/media, used when the film is not on YouTube. Shown on its own when the media carousel is off.
       - name: links
         label: Links
         type: object

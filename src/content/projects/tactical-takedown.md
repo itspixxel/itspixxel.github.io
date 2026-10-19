@@ -1,77 +1,49 @@
 ---
 title: Tactical Takedown
-description: A prototype for a procedural top-down shooter game made with Unity
-image: /media/TacticalTakedownIcon.webp
-imageAlt: Tactical Takedown · project screenshot
+description: A top-down survival shooter in Unity with procedurally generated maps that are always beatable.
+image: /media/TacticalTakedownL2.webp
+imageAlt: A generated map seen from above, with enemies closing in on the player
 tags:
   - Unity
-  - Prototype
+  - Procedural Generation
 category: Games
 featured: false
 order: 13
-status: Portfolio project
+status: Complete prototype
 engine: Unity
-role: ""
-year: ""
+role: Solo project
+year: "2023"
 draft: false
 sample: false
 gallery:
-  - src: /media/TacticalTakedownIcon.webp
-    alt: Tactical Takedown · development capture
-  - src: /media/TacticalTakedownL1.webp
-    alt: Tactical Takedown · development capture
   - src: /media/TacticalTakedownL2.webp
-    alt: Tactical Takedown · development capture
+    alt: A generated map seen from above, with enemies closing in on the player
+  - src: /media/TacticalTakedownL1.webp
+    alt: A second generated map, with the score and survival timer
   - src: /media/TacticalTakedownL3.webp
-    alt: Tactical Takedown · development capture
+    alt: A third generated map layout, later in a run
   - src: /media/TacticalTakedownYD.webp
-    alt: Tactical Takedown · development capture
+    alt: The “You died” screen with play again and quit buttons
 video: https://www.youtube.com/embed/qwYHcx8pUR0
 links:
   - label: GitHub Repository
     url: https://github.com/itspixxel/Tactical-Takedown
-note: From the workshop archive.
+note: A new map every run.
 ---
 
-### Project Overview
+## The project
 
-Tactical Takedown is a turn-based strategy prototype built in Unity, focusing on squad-based combat and tactical decision making. The project explores core mechanics such as cover, line of sight, and action points, providing a foundation for more complex strategy game development. Designed as a rapid prototype, it demonstrates gameplay systems, UI, and AI logic for enemy encounters.
+Tactical Takedown is a 3D top-down shooter. The player survives as long as possible on a procedurally generated map, shooting enemies to build a score.
 
-### The Problem
+I made it on my own in Unity, including the player, enemy, and weapon models and animations.
 
-"How can a strategy game deliver engaging tactical combat, clear feedback, and scalable systems for future expansion?"
+## What I worked on
 
-#### Key challenges:
+- **Map generation:** obstacles are placed with a Fisher-Yates shuffle, and a flood fill checks that every open tile is still reachable. A map that would cut the player off is never used, so every run is beatable.
+- **Spawning:** the player and enemies start in random positions each run.
+- **Game feel:** camera shake, bullet trails, enemy death particles, sound effects, and music.
+- **UI:** a score counter with a streak system, a survival timer, and win and lose screens.
 
-- Designing readable turn-based combat systems
-- Implementing cover and line-of-sight mechanics
-- Balancing AI difficulty and player feedback
-- Creating modular systems for future expansion
+## Tools
 
-### What I Built
-
-- Turn-based combat system with action points and squad management
-- Cover and line-of-sight mechanics for tactical depth
-- Basic enemy AI with patrol and attack logic
-- UI for squad selection, movement, and combat actions
-- Modular code structure for easy feature addition
-
-### Technical & Visual Principles Applied
-
-- Clear UI feedback for player actions
-- Modular code for scalability
-- Optimized logic for real-time responsiveness
-- Layered effects for clarity
-
-### Outcome
-
-- Delivered a playable strategy prototype with core tactical systems
-- Provided a foundation for future expansion and polish
-- Documented design and technical approach for future development
-
-### Tools & Technologies
-
-- Unity for core development
-- C# for gameplay logic
-- Photoshop for UI and icons
-- Git for version control
+Unity, C#, Unity's particle system, Git.

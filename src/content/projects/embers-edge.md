@@ -1,76 +1,48 @@
 ---
 title: Ember's Edge
-description: A puzzle platformer with fluent movement mechanics based in hell
+description: A first-person parkour platformer in Unreal Engine 5, built in Blueprints around wall-running, vaulting, and dashing over rising lava.
 image: /media/EmbersEdgeIcon.webp
-imageAlt: Ember's Edge · project screenshot
+imageAlt: Ember's Edge title art
 tags:
   - Unreal Engine
   - Platformer
+  - Blueprints
 category: Games
 featured: false
 order: 8
-status: Portfolio project
+status: University project
 engine: Unreal Engine
-role: ""
-year: ""
+role: Solo project
+year: "2025"
 draft: false
 sample: false
 gallery:
   - src: /media/EmbersEdgeIcon.webp
-    alt: Ember's Edge · development capture
+    alt: Ember's Edge title art
 video: https://www.youtube.com/embed/I1429Fwx6cE
 links:
   - label: GitHub Repository
     url: https://github.com/itspixxel/Embers-Edge
   - label: Technical design document
     url: /docs/tdd/EmbersEdgeTDD.pdf
-note: From the workshop archive.
+note: Keep moving. The floor is lava.
 ---
 
-### Project Overview
+## The project
 
-Ember's Edge is a challenging puzzle platformer set in the depths of hell, where players take control of a nimble character navigating through treacherous environments. The game combines fluid movement mechanics with environmental puzzles, creating a unique blend of action and problem-solving. Inspired by modern platformers and classic puzzle games, it offers a fresh take on the genre with its hell-themed setting and innovative movement system.
+Ember's Edge is a fast first-person parkour platformer. The floor is lava and it keeps rising, so the player has to keep moving and find their own line through each level. The references were Mirror's Edge and Clustertruck.
 
-### The Problem
+I built it on my own in Unreal Engine 5, entirely in Blueprints, and wrote a technical design document alongside it.
 
-"How can a platformer deliver both fluid movement and engaging puzzles, while maintaining performance and visual clarity?"
+## What I worked on
 
-#### Key challenges:
+- **Movement:** sprinting, jumping, vaulting, wall-running, and a dash with a cooldown. Speed carries into jump distance and vault height, so momentum matters.
+- **Lava hazard:** a rising lava floor with instant death on contact.
+- **Progression:** checkpoints that respawn the player, and a level timer that rewards faster runs.
+- **Blueprint standards:** naming conventions, comment rules, and event-driven logic instead of tick, all set out in the design document.
 
-- Creating a fluid movement system that feels responsive and satisfying
-- Balancing puzzle difficulty with player progression
-- Optimizing particle effects and shaders for consistent performance
-- Designing levels that teach mechanics naturally without explicit tutorials
+The design document covers the movement flowchart, the lava state machine, and the checkpoint logic.
 
-### What I Built
+## Tools
 
-- Dynamic movement system: wall-running, air dashing, momentum-based platforming
-- Environmental puzzles with multiple solution paths
-- Unique hell-inspired art style with dynamic lighting and particle effects
-- Progressive difficulty curve introducing new mechanics and challenges
-- Multiple paths through levels for exploration and replayability
-- Responsive controls for precise platforming
-- Dynamic sound design and checkpoint system
-
-### Technical & Visual Principles Applied
-
-- Custom character controller with advanced movement mechanics
-- Advanced particle systems for environmental effects
-- Efficient physics-based interactions and custom collision responses
-- Custom shader system for hell-themed visual effects
-- Procedural animation system for smooth transitions
-- Performance optimization for consistent 60 FPS
-
-### Outcome
-
-- Delivered a fluid and responsive platformer experience
-- Balanced challenge and accessibility for a wide range of players
-- Created a visually unique and engaging game world
-- Provided technical documentation and playtesting feedback
-
-### Tools & Technologies
-
-- Unreal Engine 5 for core development
-- Blender for custom asset creation
-- Git for version control and collaboration
-- Visual Studio for C++ development
+Unreal Engine 5 (Blueprints, Enhanced Input, Niagara), Blender, Substance Painter, Git.

@@ -106,6 +106,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
           © {new Date().getFullYear()} {site.name}
         </span>
         <div>
+          {site.resume && (
+            <a href={url(site.resume)}>CV <Icon name="northeast" /></a>
+          )}
           {site.socials
             .filter((s) => s.visible)
             .map((s) => (
@@ -125,7 +128,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
               {play.commentaryLabel}
             </button>
           )}
-          <a href={url("/rss.xml")}>{site.labels.rss}</a>
           <template data-owner-link>
             <a href={url("/edit/")}>{site.labels.edit}</a>
           </template>

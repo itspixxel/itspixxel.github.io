@@ -148,6 +148,11 @@ const { Content } = await render(page);
           <a class="text-link" href={url("/contact/")}>
             {site.labels.contact}<span aria-hidden="true"><Icon name="northeast" /></span>
           </a>
+          {site.resume && (
+            <a class="text-link" href={url(site.resume)}>
+              {site.resumeLabel}<span aria-hidden="true"><Icon name="northeast" /></span>
+            </a>
+          )}
         </div>
       </div>
     </div>
