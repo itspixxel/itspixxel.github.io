@@ -28,4 +28,5 @@ If I’m placing every pebble by hand, I’m already thinking about a scatter to
 
 ## Outside work
 
-Discord bots got me into programming. These days, it’s Minecraft, Valorant, Overwatch, and usually another app idea. My current side goal: learning to build my own programming language.
+These days, it’s Minecraft, Valorant, Overwatch, and usually another app idea. 
+My current side goal: learning to build my own programming language.
