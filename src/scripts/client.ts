@@ -30,6 +30,53 @@ window.addEventListener("storage", (event) => {
   if (event.key === ownerKey || event.key === null) syncOwnerMode();
 });
 
+document.querySelectorAll<HTMLDetailsElement>(".origin-story").forEach((details) => {
+  const summary = details.querySelector("summary")!;
+  let expanded = details.open;
+  let motion: Animation | undefined;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  const settle = () => {
+    motion?.cancel();
+    motion = undefined;
+    details.open = expanded;
+    details.style.height = "";
+    details.style.overflow = "";
+  };
+
+  summary.addEventListener("click", (event) => {
+    event.preventDefault();
+    const from = details.getBoundingClientRect().height;
+    motion?.cancel();
+    expanded = !expanded;
+    details.dataset.expanded = String(expanded);
+    if (reducedMotion.matches) {
+      settle();
+      return;
+    }
+    // Keep native details open during collapse, then close after the animation.
+    details.open = true;
+    details.style.height = "";
+    const border = details.offsetHeight - details.clientHeight;
+    const to = expanded
+      ? details.getBoundingClientRect().height
+      : summary.getBoundingClientRect().height + border;
+    details.style.overflow = "hidden";
+    motion = details.animate(
+      [{ height: `${from}px` }, { height: `${to}px` }],
+      { duration: 380, easing: "cubic-bezier(.22, 1, .36, 1)" },
+    );
+    motion.onfinish = settle;
+  });
+  reducedMotion.addEventListener("change", () => {
+    if (reducedMotion.matches) settle();
+  });
+  // Finish cleanly if a viewport change alters the story's wrapping mid-animation.
+  window.addEventListener("resize", () => {
+    if (motion) settle();
+  });
+});
+
 const filter = document.querySelector("[data-filter]");
 if (filter) {
   const search = document.querySelector<HTMLInputElement>("#search")!;

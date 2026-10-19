@@ -627,6 +627,11 @@ dd {
   border: 1px solid var(--line);
   border-radius: 6px;
   background: rgb(238 238 228 / 2%);
+  transition: border-color 220ms ease, background-color 220ms ease;
+}
+.origin-story:hover {
+  border-color: #64556f;
+  background: rgb(197 160 245 / 4%);
 }
 .origin-story summary {
   cursor: pointer;
@@ -656,8 +661,10 @@ dd {
   color: var(--accent);
   font-size: 26px;
   line-height: 1;
+  transition: transform 380ms cubic-bezier(.22, 1, .36, 1);
 }
-.origin-story[open] .origin-story-indicator {
+.origin-story[data-expanded="true"] .origin-story-indicator,
+.origin-story[open]:not([data-expanded]) .origin-story-indicator {
   transform: rotate(45deg);
 }
 .origin-story-body {
