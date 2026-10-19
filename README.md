@@ -4,11 +4,11 @@ A static Astro + TypeScript portfolio, with a charcoal/ivory/purple visual syste
 
 ## One-time account setup
 
-1. Review and commit this replacement to **itspixxel/itspixxel.github.io**, branch **amethyst** (the repository's existing default branch). Nothing has been pushed or deployed by this build session.
+1. The replacement and CMS configuration are committed to **itspixxel/itspixxel.github.io**, branch **amethyst** (the repository's existing default branch).
 2. In GitHub **Settings → Pages → Build and deployment**, choose **GitHub Actions** as the source. Ensure Actions are enabled and the `github-pages` environment allows deployments from `amethyst`.
 3. Push the changes or run **Deploy workshop to GitHub Pages** under Actions. The workflow checks types, builds, verifies internal links/content, uploads `dist`, and deploys with GitHub's official Pages actions.
 4. Open [Pages CMS](https://app.pagescms.org/), sign in with GitHub, and install/authorize its GitHub App for this repository. Select **itspixxel/itspixxel.github.io → amethyst**. The root `.pages.yml` defines the complete editor.
-5. Make a small content edit and save it. Confirm its GitHub commit triggers the deployment workflow, then check the live site. This account-authorized end-to-end step must be performed by the owner; it has not been verified here.
+5. Make a small content edit and save it. Confirm its GitHub commit triggers the deployment workflow, then check the live site. The initial connection and a homepage edit through Pages CMS were verified on 19 October 2026.
 
 Expected URL: **https://itspixxel.github.io/**. No CNAME/custom domain was present in the original repository. This is a user Pages repository, so Astro uses `site: https://itspixxel.github.io` and `base: /`, with trailing-slash routes. If you move it to a project repository or custom domain, update `astro.config.mjs`, robots, and CMS media output as appropriate. Arbitrary subpath hosting is not configured.
 
