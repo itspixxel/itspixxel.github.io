@@ -24,6 +24,14 @@ const projects = defineCollection({
     year: z.string().default(""),
     note: z.string().default(""),
     video: z.string().default(""),
+    showCarousel: z.boolean().default(true),
+    sections: z.array(z.object({
+      title: z.string(),
+      text: z.string(),
+      image: z.string().default(""),
+      imageAlt: z.string().default(""),
+      caption: z.string().default(""),
+    })).default([]),
     links: z
       .array(z.object({ label: z.string(), url: z.string() }))
       .default([]),

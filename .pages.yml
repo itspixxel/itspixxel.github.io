@@ -347,6 +347,34 @@ content:
           - name: alt
             label: Alt
             type: string
+      - name: showCarousel
+        label: Show media carousel
+        type: boolean
+        default: true
+        description: Turn off to show the trailer on its own. Gallery images are kept for later.
+      - name: sections
+        label: Case study sections
+        type: object
+        list: true
+        description: Sections appear after Body, with images alternating sides on desktop.
+        fields:
+          - name: title
+            label: Heading
+            type: string
+            required: true
+          - name: text
+            label: Explanation
+            type: text
+            description: Separate paragraphs with a blank line.
+          - name: image
+            label: Image
+            type: image
+          - name: imageAlt
+            label: Image description
+            type: string
+          - name: caption
+            label: Image caption
+            type: text
       - &a8
         name: body
         label: Body

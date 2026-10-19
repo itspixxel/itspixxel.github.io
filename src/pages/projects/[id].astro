@@ -52,7 +52,18 @@ const projectFacts = [
         </dl>
       )}
     </header>
-    {mediaCount > 0 && (
+    {!d.showCarousel && videoUrl && (
+      <section class="project-trailer" aria-label="Project trailer">
+        <figure class="capture-video standalone-trailer">
+          {d.image && <img src={url(d.image)} alt="" role="presentation" width="1600" height="900" />}
+          <button class="project-video-play" type="button" data-project-video={videoUrl}>
+            <span aria-hidden="true">▷</span>Watch the trailer
+          </button>
+        </figure>
+        <p class="trailer-caption">{d.title} in motion <span>YouTube loads when you press play.</span></p>
+      </section>
+    )}
+    {d.showCarousel && mediaCount > 0 && (
       <section
         class="capture-carousel project-media-gallery"
         data-carousel
@@ -182,9 +193,9 @@ const projectFacts = [
         )}
       </section>
     )}
-    <div class="article-layout">
+    <div class:list={["article-layout", { "case-study-intro": d.sections.length > 0 }]}>
       <aside>
-        <dl>
+        {d.sections.length === 0 && <dl>
           {[
             [site.labels.engine, d.engine],
             [site.labels.role, d.role],
@@ -198,7 +209,7 @@ const projectFacts = [
                 <dd>{value}</dd>
               </div>
             ))}
-        </dl>
+        </dl>}
         {d.links.map((l) => (
           <a class="resource" href={l.url}>
             {l.label} ↗
@@ -210,6 +221,25 @@ const projectFacts = [
         <Content />
       </div>
     </div>
+    {d.sections.length > 0 && (
+      <div class="case-study-sections">
+        {d.sections.map((section, index) => (
+          <section class:list={["case-study-section", { "image-first": index % 2 === 1, "text-only": !section.image }]}>
+            <div class="case-study-copy prose">
+              <span class="eyebrow">{String(index + 1).padStart(2, "0")}</span>
+              <h2>{section.title}</h2>
+              {section.text.split(/\n\s*\n/).map((paragraph) => <p>{paragraph}</p>)}
+            </div>
+            {section.image && (
+              <figure>
+                <img src={url(section.image)} alt={section.imageAlt || section.title} width="1600" height="900" loading="lazy" />
+                {section.caption && <figcaption>{section.caption}</figcaption>}
+              </figure>
+            )}
+          </section>
+        ))}
+      </div>
+    )}
     <section class="related">
       <p class="eyebrow">{site.labels.related}</p>
       <div class="related-project-grid">
