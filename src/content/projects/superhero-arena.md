@@ -14,7 +14,7 @@ status: Live game at AriseMedia
 engine: Roblox Studio
 role: Game Developer at AriseMedia
 duration: June 2026 – present
-team: Small studio team
+team: One of two game developers
 year: "2026"
 draft: false
 sample: false
