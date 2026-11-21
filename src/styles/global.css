@@ -2,7 +2,7 @@
   --bg: #171917;
   --panel: #1e211d;
   --ink: #eeeee4;
-  --muted: #999e91;
+  --muted: #adb1a5;
   --line: #383d32;
   --accent: #c5a0f5;
   --sans: "Mona Sans", "Segoe UI", system-ui, sans-serif;
@@ -58,7 +58,11 @@ select {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
-select:focus-visible {
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+video:focus-visible,
+[tabindex]:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 5px;
 }
@@ -263,7 +267,7 @@ h3 {
   gap: 30px;
 }
 .section-heading h2 {
-  font-size: 36px;
+  font-size: 40px;
   max-width: 570px;
   margin: 17px 0 0;
 }
@@ -362,7 +366,7 @@ h3 {
 .archive-row:hover .archive-thumbnail img { transform: scale(1.05); }
 .archive-row-copy { display: grid; gap: 6px; }
 .archive-project-title { font-size: 20px; color: var(--ink); line-height: 1.3; }
-.archive-description { color: var(--muted); font-size: 14px; line-height: 1.6; }
+.archive-description { color: var(--muted); font-size: 15px; line-height: 1.6; }
 .archive-row-meta { display: grid; gap: 8px; color: var(--muted); font-size: 12px; line-height: 1.4; }
 .archive-featured-label { color: var(--accent); }
 .archive-row-arrow { color: var(--accent); font-size: 21px; transition: transform 220ms ease; }
@@ -480,12 +484,13 @@ h3 {
 }
 .project-caption h3 {
   margin-bottom: 9px;
+  font-size: 26px;
 }
 .project-caption .eyebrow {
   font-size: 14px;
 }
 .project-caption p:not(.eyebrow) {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   max-width: 570px;
   margin-bottom: 0;
@@ -513,7 +518,7 @@ h3 {
   color: #b598cc;
 }
 .interest h2 {
-  font-size: clamp(2.4rem, 4vw, 4.5rem);
+  font-size: 40px;
   max-width: 500px;
 }
 .interest > div > p {
@@ -544,11 +549,11 @@ h3 {
   border-bottom: 1px solid var(--line);
 }
 .note-row h3 {
-  font-size: 24px;
+  font-size: 26px;
   margin: 12px 0;
 }
 .note-row p:not(.eyebrow) {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   max-width: 650px;
   margin-bottom: 0;
@@ -581,8 +586,8 @@ h3 {
   color: var(--accent);
 }
 .contact-band p {
-  max-width: 430px;
-  font-size: 14px;
+  max-width: 460px;
+  font-size: 16px;
   color: var(--muted);
 }
 footer {
@@ -1177,7 +1182,7 @@ select {
     gap: 15px;
   }
   .hero-intro p {
-    font-size: 14px;
+    font-size: 16px;
   }
   .hero-bottom {
     font-size: 14px;
@@ -1192,7 +1197,7 @@ select {
     gap: 20px;
   }
   .section-heading h2 {
-    font-size: 29px;
+    font-size: 30px;
   }
   .project-grid {
     grid-template-columns: 1fr;
@@ -1205,7 +1210,7 @@ select {
     aspect-ratio: 16/10;
   }
   .project-caption h3 {
-    font-size: 25px;
+    font-size: 23px;
   }
   .project-number {
     top: 12px;
@@ -1217,11 +1222,11 @@ select {
     padding-block: 48px;
   }
   .interest h2 {
-    font-size: 40px;
+    font-size: 30px;
     margin: 25px 0;
   }
   .interest > div > p {
-    font-size: 14px;
+    font-size: 16px;
   }
   .note-row {
     grid-template-columns: 1fr 18px;
@@ -1242,7 +1247,7 @@ select {
     grid-row: 1;
   }
   .note-row p:not(.eyebrow) {
-    font-size: 14px;
+    font-size: 16px;
   }
   .contact-band {
     padding: 45px 0 60px;
@@ -1497,7 +1502,7 @@ select:focus {
     display: none;
   }
   .has-portrait .hero-intro p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.7;
   }
   .has-portrait .hero-intro .text-link {
@@ -1535,7 +1540,7 @@ select:focus {
     margin-top: max(0px, calc(clamp(96px, 29vw, 150px) - 42px));
   }
   .has-portrait .hero-intro p {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
     padding-bottom: 40px;
   }
@@ -2157,11 +2162,11 @@ select:focus {
 }
 .related-project-copy h3 {
   margin: 12px 0;
-  font-size: 26px;
+  font-size: 22px;
   color: var(--ink);
 }
 .related-project-copy > p:last-child {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--muted);
   margin-bottom: 0;
 }
@@ -2460,8 +2465,14 @@ video.project-preview-player { object-fit: cover; }
   font: 14px/1.5 var(--mono);
 }
 @media (max-width: 600px) {
-  .project-preview-toggle { top: 12px; right: 12px; }
-  .project[data-preview-url] .project-number { max-width: calc(100% - 180px); }
+  /* On a phone the toggle is a 44px icon button, so it clears the engine chip; its aria-label still names it. */
+  article.project .project-preview-toggle { top: 10px; right: 10px; width: 44px; height: 44px; padding: 0; display: grid; place-items: center; font-size: 0; }
+  article.project .project-preview-toggle .ui-icon { width: 16px; height: 16px; }
+}
+@media (max-width: 760px) {
+  .header nav a { min-height: 44px; display: inline-flex; align-items: center; padding: 0; }
+  .footer-bottom > div a,
+  .footer-bottom > div button { min-height: 44px; display: inline-flex; align-items: center; gap: 6px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .project-preview-player { transition: none; }
