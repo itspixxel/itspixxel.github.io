@@ -48,9 +48,9 @@ sections:
     image: /media/NeptuneBuoyancy.webp
     imageAlt: Crates and gameplay objects floating in Neptune's ocean
     caption: Buoyancy test with objects of different shapes.
-  - title: Where water meets the level
+  - title: Rivers, shorelines and waterfalls
     text: |-
-      The brief also covered rivers, lakes, waterfalls, and the places where water meets beaches and rocks.
+      The brief also covered rivers, lakes, waterfalls, and the edges against beaches and rocks.
 
       Shorelines: distance-field foam combined with a wet-sand shader, so the transition follows whatever geometry the water touches.
 

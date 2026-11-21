@@ -75,7 +75,6 @@ const posts = (await getCollection("blog", (p) => !p.data.draft))
     <section class="section wrap" id="work">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">{site.labels.work}</p>
           <h2>{site.labels.workIntro}</h2>
         </div>
         <a class="text-link" href={url("/projects/")}>
@@ -93,7 +92,6 @@ const posts = (await getCollection("blog", (p) => !p.data.draft))
   {home.showInterests && (
     <section class="interest-section">
       <div class="wrap interest">
-        <p class="eyebrow">{site.labels.interests}</p>
         <h2>{home.interestTitle}</h2>
         <div>
           <p>{home.interestText}</p>
@@ -113,7 +111,6 @@ const posts = (await getCollection("blog", (p) => !p.data.draft))
     <section class="section wrap">
       <div class="section-heading">
         <div>
-          <p class="eyebrow">{site.labels.writing}</p>
           <h2>{site.labels.writingIntro}</h2>
         </div>
         <a class="text-link" href={url("/blog/")}>

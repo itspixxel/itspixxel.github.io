@@ -1,5 +1,5 @@
 ---
-title: The human behind the code.
+title: Hi, I’m Sarthak.
 description: A little about me and the things that keep me curious.
 image: /media/avatar.webp
 profileName: Sarthak Sachdeva

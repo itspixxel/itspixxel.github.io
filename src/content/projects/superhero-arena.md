@@ -29,7 +29,7 @@ showCarousel: false
 sections:
   - title: The game
     text: |-
-      Superhero Arena is a Roblox battlegrounds fighting game. Players pick a hero, defeat other players to unlock more, and work their way up to Thanos. It launched in September 2026 and passed **12 million visits** and 40,000 favourites in its first six weeks.
+      Superhero Arena is a Roblox battlegrounds fighting game. Players pick a hero, defeat other players to earn more, and work their way up to Thanos. It launched in September 2026 and passed **12 million visits** and 40,000 favourites in its first six weeks.
 
       I'm a game developer at AriseMedia. The leads write a short design brief for each hero, and I build it: the morph, every ability, the animation, VFX and sound, the server logic, and the performance work to keep it running on phones.
     image: /media/sa-lobby-squad.webp
@@ -53,7 +53,7 @@ sections:
       I also reworked ten more: Iron Man (a new ability), Hulk, Frozone, The Flash, Storm, Thor, Groot, Raven, Superman, and Thanos, including his Galactic Thanos variant.
   - title: "Venom: making the symbiote feel alive"
     text: |-
-      The brief asked for Venom's tendrils to look like Kaneki's kagune from *Tokyo Ghoul* rather than flat effects, and for his goo to look like thick black syrup. Everything below is client-side and cosmetic: nothing replicates or collides, so it costs the server nothing.
+      The brief asked for Venom's tendrils to look like Kaneki's kagune from *Tokyo Ghoul*, and for his goo to look like thick black syrup. Everything below is client-side and cosmetic: nothing replicates or collides, so it costs the server nothing.
 
       - **Tendrils.** Six procedural tubes fan out from his back. Each one is muscular at the root, then tapers to a blade point, with a spine ridge, a slight twist, and chevron ridges down its length. Each is a **verlet chain chasing a pose**: stiff at the root and loose at the tip. When he runs, jumps or turns, they trail, overshoot and whip back instead of riding rigidly on his back.
       - **Goo.** Drips off his hands are 8-node verlet ropes. They sag, swing with the body, thin to a neck, and **snap**: the bead falls, the remnant springs back, and a bead that hits the ground becomes a puddle. Thin streaks creep down his limbs and feed the drips. Goo webs stretched between his arms and legs thin as the limbs separate, then snap and re-form.
@@ -79,10 +79,10 @@ sections:
       With a large mobile audience, the team decided to bake his look. I built the bake pipeline and the runtime that plays it back:
 
       - **Studio bake tools** build each piece from the same procedural code with fixed seeds, preview it, then upload it as a mesh asset.
-      - **Veins** became five plain meshes welded to his limbs. They have no per-frame cost, so every Venom gets them at any distance, not just the nearest few.
+      - **Veins** became five plain meshes welded to his limbs. They have no per-frame cost, so every Venom gets them at any distance.
       - **Tendrils** became six skinned meshes with 14 bones each. Each frame only moves the bones along the same verlet chain, and the GPU bends the mesh.
       - **Only one live mesh is left:** the Tendril Slam tendril, because it has to stretch 75 studs and coil round a target.
-      - **Mesh pools** for every hero are now gated on someone actually wearing that hero. They release 15 seconds after the last wearer leaves.
+      - **Mesh pools** for every hero are now gated on someone wearing that hero. They release 15 seconds after the last wearer leaves.
 
       **Thickness from bones.** Bones can bend a mesh but not thin it, and drips and the axe handle need to thin and swell. So each station along a baked tube has **two bones at the same spot**. Turned apart by ±θ, linear blend skinning's "candy wrapper" artefact shrinks the ring to cos θ of its radius, which gives any thickness from 0 to 1 without rebuilding anything. The usual skinning bug became the feature.
     image: /media/sa-venom-live-tendril.webp
@@ -98,7 +98,7 @@ sections:
     caption: "The Scarlet Hex: the arena turns scarlet around her rune circle."
   - title: Hundreds of ants on a phone budget
     text: |-
-      Ant-Man's Ant Swarm moves hundreds of small ant meshes on every client, so I measured what they actually cost in Studio, using 224 ants:
+      Ant-Man's Ant Swarm moves hundreds of small ant meshes on every client, so I measured what they cost in Studio, using 224 ants:
 
       - **The maths was cheap.** Aiming every ant took about 0.17 ms in total.
       - **Moving them was the cost.** BulkMoveTo runs at about 6 to 7 µs per part and scales linearly, so 500 ants is about 3.4 ms. Parenting them under the camera made it about 20% cheaper.
@@ -108,7 +108,7 @@ sections:
     caption: "Ant Swarm pouring off Ant-Man."
   - title: Tracing a rubber band
     text: |-
-      Homelander's knockbacks rubber-banded: a body would arc too slowly, then snap back. Rather than keep guessing, I traced it live. The shared module that steers knocked-down bodies used a rigid AlignPosition, which tops out at about 80 studs a second whatever its force and velocity limits. His knockback ran at 150, so the body lagged behind the path every client was drawing, then snapped when control was handed back.
+      Homelander's knockbacks rubber-banded: a body would arc too slowly, then snap back. So I traced it live. The shared module that steers knocked-down bodies used a rigid AlignPosition, which tops out at about 80 studs a second whatever its force and velocity limits. His knockback ran at 150, so the body lagged behind the path every client was drawing, then snapped when control was handed back.
 
       Switching it to a non-rigid constraint with high limits brought the lag down to about 2.5 studs at 150 studs a second. Because the module is shared, the fix covers every knockback in the game, including ordinary punches, which had been running just past the cap.
     image: /media/sa-ultron-barrage.webp
