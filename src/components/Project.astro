@@ -10,9 +10,15 @@ const videoId = d.video?.match(
 const previewUrl = videoId
   ? `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&playsinline=1&rel=0`
   : "";
+// No YouTube film: fall back to a self-hosted trailer (mp4), played muted in the card.
+const previewVideo = !previewUrl && d.trailer ? url(d.trailer) : "";
 ---
 
-<article class:list={["project", { "project-large": index === 0 }]} data-preview-url={previewUrl || undefined}>
+<article
+  class:list={["project", { "project-large": index === 0 }]}
+  data-preview-url={previewUrl || undefined}
+  data-preview-video={previewVideo || undefined}
+>
   <a class="project-visual" href={url(`/projects/${project.id}/`)}>
     {d.image ? (
       <img
@@ -35,7 +41,7 @@ const previewUrl = videoId
       <Icon name="northeast" />
     </span>
   </a>
-  {previewUrl && (
+  {(previewUrl || previewVideo) && (
     <button class="project-preview-toggle" type="button" aria-label={`Play ${d.title} preview`} aria-pressed="false" data-preview-toggle>
       Play preview <Icon name="play" />
     </button>
@@ -80,7 +86,7 @@ const previewUrl = videoId
           </div>
         </dl>
         <a class="text-link" href={url("/projects/" + project.id + "/")}>
-          Open the case study <Icon name="northeast" />
+          Open the case study <span><Icon name="northeast" /></span>
         </a>
       </div>
     </details>

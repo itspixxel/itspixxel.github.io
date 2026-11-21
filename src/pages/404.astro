@@ -13,7 +13,7 @@ import { site, url } from "../lib";
     <p>{site.labels.notFoundText}</p>
     {play.enabled && play.playable404 && <PlayFeature kind="jump" />}
     <a class="text-link" href={url("/")}>
-      {site.labels.back} <Icon name="northeast" />
+      {site.labels.back} <span><Icon name="northeast" /></span>
     </a>
   </section>
 </Layout>

@@ -11,6 +11,23 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const d = project.data;
 const { Content } = await render(project);
+// Section text: blank-line paragraphs, "- " bullet lists, **bold** and *italic*. Plain paragraphs render as before.
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const inlineMd = (s: string) =>
+  escapeHtml(s)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/(^|[^*])\*([^*\s][^*]*?)\*(?!\*)/g, "$1<em>$2</em>");
+const sectionHtml = (text: string) =>
+  text
+    .split(/\n\s*\n/)
+    .map((block) => {
+      const lines = block.split("\n").filter((l) => l.trim());
+      return lines.length && lines.every((l) => /^\s*-\s+/.test(l))
+        ? "<ul>" + lines.map((l) => "<li>" + inlineMd(l.replace(/^\s*-\s+/, "")) + "</li>").join("") + "</ul>"
+        : "<p>" + inlineMd(block.trim()) + "</p>";
+    })
+    .join("");
 const related = (
   await getCollection("projects", (p) => !p.data.draft && p.id !== project.id)
 )
@@ -251,7 +268,7 @@ const projectFacts = [
             <div class="case-study-copy prose">
               <span class="eyebrow">{String(index + 1).padStart(2, "0")}</span>
               <h2>{section.title}</h2>
-              {section.text.split(/\n\s*\n/).map((paragraph) => <p>{paragraph}</p>)}
+              <Fragment set:html={sectionHtml(section.text)} />
             </div>
             {section.image && (
               <figure>

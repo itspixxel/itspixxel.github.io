@@ -4,7 +4,7 @@ description: How Venom's baked goo in Superhero Arena thins and swells with no m
 date: 2026-11-21
 tags:
   - Technical
-image: /media/SuperheroArenaCover.webp
+image: /media/sa-venom-tendril-slam.webp
 featured: false
 draft: true
 sample: false

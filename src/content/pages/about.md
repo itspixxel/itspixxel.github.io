@@ -20,7 +20,7 @@ originStory: >-
   getting comfortable with Unreal Engine; the projects in this portfolio came
   together during my time at university.
 ---
-I’m **Sarthak Sachdeva**, or **Pixxel** online - a technical artist and gameplay programmer. I graduated from the University of Staffordshire with a **first-class B.Sc. (Hons) in Computer Games Development**, and I now work full-time as a Game Developer at **AriseMedia**, building heroes for [Superhero Arena](/projects/superhero-arena/) on Roblox: abilities, VFX, networking, asset pipelines, and the performance work to keep them running on phones.
+I’m **Sarthak Sachdeva**, or **Pixxel** online - a technical artist and gameplay programmer. I graduated from the University of Staffordshire with a **first-class B.Sc. (Hons) in Computer Games Development**, and I now work full-time as a Game Developer at **AriseMedia**, where I’ve built 12 of [Superhero Arena](/projects/superhero-arena/)’s 35 heroes from scratch and reworked 10 more: abilities, VFX, networking, asset pipelines, and the performance work to keep them running on phones.
 
 ## I’ll probably build a tool for that
 

@@ -42,7 +42,7 @@ const tags = [...new Set(posts.flatMap((p) => p.data.tags))];
       {site.labels.empty}
     </p>
     <button id="more" class="text-link" hidden>
-      {site.labels.loadMore} <Icon name="down" />
+      {site.labels.loadMore} <span><Icon name="down" /></span>
     </button>
   </section>
 </Layout>

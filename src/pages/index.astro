@@ -110,7 +110,7 @@ const posts = (await getCollection("blog", (p) => !p.data.draft))
             ))}
           </ul>
           <a class="text-link" href={url("/about/")}>
-            {site.labels.aboutLink} <Icon name="northeast" />
+            {site.labels.aboutLink} <span><Icon name="northeast" /></span>
           </a>
         </div>
       </div>
