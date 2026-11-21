@@ -70,8 +70,8 @@ sections:
 
       All four share one session system, so they can never overlap, and every path that doesn't reach the last hit still cleans up. The caster is never left stuck mid-ability.
     image: /media/sa-venom-slam-impact.webp
-    imageAlt: "Venom's Tendril Slam driving a target into the Helicarrier deck in a burst of light, his tendrils fanned behind him"
-    caption: "Tendril Slam driving a target into the deck."
+    imageAlt: "Venom's Tendril Slam driving Nightwing into the runway in a burst of light, his tendrils fanned behind him and Spider-Man sparring in the background"
+    caption: "Tendril Slam driving Nightwing into the deck."
   - title: Baking the goo for phones
     text: |-
       The first version rebuilt Venom's goo every frame in EditableMesh: every vertex rewritten and the whole mesh re-uploaded. That looked great, but EditableMesh has a small memory budget per client, especially on phones. Other heroes' mesh pools were also pre-building on every client, and **the budget ran out about 5 seconds after joining**.
@@ -86,8 +86,8 @@ sections:
 
       **Thickness from bones.** Bones can bend a mesh but not thin it, and drips and the axe handle need to thin and swell. So each station along a baked tube has **two bones at the same spot**. Turned apart by ±θ, linear blend skinning's "candy wrapper" artefact shrinks the ring to cos θ of its radius, which gives any thickness from 0 to 1 without rebuilding anything. The usual skinning bug became the feature.
     image: /media/sa-venom-live-tendril.webp
-    imageAlt: "Venom's Tendril Slam tendril stretched high, hoisting a target overhead, with the baked tendrils curling from his back"
-    caption: "The one live mesh left: the Tendril Slam tendril, stretched to hoist its target. The rest are baked."
+    imageAlt: "Low angle on Venom as the live Tendril Slam tendril stretches up, hoisting Nightwing overhead, with the baked tendrils curling from his back"
+    caption: "The one live mesh left: the Tendril Slam tendril, stretched to hoist Nightwing. The rest are baked."
   - title: "Scarlet Witch: two kits in one hero"
     text: |-
       Scarlet Witch is the biggest kit in the game. Two modes, Hexweaver and Chaos Control, swap her whole moveset, and Hexweaver's Telekinesis grabs a target and finishes with a Slam, a Push or a Crush.
@@ -104,16 +104,16 @@ sections:
       - **Moving them was the cost.** BulkMoveTo runs at about 6 to 7 µs per part and scales linearly, so 500 ants is about 3.4 ms. Parenting them under the camera made it about 20% cheaper.
       - **Fading was the trap.** With every ant half-transparent, render CPU rose by 3 ms and GPU by 5 ms. So the swarm never fades: ants leave by burrowing, shrinking or popping instead.
     image: /media/sa-antman-swarm.webp
-    imageAlt: "Ant-Man's Ant Swarm pouring off him toward the camera on the Helicarrier deck"
-    caption: "Ant Swarm pouring off Ant-Man."
+    imageAlt: "Ant-Man's Ant Swarm pouring off him toward Darkseid on the lower runway"
+    caption: "Ant Swarm pouring off Ant-Man toward Darkseid."
   - title: Tracing a rubber band
     text: |-
       Homelander's knockbacks rubber-banded: a body would arc too slowly, then snap back. So I traced it live. The shared module that steers knocked-down bodies used a rigid AlignPosition, which tops out at about 80 studs a second whatever its force and velocity limits. His knockback ran at 150, so the body lagged behind the path every client was drawing, then snapped when control was handed back.
 
       Switching it to a non-rigid constraint with high limits brought the lag down to about 2.5 studs at 150 studs a second. Because the module is shared, the fix covers every knockback in the game, including ordinary punches, which had been running just past the cap.
     image: /media/sa-ultron-barrage.webp
-    imageAlt: "Ultron hovering as his Hover Barrage knocks a target back with red bolts"
-    caption: "Ultron's Hover Barrage knocking a target back. Every knockback runs through the fixed module."
+    imageAlt: "Ultron hovering on a rotor wing as a Hover Barrage bolt knocks Black Panther back"
+    caption: "Ultron's Hover Barrage knocking Black Panther back. Every knockback runs through the fixed module."
   - title: "Duels: a ranked mode of its own"
     text: |-
       Duels is a separate place for ranked one-on-one and two-on-two fights. I built the floating city map and its performance pass, the queue lobby, the pick-and-ban flow, the VS and results screens, and Elo with ranks and leaderboards.
@@ -144,13 +144,16 @@ sections:
 
       Two of the fixes were just wasted work: the hotbar was walking 6,390 instances on every key press, and Spider-Man scanned 29,500 instances (about 4.8 ms) per press. Both are now cached or gone.
     image: /media/sa-panther-shield.webp
-    imageAlt: "Black Panther inside his Bubble Shield, a blue hexagonal forcefield dome on the Helicarrier deck"
+    imageAlt: "Black Panther inside his Bubble Shield on the tower roof while Spider-Man and Nightwing swing at the dome"
     caption: "Black Panther's Bubble Shield: the dome is pooled and warmed at load, with no per-frame work on the client."
   - title: Fixing a live game
     text: |-
       - **Server-side invincibility frames.** Hulk Smash set its invincibility frames on the client, but client-set attributes don't replicate, so the server's damage check never saw them. I moved them to the server at the start of the wind-up and broadcast the wind-up so other players see the telegraph.
       - **Beams that always end.** Superman's and Thanos's lasers now cancel cleanly on a hit, ragdoll, freeze, death or leaving. One idempotent end routine, watched by a single incapacitated signal, means a re-cast can't soft-lock the hero.
       - **Aquaman's ocean.** The water launches him up to three times, refilled by touching ground, then he drowns. The server relays the bounce when it owns a knocked-down body.
+    image: /media/sa-superman-heat-vision.webp
+    imageAlt: "Superman hovering above the lower runway, firing Heat Vision at two burning opponents"
+    caption: "Superman's Heat Vision: the beam now ends cleanly on a hit, ragdoll, freeze, death or leaving."
 ---
 
 ## At a glance
