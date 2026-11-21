@@ -1,6 +1,6 @@
 ---
 title: Superhero Arena
-description: Venom, Doctor Strange, Green Lantern, and the performance work behind them, on a live Roblox battlegrounds game with 12M+ visits.
+description: Procedural animation, ability VFX, networking, and phone performance for three heroes on a live Roblox fighting game with 12M+ visits.
 image: /media/SuperheroArenaCover.webp
 imageAlt: Superhero Arena key art showing two Roblox heroes clashing
 tags:
@@ -67,9 +67,12 @@ With a large mobile audience, the team decided to bake his look. I built the bak
 - **Studio bake tools** build each piece from the same procedural code with fixed seeds, preview it, then upload it as a mesh asset.
 - **Veins** became five plain meshes welded to his limbs. They have no per-frame cost, so every Venom gets them at any distance, not just the nearest few.
 - **Tendrils** became six skinned meshes with 14 bones each. Each frame only moves the bones along the same verlet chain, and the GPU bends the mesh.
-- **Thickness from bones.** Bones can bend a mesh but not thin it, and drips and the axe handle need to thin and swell. So each station along a baked tube has **two bones at the same spot**. Turned apart by ±θ, linear blend skinning's "candy wrapper" artefact shrinks the ring to cos θ of its radius, which gives any thickness from 0 to 1 without rebuilding anything.
 - **Only one live mesh is left:** the Tendril Slam tendril, because it has to stretch 75 studs and coil round a target.
 - **Mesh pools** for every hero are now gated on someone actually wearing that hero. They release 15 seconds after the last wearer leaves.
+
+### Thickness from bones
+
+Bones can bend a mesh but not thin it, and drips and the axe handle need to thin and swell. So each station along a baked tube has **two bones at the same spot**. Turned apart by ±θ, linear blend skinning's "candy wrapper" artefact shrinks the ring to cos θ of its radius, which gives any thickness from 0 to 1 without rebuilding anything. The usual skinning bug became the feature.
 
 ## Doctor Strange and Green Lantern
 

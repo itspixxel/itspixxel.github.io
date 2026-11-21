@@ -27,4 +27,4 @@ I’m learning how to build my own programming language, fitted around my full-t
 
 ## Availability
 
-I’m working full-time at AriseMedia and I’m open to hearing about **full-time technical art, VFX, or tools roles**. I’m not taking on freelance or part-time work right now. The best way to reach me is through the [contact page](/contact/).
+I’m working full-time at AriseMedia and I’m open to hearing about **full-time technical art, VFX, tools, or gameplay programming roles**. I’m not taking on freelance or part-time work right now. The best way to reach me is through the [contact page](/contact/).

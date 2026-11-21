@@ -3,7 +3,7 @@ title: The human behind the code.
 description: A little about me and the things that keep me curious.
 image: /media/avatar.webp
 profileName: Sarthak Sachdeva
-profileDetail: Game Developer & Technical Artist (they/them)
+profileDetail: Technical Artist & Gameplay Programmer (they/them)
 profileBio: Game developer who enjoys making things move, react, and
   occasionally behave themselves.
 originStory: >-
@@ -20,7 +20,7 @@ originStory: >-
   getting comfortable with Unreal Engine; the projects in this portfolio came
   together during my time at university.
 ---
-I’m **Sarthak Sachdeva**, or **Pixxel** online - a game developer and technical artist. I graduated from the University of Staffordshire with a **first-class B.Sc. (Hons) in Computer Games Development**, and I now work full-time as a Game Developer at **AriseMedia**, building ability VFX, UI and asset pipelines for [Superhero Arena](/projects/superhero-arena/) on Roblox.
+I’m **Sarthak Sachdeva**, or **Pixxel** online - a technical artist and gameplay programmer. I graduated from the University of Staffordshire with a **first-class B.Sc. (Hons) in Computer Games Development**, and I now work full-time as a Game Developer at **AriseMedia**, building heroes for [Superhero Arena](/projects/superhero-arena/) on Roblox: abilities, VFX, networking, asset pipelines, and the performance work to keep them running on phones.
 
 ## I’ll probably build a tool for that
 
