@@ -266,7 +266,6 @@ const projectFacts = [
         {d.sections.map((section, index) => (
           <section class:list={["case-study-section", { "image-first": index % 2 === 1, "text-only": !section.image }]}>
             <div class="case-study-copy prose">
-              <span class="eyebrow">{String(index + 1).padStart(2, "0")}</span>
               <h2>{section.title}</h2>
               <Fragment set:html={sectionHtml(section.text)} />
             </div>

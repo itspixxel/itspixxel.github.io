@@ -37,6 +37,12 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       content={new URL(url(image || site.ogImage), Astro.site)}
     />
     <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Mona+Sans:ital,wdth,wght@0,75..125,200..900;1,75..125,200..900&display=swap"
+    />
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -45,9 +51,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     />
   </head>
   <body>
-    <div class="ambient-background" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </div>
     <a class="skip" href="#main">
       Skip to content
     </a>
@@ -137,7 +140,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <script>
       import "../scripts/client";
       import "../scripts/play";
-      import "../scripts/cursor";
       import "../scripts/project-previews";
     </script>
   </body>

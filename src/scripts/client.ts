@@ -157,63 +157,7 @@ document
     h.append(a);
   });
 
-// Only reveal content that starts below the viewport. Animating already-painted
-// content from opacity zero causes a flash during document navigation.
 const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
-const runningAnimations = new Set<Animation>();
-const entranceTargets = document.querySelectorAll<HTMLElement>(
-  ".hero-copy, .hero-portrait, .page-heading, .section-heading, .project, .note-row, .interest > h2, .interest > div, .contact-band, .personal-layout, .detail-cover, .article-layout, .related",
-);
-const entranceObserver = new IntersectionObserver(
-  (entries) => {
-    const visible = entries.filter((entry) => entry.isIntersecting);
-    visible.forEach((entry, index) => {
-      entranceObserver.unobserve(entry.target);
-      if (
-        motionPreference.matches ||
-        entry.target.contains(document.activeElement)
-      )
-        return;
-      const animation = entry.target.animate(
-        [
-          { opacity: 0, transform: "translateY(20px)" },
-          { opacity: 1, transform: "translateY(0)" },
-        ],
-        {
-          duration: 720,
-          delay: Math.min(index * 65, 195),
-          easing: "cubic-bezier(0.22, 1, 0.36, 1)",
-          fill: "backwards",
-        },
-      );
-      runningAnimations.add(animation);
-      animation.finished
-        .then(() => runningAnimations.delete(animation))
-        .catch(() => runningAnimations.delete(animation));
-    });
-  },
-  { threshold: 0, rootMargin: "0px 0px -24px 0px" },
-);
-entranceTargets.forEach((element) => {
-  const bounds = element.getBoundingClientRect();
-  if (bounds.top < window.innerHeight) return;
-  entranceObserver.observe(element);
-});
-// Navigation snapshots should capture finished content, not a half-faded reveal.
-window.addEventListener("pageswap", () => {
-  runningAnimations.forEach((animation) => animation.cancel());
-});
-motionPreference.addEventListener("change", () => {
-  if (motionPreference.matches)
-    runningAnimations.forEach((animation) => animation.cancel());
-});
-document.addEventListener("focusin", () => {
-  runningAnimations.forEach((animation) => {
-    const target = (animation.effect as KeyframeEffect | null)?.target;
-    if (target instanceof Element && target.contains(document.activeElement))
-      animation.cancel();
-  });
-});
 
 // Load the trailer only on interaction; the cover remains the default state.
 document

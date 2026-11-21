@@ -14,7 +14,7 @@ const tags = [...new Set(posts.flatMap((p) => p.data.tags))];
 
 <Layout title={site.labels.writing} description={site.labels.blogIntro}>
   <section class="wrap page-heading">
-    <p class="eyebrow">02 / {site.labels.writing}</p>
+    <p class="eyebrow">{site.labels.writing}</p>
     <h1>{site.labels.blogTitle}</h1>
     <p>{site.labels.blogIntro}</p>
   </section>

@@ -1,7 +1,7 @@
 ---
 import Icon from "./Icon.astro";
 import { url, site, date, reading } from "../lib";
-const { post, index = 0 } = Astro.props;
+const { post } = Astro.props;
 ---
 
 <a
@@ -11,7 +11,6 @@ const { post, index = 0 } = Astro.props;
   data-tags={post.data.tags.join("|")}
   data-search={`${post.data.title} ${post.data.description} ${post.data.tags.join(" ")}`.toLowerCase()}
 >
-  <span class="note-index">{String(index + 1).padStart(2, "0")}</span>
   <div>
     <p class="eyebrow">
       {post.data.tags.join(" / ")}
