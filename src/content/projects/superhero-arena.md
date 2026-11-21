@@ -151,9 +151,6 @@ sections:
       - **Server-side invincibility frames.** Hulk Smash set its invincibility frames on the client, but client-set attributes don't replicate, so the server's damage check never saw them. I moved them to the server at the start of the wind-up and broadcast the wind-up so other players see the telegraph.
       - **Beams that always end.** Superman's and Thanos's lasers now cancel cleanly on a hit, ragdoll, freeze, death or leaving. One idempotent end routine, watched by a single incapacitated signal, means a re-cast can't soft-lock the hero.
       - **Aquaman's ocean.** The water launches him up to three times, refilled by touching ground, then he drowns. The server relays the bounce when it owns a knocked-down body.
-    image: /media/sa-strange-portal.webp
-    imageAlt: "Doctor Strange opening a ring of fire for his Infinite Portal Trap on the Helicarrier deck"
-    caption: "Doctor Strange's Infinite Portal Trap opening on the deck."
 ---
 
 ## At a glance
